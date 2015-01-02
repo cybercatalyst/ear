@@ -1,0 +1,97 @@
+\hypertarget{group__ErrorOutput}{\section{\-Controlling error/information output}
+\label{d2/dd9/group__ErrorOutput}\index{\-Controlling error/information output@{\-Controlling error/information output}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f}{jack\-\_\-set\-\_\-error\-\_\-function} (void($\ast$func)(const char $\ast$)) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f}{jack\-\_\-set\-\_\-info\-\_\-function} (void($\ast$func)(const char $\ast$)) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \hyperlink{group__ErrorOutput_gadabaab075f11a7149f8bc3143d638780}{jack\-\_\-error\-\_\-callback} )(const char $\ast$msg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void($\ast$ \hyperlink{group__ErrorOutput_ga4fd590171478e9ef1c0686c8911041b7}{jack\-\_\-info\-\_\-callback} )(const char $\ast$msg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f}{\index{\-Controlling error/information output@{\-Controlling error/information output}!jack\-\_\-set\-\_\-error\-\_\-function@{jack\-\_\-set\-\_\-error\-\_\-function}}
+\index{jack\-\_\-set\-\_\-error\-\_\-function@{jack\-\_\-set\-\_\-error\-\_\-function}!Controlling error/information output@{\-Controlling error/information output}}
+\subsubsection[{jack\-\_\-set\-\_\-error\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-set\-\_\-error\-\_\-function} (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(const char $\ast$)}]{func}
+\end{DoxyParamCaption}
+)}}\label{d2/dd9/group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f}
+\-Set the \hyperlink{group__ErrorOutput_gadabaab075f11a7149f8bc3143d638780}{jack\-\_\-error\-\_\-callback} for error message display. \-Set it to \-N\-U\-L\-L to restore default\-\_\-jack\-\_\-error\-\_\-callback function.
+
+\-The \-J\-A\-C\-K library provides two built-\/in callbacks for this purpose\-: default\-\_\-jack\-\_\-error\-\_\-callback() and silent\-\_\-jack\-\_\-error\-\_\-callback(). 
+
+\-Referenced by \-Jack\-Adapter\-::connect\-To\-Server().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd9/group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f}{\index{\-Controlling error/information output@{\-Controlling error/information output}!jack\-\_\-set\-\_\-info\-\_\-function@{jack\-\_\-set\-\_\-info\-\_\-function}}
+\index{jack\-\_\-set\-\_\-info\-\_\-function@{jack\-\_\-set\-\_\-info\-\_\-function}!Controlling error/information output@{\-Controlling error/information output}}
+\subsubsection[{jack\-\_\-set\-\_\-info\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-set\-\_\-info\-\_\-function} (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(const char $\ast$)}]{func}
+\end{DoxyParamCaption}
+)}}\label{d2/dd9/group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f}
+\-Set the \hyperlink{group__ErrorOutput_ga4fd590171478e9ef1c0686c8911041b7}{jack\-\_\-info\-\_\-callback} for info message display. \-Set it to \-N\-U\-L\-L to restore default\-\_\-jack\-\_\-info\-\_\-callback function.
+
+\-The \-J\-A\-C\-K library provides two built-\/in callbacks for this purpose\-: default\-\_\-jack\-\_\-info\-\_\-callback() and silent\-\_\-jack\-\_\-info\-\_\-callback(). 
+
+\-Referenced by \-Jack\-Adapter\-::connect\-To\-Server().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd9/group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__ErrorOutput_gadabaab075f11a7149f8bc3143d638780}{\index{\-Controlling error/information output@{\-Controlling error/information output}!jack\-\_\-error\-\_\-callback@{jack\-\_\-error\-\_\-callback}}
+\index{jack\-\_\-error\-\_\-callback@{jack\-\_\-error\-\_\-callback}!Controlling error/information output@{\-Controlling error/information output}}
+\subsubsection[{jack\-\_\-error\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf jack\-\_\-error\-\_\-callback})(const char $\ast$msg) {\bf \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}}}\label{d2/dd9/group__ErrorOutput_gadabaab075f11a7149f8bc3143d638780}
+\-Display \-J\-A\-C\-K error message.
+
+\-Set via \hyperlink{group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f}{jack\-\_\-set\-\_\-error\-\_\-function()}, otherwise a \-J\-A\-C\-K-\/provided default will print {\itshape msg\/} (plus a newline) to stderr.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em msg} & error message text (no newline at end). \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ErrorOutput_ga4fd590171478e9ef1c0686c8911041b7}{\index{\-Controlling error/information output@{\-Controlling error/information output}!jack\-\_\-info\-\_\-callback@{jack\-\_\-info\-\_\-callback}}
+\index{jack\-\_\-info\-\_\-callback@{jack\-\_\-info\-\_\-callback}!Controlling error/information output@{\-Controlling error/information output}}
+\subsubsection[{jack\-\_\-info\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf jack\-\_\-info\-\_\-callback})(const char $\ast$msg) {\bf \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}}}\label{d2/dd9/group__ErrorOutput_ga4fd590171478e9ef1c0686c8911041b7}
+\-Display \-J\-A\-C\-K info message.
+
+\-Set via \hyperlink{group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f}{jack\-\_\-set\-\_\-info\-\_\-function()}, otherwise a \-J\-A\-C\-K-\/provided default will print {\itshape msg\/} (plus a newline) to stdout.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em msg} & info message text (no newline at end). \\
+\hline
+\end{DoxyParams}

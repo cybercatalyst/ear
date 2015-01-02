@@ -1,0 +1,124 @@
+\hypertarget{intclient_8h}{\section{3rdparty/jack/include/jack/intclient.h \-File \-Reference}
+\label{d4/d89/intclient_8h}\index{3rdparty/jack/include/jack/intclient.\-h@{3rdparty/jack/include/jack/intclient.\-h}}
+}
+{\ttfamily \#include $<$jack/types.\-h$>$}\*
+\-Include dependency graph for intclient.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{d6/d1c/intclient_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{intclient_8h_a06135991a92b175802b441cb07d2cc46}{jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t} intclient)
+\item 
+\hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t} \hyperlink{intclient_8h_a40c4a05e9e5acd83d0cd9af01754c017}{jack\-\_\-internal\-\_\-client\-\_\-handle} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$client\-\_\-name, jack\-\_\-status\-\_\-t $\ast$status)
+\item 
+\hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t} \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$client\-\_\-name, jack\-\_\-options\-\_\-t options, jack\-\_\-status\-\_\-t $\ast$status,...)
+\item 
+jack\-\_\-status\-\_\-t \hyperlink{intclient_8h_a0cb5e85d41c1d0fd0163a64859ba3672}{jack\-\_\-internal\-\_\-client\-\_\-unload} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t} intclient)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{intclient_8h_a06135991a92b175802b441cb07d2cc46}{\index{intclient.\-h@{intclient.\-h}!jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name@{jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name}}
+\index{jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name@{jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name}!intclient.h@{intclient.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf jack\-\_\-get\-\_\-internal\-\_\-client\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-intclient\-\_\-t}}]{intclient}
+\end{DoxyParamCaption}
+)}}\label{d4/d89/intclient_8h_a06135991a92b175802b441cb07d2cc46}
+\-Get an internal client's name. \-This is useful when \hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name} was not specified on \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()} and \-Jack\-Name\-Not\-Unique status was returned. \-In that case, the actual name will differ from the {\itshape client\-\_\-name\/} requested.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & requesting \-J\-A\-C\-K client's handle.\\
+\hline
+{\em intclient} & handle returned from \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()} or \hyperlink{intclient_8h_a40c4a05e9e5acd83d0cd9af01754c017}{jack\-\_\-internal\-\_\-client\-\_\-handle()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-N\-U\-L\-L if unsuccessful, otherwise pointer to the internal client name obtained from the heap via malloc(). \-The caller should free() this storage when no longer needed. 
+\end{DoxyReturn}
+\hypertarget{intclient_8h_a40c4a05e9e5acd83d0cd9af01754c017}{\index{intclient.\-h@{intclient.\-h}!jack\-\_\-internal\-\_\-client\-\_\-handle@{jack\-\_\-internal\-\_\-client\-\_\-handle}}
+\index{jack\-\_\-internal\-\_\-client\-\_\-handle@{jack\-\_\-internal\-\_\-client\-\_\-handle}!intclient.h@{intclient.\-h}}
+\subsubsection[{jack\-\_\-internal\-\_\-client\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-intclient\-\_\-t} {\bf jack\-\_\-internal\-\_\-client\-\_\-handle} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const char $\ast$}]{client\-\_\-name, }
+\item[{jack\-\_\-status\-\_\-t $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{d4/d89/intclient_8h_a40c4a05e9e5acd83d0cd9af01754c017}
+\-Return the \hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t} handle for an internal client running in the \-J\-A\-C\-K server.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & requesting \-J\-A\-C\-K client's handle.\\
+\hline
+{\em client\-\_\-name} & for the internal client of no more than \hyperlink{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{jack\-\_\-client\-\_\-name\-\_\-size()} characters. \-The name scope is local to the current server.\\
+\hline
+{\em status} & (if non-\/\-N\-U\-L\-L) an address for \-J\-A\-C\-K to return information from this operation. \-This status word is formed by \-O\-R-\/ing together the relevant \-Jack\-Status bits.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Opaque internal client handle if successful. \-If 0, the internal client was not found, and {\itshape $\ast$status\/} includes the \-Jack\-No\-Such\-Client and \-Jack\-Failure bits. 
+\end{DoxyReturn}
+\hypertarget{intclient_8h_adca1931231a03563544281cda1530ca6}{\index{intclient.\-h@{intclient.\-h}!jack\-\_\-internal\-\_\-client\-\_\-load@{jack\-\_\-internal\-\_\-client\-\_\-load}}
+\index{jack\-\_\-internal\-\_\-client\-\_\-load@{jack\-\_\-internal\-\_\-client\-\_\-load}!intclient.h@{intclient.\-h}}
+\subsubsection[{jack\-\_\-internal\-\_\-client\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-intclient\-\_\-t} {\bf jack\-\_\-internal\-\_\-client\-\_\-load} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const char $\ast$}]{client\-\_\-name, }
+\item[{jack\-\_\-options\-\_\-t}]{options, }
+\item[{jack\-\_\-status\-\_\-t $\ast$}]{status, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{d4/d89/intclient_8h_adca1931231a03563544281cda1530ca6}
+\-Load an internal client into the \-J\-A\-C\-K server.
+
+\-Internal clients run inside the \-J\-A\-C\-K server process. \-They can use most of the same functions as external clients. \-Each internal client is built as a shared object module, which must declare jack\-\_\-initialize() and jack\-\_\-finish() entry points called at load and unload times. \-See inprocess\-::c for an example.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & loading \-J\-A\-C\-K client's handle.\\
+\hline
+{\em client\-\_\-name} & of at most \hyperlink{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{jack\-\_\-client\-\_\-name\-\_\-size()} characters for the internal client to load. \-The name scope is local to the current server.\\
+\hline
+{\em options} & formed by \-O\-R-\/ing together \hyperlink{types_8h_a396617de2ef101891c51346f408a375e}{\-Jack\-Options} bits. \-Only the \hyperlink{types_8h_ac4e472a37c86a53ccbf35e903196501d}{\-Jack\-Load\-Options} bits are valid.\\
+\hline
+{\em status} & (if non-\/\-N\-U\-L\-L) an address for \-J\-A\-C\-K to return information from the load operation. \-This status word is formed by \-O\-R-\/ing together the relevant \-Jack\-Status bits.\\
+\hline
+\end{DoxyParams}
+{\bfseries \-Optional parameters\-:} depending on corresponding \mbox{[}{\itshape options\/} bits\mbox{]} additional parameters may follow {\itshape status\/} (in this order).
+
+\begin{DoxyItemize}
+\item \mbox{[}\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea82905c7e1c615d183fffac16c0267e18}{\-Jack\-Load\-Name}\mbox{]} {\itshape (char $\ast$) load\-\_\-name\/} is the shared object file from which to load the new internal client (otherwise use the {\itshape client\-\_\-name\/}).\end{DoxyItemize}
+\begin{DoxyItemize}
+\item \mbox{[}\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea1cd6cb23e61406309871a644d1a5d3c7}{\-Jack\-Load\-Init}\mbox{]} {\itshape (char $\ast$) load\-\_\-init\/} an arbitary string passed to the internal client's jack\-\_\-initialize() routine (otherwise \-N\-U\-L\-L), of no more than \hyperlink{types_8h_ab3686dbff70b81ae1165fe6401f70921}{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T} bytes.\end{DoxyItemize}
+\begin{DoxyReturn}{\-Returns}
+\-Opaque internal client handle if successful. \-If this is 0, the load operation failed, the internal client was not loaded, and {\itshape $\ast$status\/} includes the \-Jack\-Failure bit. 
+\end{DoxyReturn}
+\hypertarget{intclient_8h_a0cb5e85d41c1d0fd0163a64859ba3672}{\index{intclient.\-h@{intclient.\-h}!jack\-\_\-internal\-\_\-client\-\_\-unload@{jack\-\_\-internal\-\_\-client\-\_\-unload}}
+\index{jack\-\_\-internal\-\_\-client\-\_\-unload@{jack\-\_\-internal\-\_\-client\-\_\-unload}!intclient.h@{intclient.\-h}}
+\subsubsection[{jack\-\_\-internal\-\_\-client\-\_\-unload}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-status\-\_\-t {\bf jack\-\_\-internal\-\_\-client\-\_\-unload} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-intclient\-\_\-t}}]{intclient}
+\end{DoxyParamCaption}
+)}}\label{d4/d89/intclient_8h_a0cb5e85d41c1d0fd0163a64859ba3672}
+\-Unload an internal client from a \-J\-A\-C\-K server. \-This calls the intclient's jack\-\_\-finish() entry point then removes it. \-See inprocess\-::c for an example.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & unloading \-J\-A\-C\-K client's handle.\\
+\hline
+{\em intclient} & handle returned from \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()} or \hyperlink{intclient_8h_a40c4a05e9e5acd83d0cd9af01754c017}{jack\-\_\-internal\-\_\-client\-\_\-handle()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 if successful, otherwise \-Jack\-Status bits. 
+\end{DoxyReturn}

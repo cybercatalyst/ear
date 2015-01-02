@@ -1,0 +1,809 @@
+\hypertarget{group__ServerControl}{\section{\-Controling the server}
+\label{d2/d3b/group__ServerControl}\index{\-Controling the server@{\-Controling the server}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+sigset\-\_\-t \hyperlink{group__ServerControl_gaaf1bee06690f756a6ffb463580590518}{jackctl\-\_\-setup\-\_\-signals} (unsigned int flags)
+\item 
+void \hyperlink{group__ServerControl_ga90d8e0221779a24483fe4f4cce775d51}{jackctl\-\_\-wait\-\_\-signals} (sigset\-\_\-t signals)
+\item 
+jackctl\-\_\-server\-\_\-t $\ast$ \hyperlink{group__ServerControl_ga8b8c36f1be47c0d582e36ee2ea21e7bb}{jackctl\-\_\-server\-\_\-create} (bool($\ast$on\-\_\-device\-\_\-acquire)(const char $\ast$device\-\_\-name), void($\ast$on\-\_\-device\-\_\-release)(const char $\ast$device\-\_\-name))
+\item 
+void \hyperlink{group__ServerControl_gab6f848f11e9853f49d82f253c1df1121}{jackctl\-\_\-server\-\_\-destroy} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gad2b438d61acdadc96368ff2dd4e9e62f}{jackctl\-\_\-server\-\_\-open} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_gaa573e4c5e35e853d199cf5b7368700b5}{jackctl\-\_\-server\-\_\-start} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gaf71c3fbc808e15305277e667ca6cfac4}{jackctl\-\_\-server\-\_\-stop} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gab09dea0a3ffc38e439cbceaa33951a2c}{jackctl\-\_\-server\-\_\-close} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_ga3edd82a413260dc1f4de2862f0a6a669}{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gaeaefa3144a6a9d843467d4951ca71f70}{jackctl\-\_\-server\-\_\-get\-\_\-parameters} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gacf1e2a650fec3f019bb36e49ffacde4f}{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_ga338effc099ff0cf03648971df51f9086}{jackctl\-\_\-server\-\_\-load\-\_\-internal} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+bool \hyperlink{group__ServerControl_gac0d0b9b2c5323da9193db9a0aa84bdf9}{jackctl\-\_\-server\-\_\-unload\-\_\-internal} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+bool \hyperlink{group__ServerControl_gadacbb19d2f9e614ce33c8aedaa04fda1}{jackctl\-\_\-server\-\_\-add\-\_\-slave} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_gac71a7c5d85e891a51a57f2575aea627c}{jackctl\-\_\-server\-\_\-remove\-\_\-slave} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_ga3bfe5d4befb9d9bab8f05e13d37ca7b3}{jackctl\-\_\-server\-\_\-switch\-\_\-master} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga9e28945c015f343e7a82c4e76e9cb1b4}{jackctl\-\_\-driver\-\_\-get\-\_\-name} (jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_ga0f73cfb0c40a401ca6aa617073303e72}{jackctl\-\_\-driver\-\_\-get\-\_\-parameters} (jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga4d14a6526174de9d085b203a7b7d632a}{jackctl\-\_\-internal\-\_\-get\-\_\-name} (jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gade591618ee972b92724be7ee87a3943a}{jackctl\-\_\-internal\-\_\-get\-\_\-parameters} (jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga3a123ee66e7605b1f17db88d4f5b8ac8}{jackctl\-\_\-parameter\-\_\-get\-\_\-name} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_gaac9fe5577753455308a53f5569fe3106}{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga97aae5c29e16539b71bc7dc2bddafc4b}{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840}{jackctl\-\_\-param\-\_\-type\-\_\-t} \hyperlink{group__ServerControl_ga37fe25ce3d3fdbc631a12cab91c460bb}{jackctl\-\_\-parameter\-\_\-get\-\_\-type} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+char \hyperlink{group__ServerControl_ga864ee9036a98736910f264b1a62f0fe9}{jackctl\-\_\-parameter\-\_\-get\-\_\-id} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_ga439234cd9c8cb1ff35a8bffef526f04b}{jackctl\-\_\-parameter\-\_\-is\-\_\-set} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gac75904b4d63158841b6f4667a7928788}{jackctl\-\_\-parameter\-\_\-reset} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_ga9881e66c9c235484e5b8879ce27bc9f2}{jackctl\-\_\-parameter\-\_\-get\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gab769622731339e7d35e3b7093db347e6}{jackctl\-\_\-parameter\-\_\-set\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, const union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$value\-\_\-ptr)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_gaa71bfc637794e50ccd5c39d0449b982a}{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gae7228c1726b5ecaae6458134bf4ab4d7}{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_ga823ae164d023267b57002226444fe708}{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+uint32\-\_\-t \hyperlink{group__ServerControl_ga1578b61842cf7a7cfb0d8fe54cf286ff}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_ga12fbe98c92f84dcfbd2de23421181567}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, uint32\-\_\-t index)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_gadbaa1566bcd829aa4233aac9234125ed}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, uint32\-\_\-t index)
+\item 
+void \hyperlink{group__ServerControl_ga132d53b3fe319e84baf5a2381bd50fc6}{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$min\-\_\-ptr, union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$max\-\_\-ptr)
+\item 
+bool \hyperlink{group__ServerControl_gac1d74fdcc7125293b7c2d329c0b09e9a}{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gafd1b5bc48305a978135692997abc8996}{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+void \hyperlink{group__ServerControl_gac6448626e0b75fc6d9da1ccbdca0355e}{jack\-\_\-error} (const char $\ast$format,...)
+\item 
+void \hyperlink{group__ServerControl_ga21328fd378306e0da7270952196eb717}{jack\-\_\-info} (const char $\ast$format,...)
+\item 
+void \hyperlink{group__ServerControl_ga35f69faaee3bb9b958ed8c9a5f62246c}{jack\-\_\-log} (const char $\ast$format,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__ServerControl_gac6448626e0b75fc6d9da1ccbdca0355e}{\index{\-Controling the server@{\-Controling the server}!jack\-\_\-error@{jack\-\_\-error}}
+\index{jack\-\_\-error@{jack\-\_\-error}!Controling the server@{\-Controling the server}}
+\subsubsection[{jack\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-error} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gac6448626e0b75fc6d9da1ccbdca0355e}
+\-Call this function to log an error message.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em format} & string \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ServerControl_ga21328fd378306e0da7270952196eb717}{\index{\-Controling the server@{\-Controling the server}!jack\-\_\-info@{jack\-\_\-info}}
+\index{jack\-\_\-info@{jack\-\_\-info}!Controling the server@{\-Controling the server}}
+\subsubsection[{jack\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-info} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga21328fd378306e0da7270952196eb717}
+\-Call this function to log an information message.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em format} & string \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ServerControl_ga35f69faaee3bb9b958ed8c9a5f62246c}{\index{\-Controling the server@{\-Controling the server}!jack\-\_\-log@{jack\-\_\-log}}
+\index{jack\-\_\-log@{jack\-\_\-log}!Controling the server@{\-Controling the server}}
+\subsubsection[{jack\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-log} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga35f69faaee3bb9b958ed8c9a5f62246c}
+\-Call this function to log an information message but only when verbose mode is enabled.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em format} & string \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ServerControl_ga9e28945c015f343e7a82c4e76e9cb1b4}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-driver\-\_\-get\-\_\-name@{jackctl\-\_\-driver\-\_\-get\-\_\-name}}
+\index{jackctl\-\_\-driver\-\_\-get\-\_\-name@{jackctl\-\_\-driver\-\_\-get\-\_\-name}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-driver\-\_\-get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-driver\-\_\-get\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga9e28945c015f343e7a82c4e76e9cb1b4}
+\-Call this function to get name of driver.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em driver} & driver object handle to get name of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+driver name. \-Must not be modified. \-Always same for same driver object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga0f73cfb0c40a401ca6aa617073303e72}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-driver\-\_\-get\-\_\-parameters@{jackctl\-\_\-driver\-\_\-get\-\_\-parameters}}
+\index{jackctl\-\_\-driver\-\_\-get\-\_\-parameters@{jackctl\-\_\-driver\-\_\-get\-\_\-parameters}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-driver\-\_\-get\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}const \-J\-S\-List$\ast$ {\bf jackctl\-\_\-driver\-\_\-get\-\_\-parameters} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga0f73cfb0c40a401ca6aa617073303e72}
+\-Call this function to get list of driver parameters. \-List node data pointers is a parameter object handle (\-::jackctl\-\_\-parameter\-\_\-t).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em driver} & driver object handle to get parameters for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Single linked list of parameter object handles. \-Must not be modified. \-Always same for same driver object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga4d14a6526174de9d085b203a7b7d632a}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-internal\-\_\-get\-\_\-name@{jackctl\-\_\-internal\-\_\-get\-\_\-name}}
+\index{jackctl\-\_\-internal\-\_\-get\-\_\-name@{jackctl\-\_\-internal\-\_\-get\-\_\-name}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-internal\-\_\-get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-internal\-\_\-get\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-internal\-\_\-t $\ast$}]{internal}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga4d14a6526174de9d085b203a7b7d632a}
+\-Call this function to get name of internal client.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em internal} & internal object handle to get name of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+internal name. \-Must not be modified. \-Always same for same internal object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gade591618ee972b92724be7ee87a3943a}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-internal\-\_\-get\-\_\-parameters@{jackctl\-\_\-internal\-\_\-get\-\_\-parameters}}
+\index{jackctl\-\_\-internal\-\_\-get\-\_\-parameters@{jackctl\-\_\-internal\-\_\-get\-\_\-parameters}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-internal\-\_\-get\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}const \-J\-S\-List$\ast$ {\bf jackctl\-\_\-internal\-\_\-get\-\_\-parameters} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-internal\-\_\-t $\ast$}]{internal}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gade591618ee972b92724be7ee87a3943a}
+\-Call this function to get list of internal parameters. \-List node data pointers is a parameter object handle (\-::jackctl\-\_\-parameter\-\_\-t).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em internal} & internal object handle to get parameters for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Single linked list of parameter object handles. \-Must not be modified. \-Always same for same internal object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gafd1b5bc48305a978135692997abc8996}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value@{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value}}
+\index{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value@{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gafd1b5bc48305a978135692997abc8996}
+\-Call this function to check whether parameter has fake values, i.\-e. values have no user meaningful meaning and only value description is meaningful to user.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+whether parameter constraint is strict. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gac1d74fdcc7125293b7c2d329c0b09e9a}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict@{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict}}
+\index{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict@{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gac1d74fdcc7125293b7c2d329c0b09e9a}
+\-Call this function to check whether parameter constraint is strict, i.\-e. whether supplying non-\/matching value will not work for sure.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+whether parameter constraint is strict. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gaa71bfc637794e50ccd5c39d0449b982a}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}union {\bf jackctl\-\_\-parameter\-\_\-value} {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}write\mbox{]}}}}\label{d2/d3b/group__ServerControl_gaa71bfc637794e50ccd5c39d0449b982a}
+\-Call this function to get parameter default value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get default value of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter default value. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gadbaa1566bcd829aa4233aac9234125ed}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gadbaa1566bcd829aa4233aac9234125ed}
+\-Call this function to get parameter enumeration value description.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter \\
+\hline
+{\em index} & index of parameter enumeration value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+enumeration value description. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga12fbe98c92f84dcfbd2de23421181567}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}union {\bf jackctl\-\_\-parameter\-\_\-value} {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}write\mbox{]}}}}\label{d2/d3b/group__ServerControl_ga12fbe98c92f84dcfbd2de23421181567}
+\-Call this function to get parameter enumeration value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter \\
+\hline
+{\em index} & index of parameter enumeration value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+enumeration value. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga1578b61842cf7a7cfb0d8fe54cf286ff}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count@{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga1578b61842cf7a7cfb0d8fe54cf286ff}
+\-Call this function get how many enumeration values parameter has.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+number of enumeration values 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga864ee9036a98736910f264b1a62f0fe9}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-id@{jackctl\-\_\-parameter\-\_\-get\-\_\-id}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-id@{jackctl\-\_\-parameter\-\_\-get\-\_\-id}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-id} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga864ee9036a98736910f264b1a62f0fe9}
+\-Call this function to get parameter character.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get character of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+character. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga97aae5c29e16539b71bc7dc2bddafc4b}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga97aae5c29e16539b71bc7dc2bddafc4b}
+\-Call this function to get parameter long description.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get long description of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter long description. \-Must not be modified. \-Always same for same parameter object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga3a123ee66e7605b1f17db88d4f5b8ac8}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-name@{jackctl\-\_\-parameter\-\_\-get\-\_\-name}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-name@{jackctl\-\_\-parameter\-\_\-get\-\_\-name}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga3a123ee66e7605b1f17db88d4f5b8ac8}
+\-Call this function to get parameter name.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get name of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter name. \-Must not be modified. \-Always same for same parameter object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga132d53b3fe319e84baf5a2381bd50fc6}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter, }
+\item[{union {\bf jackctl\-\_\-parameter\-\_\-value} $\ast$}]{min\-\_\-ptr, }
+\item[{union {\bf jackctl\-\_\-parameter\-\_\-value} $\ast$}]{max\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga132d53b3fe319e84baf5a2381bd50fc6}
+\-Call this function to get parameter range.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter \\
+\hline
+{\em min\-\_\-ptr} & pointer to variable receiving parameter minimum value \\
+\hline
+{\em max\-\_\-ptr} & pointer to variable receiving parameter maximum value \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ServerControl_gaac9fe5577753455308a53f5569fe3106}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description@{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gaac9fe5577753455308a53f5569fe3106}
+\-Call this function to get parameter short description.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get short description of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter short description. \-Must not be modified. \-Always same for same parameter object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga37fe25ce3d3fdbc631a12cab91c460bb}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-type@{jackctl\-\_\-parameter\-\_\-get\-\_\-type}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-type@{jackctl\-\_\-parameter\-\_\-get\-\_\-type}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jackctl\-\_\-param\-\_\-type\-\_\-t} {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-type} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga37fe25ce3d3fdbc631a12cab91c460bb}
+\-Call this function to get parameter type.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get type of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter type. \-Always same for same parameter object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga9881e66c9c235484e5b8879ce27bc9f2}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-get\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-value}}
+\index{jackctl\-\_\-parameter\-\_\-get\-\_\-value@{jackctl\-\_\-parameter\-\_\-get\-\_\-value}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-get\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}union {\bf jackctl\-\_\-parameter\-\_\-value} {\bf jackctl\-\_\-parameter\-\_\-get\-\_\-value} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}write\mbox{]}}}}\label{d2/d3b/group__ServerControl_ga9881e66c9c235484e5b8879ce27bc9f2}
+\-Call this function to get parameter value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get value of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+parameter value. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga823ae164d023267b57002226444fe708}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint}}
+\index{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga823ae164d023267b57002226444fe708}
+\-Call this function check whether parameter has enumeration constraint.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+whether parameter has enumeration constraint. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gae7228c1726b5ecaae6458134bf4ab4d7}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint}}
+\index{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint@{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gae7228c1726b5ecaae6458134bf4ab4d7}
+\-Call this function check whether parameter has range constraint.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & object handle of parameter to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+whether parameter has range constraint. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga439234cd9c8cb1ff35a8bffef526f04b}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-is\-\_\-set@{jackctl\-\_\-parameter\-\_\-is\-\_\-set}}
+\index{jackctl\-\_\-parameter\-\_\-is\-\_\-set@{jackctl\-\_\-parameter\-\_\-is\-\_\-set}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-is\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-is\-\_\-set} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga439234cd9c8cb1ff35a8bffef526f04b}
+\-Call this function to check whether parameter has been set, or its default value is being used.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true -\/ parameter is set, false -\/ parameter is using default value. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gac75904b4d63158841b6f4667a7928788}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-reset@{jackctl\-\_\-parameter\-\_\-reset}}
+\index{jackctl\-\_\-parameter\-\_\-reset@{jackctl\-\_\-parameter\-\_\-reset}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-reset} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gac75904b4d63158841b6f4667a7928788}
+\-Call this function to reset parameter to its default value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to reset value of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gab769622731339e7d35e3b7093db347e6}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-parameter\-\_\-set\-\_\-value@{jackctl\-\_\-parameter\-\_\-set\-\_\-value}}
+\index{jackctl\-\_\-parameter\-\_\-set\-\_\-value@{jackctl\-\_\-parameter\-\_\-set\-\_\-value}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-parameter\-\_\-set\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-parameter\-\_\-set\-\_\-value} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-parameter\-\_\-t $\ast$}]{parameter, }
+\item[{const union {\bf jackctl\-\_\-parameter\-\_\-value} $\ast$}]{value\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gab769622731339e7d35e3b7093db347e6}
+\-Call this function to set parameter value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parameter} & parameter object handle to get value of \\
+\hline
+{\em value\-\_\-ptr} & pointer to variable containing parameter value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gadacbb19d2f9e614ce33c8aedaa04fda1}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-add\-\_\-slave@{jackctl\-\_\-server\-\_\-add\-\_\-slave}}
+\index{jackctl\-\_\-server\-\_\-add\-\_\-slave@{jackctl\-\_\-server\-\_\-add\-\_\-slave}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-add\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-add\-\_\-slave} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gadacbb19d2f9e614ce33c8aedaa04fda1}
+\-Call this function to add a slave in the driver slave list. (cannot be used when the server is running that is between jackctl\-\_\-server\-\_\-start and jackctl\-\_\-server\-\_\-stop)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em driver} & driver to add in the driver slave list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gab09dea0a3ffc38e439cbceaa33951a2c}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-close@{jackctl\-\_\-server\-\_\-close}}
+\index{jackctl\-\_\-server\-\_\-close@{jackctl\-\_\-server\-\_\-close}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-close} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gab09dea0a3ffc38e439cbceaa33951a2c}
+\-Call this function to close \-J\-A\-C\-K server
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga8b8c36f1be47c0d582e36ee2ea21e7bb}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-create@{jackctl\-\_\-server\-\_\-create}}
+\index{jackctl\-\_\-server\-\_\-create@{jackctl\-\_\-server\-\_\-create}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}jackctl\-\_\-server\-\_\-t$\ast$ {\bf jackctl\-\_\-server\-\_\-create} (
+\begin{DoxyParamCaption}
+\item[{bool($\ast$)(const char $\ast$device\-\_\-name)}]{on\-\_\-device\-\_\-acquire, }
+\item[{void($\ast$)(const char $\ast$device\-\_\-name)}]{on\-\_\-device\-\_\-release}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga8b8c36f1be47c0d582e36ee2ea21e7bb}
+\-Call this function to create server object.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em on\-\_\-device\-\_\-acquire} & -\/ \-Optional callback to be called before device is acquired. \-If false is returned, device usage will fail \\
+\hline
+{\em on\-\_\-device\-\_\-release} & -\/ \-Optional callback to be called after device is released.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+server object handle, \-N\-U\-L\-L if creation of server object failed. \-Successfully created server object must be destroyed with paired call to \hyperlink{group__ServerControl_gab6f848f11e9853f49d82f253c1df1121}{jackctl\-\_\-server\-\_\-destroy} 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gab6f848f11e9853f49d82f253c1df1121}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-destroy@{jackctl\-\_\-server\-\_\-destroy}}
+\index{jackctl\-\_\-server\-\_\-destroy@{jackctl\-\_\-server\-\_\-destroy}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jackctl\-\_\-server\-\_\-destroy} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gab6f848f11e9853f49d82f253c1df1121}
+\-Call this function to destroy server object.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle to destroy \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__ServerControl_ga3edd82a413260dc1f4de2862f0a6a669}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list@{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list}}
+\index{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list@{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}const \-J\-S\-List$\ast$ {\bf jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga3edd82a413260dc1f4de2862f0a6a669}
+\-Call this function to get list of available drivers. \-List node data pointers is a driver object handle (\-::jackctl\-\_\-driver\-\_\-t).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle to get drivers for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Single linked list of driver object handles. \-Must not be modified. \-Always same for same server object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gacf1e2a650fec3f019bb36e49ffacde4f}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list@{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list}}
+\index{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list@{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}const \-J\-S\-List$\ast$ {\bf jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gacf1e2a650fec3f019bb36e49ffacde4f}
+\-Call this function to get list of available internal clients. \-List node data pointers is a internal client object handle (\-::jackctl\-\_\-internal\-\_\-t).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle to get internal clients for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Single linked list of internal client object handles. \-Must not be modified. \-Always same for same server object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gaeaefa3144a6a9d843467d4951ca71f70}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-get\-\_\-parameters@{jackctl\-\_\-server\-\_\-get\-\_\-parameters}}
+\index{jackctl\-\_\-server\-\_\-get\-\_\-parameters@{jackctl\-\_\-server\-\_\-get\-\_\-parameters}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-get\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}const \-J\-S\-List$\ast$ {\bf jackctl\-\_\-server\-\_\-get\-\_\-parameters} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gaeaefa3144a6a9d843467d4951ca71f70}
+\-Call this function to get list of server parameters. \-List node data pointers is a parameter object handle (\-::jackctl\-\_\-parameter\-\_\-t).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle to get parameters for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Single linked list of parameter object handles. \-Must not be modified. \-Always same for same server object. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga338effc099ff0cf03648971df51f9086}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-load\-\_\-internal@{jackctl\-\_\-server\-\_\-load\-\_\-internal}}
+\index{jackctl\-\_\-server\-\_\-load\-\_\-internal@{jackctl\-\_\-server\-\_\-load\-\_\-internal}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-load\-\_\-internal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-load\-\_\-internal} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-internal\-\_\-t $\ast$}]{internal}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga338effc099ff0cf03648971df51f9086}
+\-Call this function to load one internal client. (can be used when the server is running)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em internal} & internal to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gad2b438d61acdadc96368ff2dd4e9e62f}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-open@{jackctl\-\_\-server\-\_\-open}}
+\index{jackctl\-\_\-server\-\_\-open@{jackctl\-\_\-server\-\_\-open}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-open} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gad2b438d61acdadc96368ff2dd4e9e62f}
+\-Call this function to open \-J\-A\-C\-K server
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em driver} & driver to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gac71a7c5d85e891a51a57f2575aea627c}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-remove\-\_\-slave@{jackctl\-\_\-server\-\_\-remove\-\_\-slave}}
+\index{jackctl\-\_\-server\-\_\-remove\-\_\-slave@{jackctl\-\_\-server\-\_\-remove\-\_\-slave}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-remove\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-remove\-\_\-slave} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gac71a7c5d85e891a51a57f2575aea627c}
+\-Call this function to remove a slave from the driver slave list. (cannot be used when the server is running that is between jackctl\-\_\-server\-\_\-start and jackctl\-\_\-server\-\_\-stop)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em driver} & driver to remove from the driver slave list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gaa573e4c5e35e853d199cf5b7368700b5}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-start@{jackctl\-\_\-server\-\_\-start}}
+\index{jackctl\-\_\-server\-\_\-start@{jackctl\-\_\-server\-\_\-start}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-start} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gaa573e4c5e35e853d199cf5b7368700b5}
+\-Call this function to start \-J\-A\-C\-K server
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gaf71c3fbc808e15305277e667ca6cfac4}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-stop@{jackctl\-\_\-server\-\_\-stop}}
+\index{jackctl\-\_\-server\-\_\-stop@{jackctl\-\_\-server\-\_\-stop}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-stop} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gaf71c3fbc808e15305277e667ca6cfac4}
+\-Call this function to stop \-J\-A\-C\-K server
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga3bfe5d4befb9d9bab8f05e13d37ca7b3}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-switch\-\_\-master@{jackctl\-\_\-server\-\_\-switch\-\_\-master}}
+\index{jackctl\-\_\-server\-\_\-switch\-\_\-master@{jackctl\-\_\-server\-\_\-switch\-\_\-master}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-switch\-\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-switch\-\_\-master} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-driver\-\_\-t $\ast$}]{driver}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga3bfe5d4befb9d9bab8f05e13d37ca7b3}
+\-Call this function to switch master driver.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em driver} & driver to switch to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gac0d0b9b2c5323da9193db9a0aa84bdf9}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-server\-\_\-unload\-\_\-internal@{jackctl\-\_\-server\-\_\-unload\-\_\-internal}}
+\index{jackctl\-\_\-server\-\_\-unload\-\_\-internal@{jackctl\-\_\-server\-\_\-unload\-\_\-internal}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-server\-\_\-unload\-\_\-internal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf jackctl\-\_\-server\-\_\-unload\-\_\-internal} (
+\begin{DoxyParamCaption}
+\item[{jackctl\-\_\-server\-\_\-t $\ast$}]{server, }
+\item[{jackctl\-\_\-internal\-\_\-t $\ast$}]{internal}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gac0d0b9b2c5323da9193db9a0aa84bdf9}
+\-Call this function to unload one internal client. (can be used when the server is running)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em server} & server object handle \\
+\hline
+{\em internal} & internal to unload\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+success status\-: true -\/ success, false -\/ fail 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_gaaf1bee06690f756a6ffb463580590518}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-setup\-\_\-signals@{jackctl\-\_\-setup\-\_\-signals}}
+\index{jackctl\-\_\-setup\-\_\-signals@{jackctl\-\_\-setup\-\_\-signals}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-setup\-\_\-signals}]{\setlength{\rightskip}{0pt plus 5cm}sigset\-\_\-t {\bf jackctl\-\_\-setup\-\_\-signals} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{flags}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_gaaf1bee06690f756a6ffb463580590518}
+\-Call this function to setup process signal handling. \-As a general rule, it is required for proper operation for the server object.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em flags} & signals setup flags, use 0 for none. \-Currently no flags are defined\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the configurated signal set. 
+\end{DoxyReturn}
+\hypertarget{group__ServerControl_ga90d8e0221779a24483fe4f4cce775d51}{\index{\-Controling the server@{\-Controling the server}!jackctl\-\_\-wait\-\_\-signals@{jackctl\-\_\-wait\-\_\-signals}}
+\index{jackctl\-\_\-wait\-\_\-signals@{jackctl\-\_\-wait\-\_\-signals}!Controling the server@{\-Controling the server}}
+\subsubsection[{jackctl\-\_\-wait\-\_\-signals}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jackctl\-\_\-wait\-\_\-signals} (
+\begin{DoxyParamCaption}
+\item[{sigset\-\_\-t}]{signals}
+\end{DoxyParamCaption}
+)}}\label{d2/d3b/group__ServerControl_ga90d8e0221779a24483fe4f4cce775d51}
+\-Call this function to wait on a signal set.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em signals} & signals set to wait on \\
+\hline
+\end{DoxyParams}

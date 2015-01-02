@@ -1,0 +1,208 @@
+\hypertarget{types_8h}{\section{3rdparty/jack/include/jack/types.h \-File \-Reference}
+\label{d9/d49/types_8h}\index{3rdparty/jack/include/jack/types.\-h@{3rdparty/jack/include/jack/types.\-h}}
+}
+{\ttfamily \#include $<$jack/systemdeps.\-h$>$}\*
+\-Include dependency graph for types.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{d2/d1f/types_8h__incl}
+\end{center}
+\end{figure}
+\-This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d56/types_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{types_8h_a2664c2aa11f4bb50d37d919a1386ae03}{\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S}~(4294967295\-U)   /$\ast$ This should be U\-I\-N\-T32\-\_\-\-M\-A\-X, but C++ has a problem with that. $\ast$/
+\item 
+\#define \hyperlink{types_8h_ab3686dbff70b81ae1165fe6401f70921}{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T}~1024
+\item 
+\#define \hyperlink{types_8h_ab39e7f78dba631f3c0d34ac4cddcf80f}{\-Jack\-Open\-Options}~(\hyperlink{types_8h_a396617de2ef101891c51346f408a375ead61a4fdbce479e30a91f616d28de1052}{\-Jack\-Session\-I\-D}$|$\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea348557bfdc579daed2e35cc41c4f09c7}{\-Jack\-Server\-Name}$|$\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea6cc8d4cba338e94a69152aabc29a8511}{\-Jack\-No\-Start\-Server}$|$\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name})
+\item 
+\#define \hyperlink{types_8h_ac4e472a37c86a53ccbf35e903196501d}{\-Jack\-Load\-Options}~(\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea1cd6cb23e61406309871a644d1a5d3c7}{\-Jack\-Load\-Init}$|$\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea82905c7e1c615d183fffac16c0267e18}{\-Jack\-Load\-Name}$|$\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name})
+\item 
+\#define \hyperlink{types_8h_a189c90b28518cb24cdb1800a5bfebe1b}{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E}~\char`\"{}32 bit float mono audio\char`\"{}
+\item 
+\#define \hyperlink{types_8h_a270e0f81331caf216976ef15fa0be816}{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E}~\char`\"{}8 bit raw midi\char`\"{}
+\item 
+\#define \hyperlink{types_8h_a4ec2f03448e8b633e08cbf17fe6de6f9}{\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K}~(\-Jack\-Position\-B\-B\-T$|$\-Jack\-Position\-Timecode)
+\item 
+\#define \hyperlink{types_8h_ab54aee2c5b5197c588cdda2349434a21}{\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O}
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\-\_\-t \hyperlink{types_8h_ab4e39fe04f202d89eb0a56029428745d}{jack\-\_\-shmsize\-\_\-t}
+\item 
+typedef uint32\-\_\-t \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}
+\item 
+typedef uint64\-\_\-t \hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t}
+\item 
+typedef uint64\-\_\-t \hyperlink{types_8h_a27ead018636ddd400b928a0287b771c9}{jack\-\_\-intclient\-\_\-t}
+\item 
+typedef struct \hyperlink{types_8h_a71448ec3724ead8743787c454cd195c4}{\-\_\-jack\-\_\-port}
+\item 
+typedef struct \hyperlink{types_8h_a3d7d650c951750f952e54054981e5dcc}{\-\_\-jack\-\_\-client}
+\item 
+typedef uint32\-\_\-t \hyperlink{types_8h_a669d727ed55e90862bd1322c5c042e86}{jack\-\_\-port\-\_\-id\-\_\-t}
+\item 
+typedef uint32\-\_\-t \hyperlink{types_8h_aaa73ac8abfc0f11db61444f9a4812e42}{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{types_8h_a396617de2ef101891c51346f408a375e}{\-Jack\-Options} \{ \*
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ead0e904647255dc227b18738706309518}{\-Jack\-Null\-Option} =  0x00, 
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea6cc8d4cba338e94a69152aabc29a8511}{\-Jack\-No\-Start\-Server} =  0x01, 
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name} =  0x02, 
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea348557bfdc579daed2e35cc41c4f09c7}{\-Jack\-Server\-Name} =  0x04, 
+\*
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea82905c7e1c615d183fffac16c0267e18}{\-Jack\-Load\-Name} =  0x08, 
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea1cd6cb23e61406309871a644d1a5d3c7}{\-Jack\-Load\-Init} =  0x10, 
+\hyperlink{types_8h_a396617de2ef101891c51346f408a375ead61a4fdbce479e30a91f616d28de1052}{\-Jack\-Session\-I\-D} =  0x20
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{types_8h_ab54aee2c5b5197c588cdda2349434a21}{\index{types.\-h@{types.\-h}!\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O@{\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O}}
+\index{\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O@{\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O}!types.h@{types.\-h}}
+\subsubsection[{\-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-T\-I\-M\-E\-\_\-\-I\-N\-F\-O}}}\label{d9/d49/types_8h_ab54aee2c5b5197c588cdda2349434a21}
+\hypertarget{types_8h_a189c90b28518cb24cdb1800a5bfebe1b}{\index{types.\-h@{types.\-h}!\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E@{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E}}
+\index{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E@{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E}!types.h@{types.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E}~\char`\"{}32 bit float mono audio\char`\"{}}}\label{d9/d49/types_8h_a189c90b28518cb24cdb1800a5bfebe1b}
+
+
+\-Referenced by \-Jack\-Adapter\-::register\-Stereo\-Input\-Port(), and \-Jack\-Adapter\-::register\-Stereo\-Output\-Port().
+
+\hypertarget{types_8h_a270e0f81331caf216976ef15fa0be816}{\index{types.\-h@{types.\-h}!\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E@{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E}}
+\index{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E@{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E}!types.h@{types.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-I\-D\-I\-\_\-\-T\-Y\-P\-E}~\char`\"{}8 bit raw midi\char`\"{}}}\label{d9/d49/types_8h_a270e0f81331caf216976ef15fa0be816}
+\hypertarget{types_8h_ab3686dbff70b81ae1165fe6401f70921}{\index{types.\-h@{types.\-h}!\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T@{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T}}
+\index{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T@{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T}!types.h@{types.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-L\-O\-A\-D\-\_\-\-I\-N\-I\-T\-\_\-\-L\-I\-M\-I\-T}~1024}}\label{d9/d49/types_8h_ab3686dbff70b81ae1165fe6401f70921}
+\-Maximum size of {\itshape load\-\_\-init\/} string passed to an internal client jack\-\_\-initialize() function via \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()}. 
+
+\-Definition at line 48 of file types.\-h.
+
+\hypertarget{types_8h_a2664c2aa11f4bb50d37d919a1386ae03}{\index{types.\-h@{types.\-h}!\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S@{\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S}}
+\index{\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S@{\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S}!types.h@{types.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-M\-A\-X\-\_\-\-F\-R\-A\-M\-E\-S}~(4294967295\-U)   /$\ast$ This should be U\-I\-N\-T32\-\_\-\-M\-A\-X, but C++ has a problem with that. $\ast$/}}\label{d9/d49/types_8h_a2664c2aa11f4bb50d37d919a1386ae03}
+\-Maximum value that can be stored in jack\-\_\-nframes\-\_\-t 
+
+\-Definition at line 36 of file types.\-h.
+
+\hypertarget{types_8h_a4ec2f03448e8b633e08cbf17fe6de6f9}{\index{types.\-h@{types.\-h}!\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K@{\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K}}
+\index{\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K@{\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K}!types.h@{types.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-M\-A\-S\-K}~(\-Jack\-Position\-B\-B\-T$|$\-Jack\-Position\-Timecode)}}\label{d9/d49/types_8h_a4ec2f03448e8b633e08cbf17fe6de6f9}
+\hypertarget{types_8h_ac4e472a37c86a53ccbf35e903196501d}{\index{types.\-h@{types.\-h}!\-Jack\-Load\-Options@{\-Jack\-Load\-Options}}
+\index{\-Jack\-Load\-Options@{\-Jack\-Load\-Options}!types.h@{types.\-h}}
+\subsubsection[{\-Jack\-Load\-Options}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-Jack\-Load\-Options}~({\bf \-Jack\-Load\-Init}$|${\bf \-Jack\-Load\-Name}$|${\bf \-Jack\-Use\-Exact\-Name})}}\label{d9/d49/types_8h_ac4e472a37c86a53ccbf35e903196501d}
+\-Valid options for loading an internal client. 
+
+\-Definition at line 128 of file types.\-h.
+
+\hypertarget{types_8h_ab39e7f78dba631f3c0d34ac4cddcf80f}{\index{types.\-h@{types.\-h}!\-Jack\-Open\-Options@{\-Jack\-Open\-Options}}
+\index{\-Jack\-Open\-Options@{\-Jack\-Open\-Options}!types.h@{types.\-h}}
+\subsubsection[{\-Jack\-Open\-Options}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-Jack\-Open\-Options}~({\bf \-Jack\-Session\-I\-D}$|${\bf \-Jack\-Server\-Name}$|${\bf \-Jack\-No\-Start\-Server}$|${\bf \-Jack\-Use\-Exact\-Name})}}\label{d9/d49/types_8h_ab39e7f78dba631f3c0d34ac4cddcf80f}
+\-Valid options for opening an external client. 
+
+\-Definition at line 125 of file types.\-h.
+
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{types_8h_a3d7d650c951750f952e54054981e5dcc}{\index{types.\-h@{types.\-h}!\-\_\-jack\-\_\-client@{\-\_\-jack\-\_\-client}}
+\index{\-\_\-jack\-\_\-client@{\-\_\-jack\-\_\-client}!types.h@{types.\-h}}
+\subsubsection[{\-\_\-jack\-\_\-client}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-jack\-\_\-client}}}\label{d9/d49/types_8h_a3d7d650c951750f952e54054981e5dcc}
+jack\-\_\-client\-\_\-t is an opaque type. \-You may only access it using the \-A\-P\-I provided. 
+
+\-Definition at line 67 of file types.\-h.
+
+\hypertarget{types_8h_a71448ec3724ead8743787c454cd195c4}{\index{types.\-h@{types.\-h}!\-\_\-jack\-\_\-port@{\-\_\-jack\-\_\-port}}
+\index{\-\_\-jack\-\_\-port@{\-\_\-jack\-\_\-port}!types.h@{types.\-h}}
+\subsubsection[{\-\_\-jack\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-jack\-\_\-port}}}\label{d9/d49/types_8h_a71448ec3724ead8743787c454cd195c4}
+jack\-\_\-port\-\_\-t is an opaque type. \-You may only access it using the \-A\-P\-I provided. 
+
+\-Definition at line 61 of file types.\-h.
+
+\hypertarget{types_8h_a27ead018636ddd400b928a0287b771c9}{\index{types.\-h@{types.\-h}!jack\-\_\-intclient\-\_\-t@{jack\-\_\-intclient\-\_\-t}}
+\index{jack\-\_\-intclient\-\_\-t@{jack\-\_\-intclient\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-intclient\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\-\_\-t {\bf jack\-\_\-intclient\-\_\-t}}}\label{d9/d49/types_8h_a27ead018636ddd400b928a0287b771c9}
+jack\-\_\-intclient\-\_\-t is an opaque type representing a loaded internal client. \-You may only access it using the \-A\-P\-I provided in \hyperlink{intclient_8h}{$<$jack/intclient.h$>$}. 
+
+\-Definition at line 55 of file types.\-h.
+
+\hypertarget{types_8h_aa954df532e901ae5172e68a23f3da9b6}{\index{types.\-h@{types.\-h}!jack\-\_\-nframes\-\_\-t@{jack\-\_\-nframes\-\_\-t}}
+\index{jack\-\_\-nframes\-\_\-t@{jack\-\_\-nframes\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-nframes\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf jack\-\_\-nframes\-\_\-t}}}\label{d9/d49/types_8h_aa954df532e901ae5172e68a23f3da9b6}
+\-Type used to represent sample frame counts. 
+
+\-Definition at line 31 of file types.\-h.
+
+\hypertarget{types_8h_a669d727ed55e90862bd1322c5c042e86}{\index{types.\-h@{types.\-h}!jack\-\_\-port\-\_\-id\-\_\-t@{jack\-\_\-port\-\_\-id\-\_\-t}}
+\index{jack\-\_\-port\-\_\-id\-\_\-t@{jack\-\_\-port\-\_\-id\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-port\-\_\-id\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf jack\-\_\-port\-\_\-id\-\_\-t}}}\label{d9/d49/types_8h_a669d727ed55e90862bd1322c5c042e86}
+\-Ports have unique ids. \-A port registration callback is the only place you ever need to know their value. 
+
+\-Definition at line 73 of file types.\-h.
+
+\hypertarget{types_8h_aaa73ac8abfc0f11db61444f9a4812e42}{\index{types.\-h@{types.\-h}!jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t@{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t}}
+\index{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t@{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t}}}\label{d9/d49/types_8h_aaa73ac8abfc0f11db61444f9a4812e42}
+
+
+\-Definition at line 75 of file types.\-h.
+
+\hypertarget{types_8h_ab4e39fe04f202d89eb0a56029428745d}{\index{types.\-h@{types.\-h}!jack\-\_\-shmsize\-\_\-t@{jack\-\_\-shmsize\-\_\-t}}
+\index{jack\-\_\-shmsize\-\_\-t@{jack\-\_\-shmsize\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-shmsize\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\-\_\-t {\bf jack\-\_\-shmsize\-\_\-t}}}\label{d9/d49/types_8h_ab4e39fe04f202d89eb0a56029428745d}
+
+
+\-Definition at line 26 of file types.\-h.
+
+\hypertarget{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{\index{types.\-h@{types.\-h}!jack\-\_\-time\-\_\-t@{jack\-\_\-time\-\_\-t}}
+\index{jack\-\_\-time\-\_\-t@{jack\-\_\-time\-\_\-t}!types.h@{types.\-h}}
+\subsubsection[{jack\-\_\-time\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\-\_\-t {\bf jack\-\_\-time\-\_\-t}}}\label{d9/d49/types_8h_af9a29b8728e95cc38e2932c0ef855b7e}
+\-Type used to represent the value of free running monotonic clock with units of microseconds. 
+
+\-Definition at line 42 of file types.\-h.
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375e}{\index{types.\-h@{types.\-h}!\-Jack\-Options@{\-Jack\-Options}}
+\index{\-Jack\-Options@{\-Jack\-Options}!types.h@{types.\-h}}
+\subsubsection[{\-Jack\-Options}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Jack\-Options}}}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375e}
+jack\-\_\-options\-\_\-t bits \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Jack\-Null\-Option@{\-Jack\-Null\-Option}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Null\-Option@{\-Jack\-Null\-Option}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ead0e904647255dc227b18738706309518}{\-Jack\-Null\-Option}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ead0e904647255dc227b18738706309518}
+}]\-Null value to use when no option bits are needed. \index{\-Jack\-No\-Start\-Server@{\-Jack\-No\-Start\-Server}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-No\-Start\-Server@{\-Jack\-No\-Start\-Server}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ea6cc8d4cba338e94a69152aabc29a8511}{\-Jack\-No\-Start\-Server}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ea6cc8d4cba338e94a69152aabc29a8511}
+}]\-Do not automatically start the \-J\-A\-C\-K server when it is not already running. \-This option is always selected if \$\-J\-A\-C\-K\-\_\-\-N\-O\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-E\-R\-V\-E\-R is defined in the calling process environment. \index{\-Jack\-Use\-Exact\-Name@{\-Jack\-Use\-Exact\-Name}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Use\-Exact\-Name@{\-Jack\-Use\-Exact\-Name}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}
+}]\-Use the exact client name requested. \-Otherwise, \-J\-A\-C\-K automatically generates a unique one, if needed. \index{\-Jack\-Server\-Name@{\-Jack\-Server\-Name}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Server\-Name@{\-Jack\-Server\-Name}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ea348557bfdc579daed2e35cc41c4f09c7}{\-Jack\-Server\-Name}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ea348557bfdc579daed2e35cc41c4f09c7}
+}]\-Open with optional {\itshape (char $\ast$) server\-\_\-name\/} parameter. \index{\-Jack\-Load\-Name@{\-Jack\-Load\-Name}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Load\-Name@{\-Jack\-Load\-Name}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ea82905c7e1c615d183fffac16c0267e18}{\-Jack\-Load\-Name}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ea82905c7e1c615d183fffac16c0267e18}
+}]\-Load internal client from optional {\itshape (char $\ast$) load\-\_\-name\/}. \-Otherwise use the {\itshape client\-\_\-name\/}. \index{\-Jack\-Load\-Init@{\-Jack\-Load\-Init}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Load\-Init@{\-Jack\-Load\-Init}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ea1cd6cb23e61406309871a644d1a5d3c7}{\-Jack\-Load\-Init}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ea1cd6cb23e61406309871a644d1a5d3c7}
+}]\-Pass optional {\itshape (char $\ast$) load\-\_\-init\/} string to the jack\-\_\-initialize() entry point of an internal client. \index{\-Jack\-Session\-I\-D@{\-Jack\-Session\-I\-D}!types.\-h@{types.\-h}}\index{types.\-h@{types.\-h}!\-Jack\-Session\-I\-D@{\-Jack\-Session\-I\-D}}\item[{\em 
+\hypertarget{types_8h_a396617de2ef101891c51346f408a375ead61a4fdbce479e30a91f616d28de1052}{\-Jack\-Session\-I\-D}\label{d9/d49/types_8h_a396617de2ef101891c51346f408a375ead61a4fdbce479e30a91f616d28de1052}
+}]pass a \-Session\-I\-D \-Token this allows the sessionmanager to identify the client again. \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 80 of file types.\-h.
+

@@ -1,0 +1,137 @@
+\hypertarget{group__ServerClientControl}{\section{\-Controlling \& querying \-J\-A\-C\-K server operation}
+\label{d9/d51/group__ServerClientControl}\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__ServerClientControl_gad65c741a1d1d2fb09efacf51437b841a}{jack\-\_\-set\-\_\-freewheel} (jack\-\_\-client\-\_\-t $\ast$client, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ServerClientControl_gad96bda0901b924f5996e02e41a979685}{jack\-\_\-set\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} nframes) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__ServerClientControl_ga62022d4f2fbfba065f0874a497afd3b4}{jack\-\_\-get\-\_\-sample\-\_\-rate} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__ServerClientControl_gad1f5972836af7e72e6d79ed6bc53916f}{jack\-\_\-get\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ServerClientControl_ga2db0a4e9ab7b6d9984e91abba27ab71d}{jack\-\_\-engine\-\_\-takeover\-\_\-timebase} (jack\-\_\-client\-\_\-t $\ast$) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+float \hyperlink{group__ServerClientControl_ga9136d56397ad4f394a8b169462f5683b}{jack\-\_\-cpu\-\_\-load} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__ServerClientControl_ga9136d56397ad4f394a8b169462f5683b}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-cpu\-\_\-load@{jack\-\_\-cpu\-\_\-load}}
+\index{jack\-\_\-cpu\-\_\-load@{jack\-\_\-cpu\-\_\-load}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-cpu\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf jack\-\_\-cpu\-\_\-load} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_ga9136d56397ad4f394a8b169462f5683b}
+\begin{DoxyReturn}{\-Returns}
+the current \-C\-P\-U load estimated by \-J\-A\-C\-K. \-This is a running average of the time it takes to execute a full process cycle for all clients as a percentage of the real time available per cycle determined by the buffer size and sample rate. 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Jack\-Adapter\-::cpu\-Load().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d9/d51/group__ServerClientControl_ga9136d56397ad4f394a8b169462f5683b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__ServerClientControl_ga2db0a4e9ab7b6d9984e91abba27ab71d}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-engine\-\_\-takeover\-\_\-timebase@{jack\-\_\-engine\-\_\-takeover\-\_\-timebase}}
+\index{jack\-\_\-engine\-\_\-takeover\-\_\-timebase@{jack\-\_\-engine\-\_\-takeover\-\_\-timebase}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-engine\-\_\-takeover\-\_\-timebase}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-engine\-\_\-takeover\-\_\-timebase} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_ga2db0a4e9ab7b6d9984e91abba27ab71d}
+\-Old-\/style interface to become the timebase for the entire \-J\-A\-C\-K subsystem.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000005}{\-Deprecated}]\-This function still exists for compatibility with the earlier transport interface, but it does nothing. \-Instead, see \hyperlink{transport_8h}{transport.\-h} and use \hyperlink{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{jack\-\_\-set\-\_\-timebase\-\_\-callback()}.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{\-Returns}
+\-E\-N\-O\-S\-Y\-S, function not implemented. 
+\end{DoxyReturn}
+\hypertarget{group__ServerClientControl_gad1f5972836af7e72e6d79ed6bc53916f}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-get\-\_\-buffer\-\_\-size@{jack\-\_\-get\-\_\-buffer\-\_\-size}}
+\index{jack\-\_\-get\-\_\-buffer\-\_\-size@{jack\-\_\-get\-\_\-buffer\-\_\-size}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-get\-\_\-buffer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-get\-\_\-buffer\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_gad1f5972836af7e72e6d79ed6bc53916f}
+\begin{DoxyReturn}{\-Returns}
+the current maximum size that will ever be passed to the {\itshape process\-\_\-callback\/}. \-It should only be used $\ast$before$\ast$ the client has been activated. \-This size may change, clients that depend on it must register a {\itshape bufsize\-\_\-callback\/} so they will be notified if it does.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__ClientCallbacks_ga030cc371acb19abe52861492acb960ad}{jack\-\_\-set\-\_\-buffer\-\_\-size\-\_\-callback()} 
+\end{DoxySeeAlso}
+\hypertarget{group__ServerClientControl_ga62022d4f2fbfba065f0874a497afd3b4}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-get\-\_\-sample\-\_\-rate@{jack\-\_\-get\-\_\-sample\-\_\-rate}}
+\index{jack\-\_\-get\-\_\-sample\-\_\-rate@{jack\-\_\-get\-\_\-sample\-\_\-rate}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-get\-\_\-sample\-\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-get\-\_\-sample\-\_\-rate} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_ga62022d4f2fbfba065f0874a497afd3b4}
+\begin{DoxyReturn}{\-Returns}
+the sample rate of the jack system, as set by the user when jackd was started. 
+\end{DoxyReturn}
+\hypertarget{group__ServerClientControl_gad96bda0901b924f5996e02e41a979685}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-set\-\_\-buffer\-\_\-size@{jack\-\_\-set\-\_\-buffer\-\_\-size}}
+\index{jack\-\_\-set\-\_\-buffer\-\_\-size@{jack\-\_\-set\-\_\-buffer\-\_\-size}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-set\-\_\-buffer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-buffer\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{nframes}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_gad96bda0901b924f5996e02e41a979685}
+\-Change the buffer size passed to the {\itshape process\-\_\-callback\/}.
+
+\-This operation stops the \-J\-A\-C\-K engine process cycle, then calls all registered {\itshape bufsize\-\_\-callback\/} functions before restarting the process cycle. \-This will cause a gap in the audio flow, so it should only be done at appropriate stopping points.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__ClientCallbacks_ga030cc371acb19abe52861492acb960ad}{jack\-\_\-set\-\_\-buffer\-\_\-size\-\_\-callback()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & pointer to \-J\-A\-C\-K client structure. \\
+\hline
+{\em nframes} & new buffer size. \-Must be a power of two.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{group__ServerClientControl_gad65c741a1d1d2fb09efacf51437b841a}{\index{\-Controlling \& querying J\-A\-C\-K server operation@{\-Controlling \& querying J\-A\-C\-K server operation}!jack\-\_\-set\-\_\-freewheel@{jack\-\_\-set\-\_\-freewheel}}
+\index{jack\-\_\-set\-\_\-freewheel@{jack\-\_\-set\-\_\-freewheel}!Controlling & querying JACK server operation@{\-Controlling \& querying J\-A\-C\-K server operation}}
+\subsubsection[{jack\-\_\-set\-\_\-freewheel}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-freewheel} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{int}]{onoff}
+\end{DoxyParamCaption}
+)}}\label{d9/d51/group__ServerClientControl_gad65c741a1d1d2fb09efacf51437b841a}
+\-Start/\-Stop \-J\-A\-C\-K's \char`\"{}freewheel\char`\"{} mode.
+
+\-When in \char`\"{}freewheel\char`\"{} mode, \-J\-A\-C\-K no longer waits for any external event to begin the start of the next process cycle.
+
+\-As a result, freewheel mode causes \char`\"{}faster than realtime\char`\"{} execution of a \-J\-A\-C\-K graph. \-If possessed, real-\/time scheduling is dropped when entering freewheel mode, and if appropriate it is reacquired when stopping.
+
+\-I\-M\-P\-O\-R\-T\-A\-N\-T\-: on systems using capabilities to provide real-\/time scheduling (i.\-e. \-Linux kernel 2.\-4), if onoff is zero, this function must be called from the thread that originally called \hyperlink{jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8}{jack\-\_\-activate()}. \-This restriction does not apply to other systems (e.\-g. \-Linux kernel 2.\-6 or \-O\-S \-X).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & pointer to \-J\-A\-C\-K client structure \\
+\hline
+{\em onoff} & if non-\/zero, freewheel mode starts. \-Otherwise freewheel mode ends.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}

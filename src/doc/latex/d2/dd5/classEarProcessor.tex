@@ -1,0 +1,542 @@
+\hypertarget{classEarProcessor}{\section{\-Ear\-Processor \-Class \-Reference}
+\label{d2/dd5/classEarProcessor}\index{\-Ear\-Processor@{\-Ear\-Processor}}
+}
+
+
+\hyperlink{classEarProcessor}{\-Ear\-Processor} performs the central task of audio processing.  
+
+
+
+
+{\ttfamily \#include $<$earprocessor.\-h$>$}
+
+
+
+\-Inheritance diagram for \-Ear\-Processor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{d0/df8/classEarProcessor__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries \-Calibration}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256}{\-Operation\-Mode} \{ \hyperlink{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256ae9788d433fd538e300653d96c7a16646}{\-Calibrating\-Latency}, 
+\hyperlink{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256a9630fd2816910eba9787853679c1d9fc}{\-Processing\-Audio}
+ \}
+\item 
+enum \hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcd}{\-Signal\-Source} \{ \hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda299de66bbce51b5337c1de3d4a88aa5a}{\-External\-Source}, 
+\hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda3ecf45c3cb438ca5e53c4ab0135e2d51}{\-White\-Noise}, 
+\hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda47712c41ea770f75eb0c37d095ded8d6}{\-Pink\-Noise}
+ \}
+\item 
+enum \hyperlink{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540}{\-Channel} \{ \hyperlink{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a924dc5ae5a38ef89c7bfff338bd0ec15}{\-Left\-Channel} =  0, 
+\hyperlink{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a2a1d3b7e6b44b65dc8a59dfcdf7607b3}{\-Right\-Channel} =  1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEarProcessor_a326156f9aaf1b984964467cb2b42ac86}{calibrate} ()
+\item 
+void \hyperlink{classEarProcessor_a94090ceb7ae0ea2b1c41ff92afa3c843}{set\-Mode\-To\-Rectification} ()
+\item 
+void \hyperlink{classEarProcessor_a6687adc94ee3461ec22e00f7a3adba81}{set\-Automatic\-Adaption\-Active} (bool on)
+\item 
+void \hyperlink{classEarProcessor_a7e2eaf62f210cf0117f6fdf044aea89f}{set\-Bypass\-Active} (bool on)
+\end{DoxyCompactItemize}
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEarProcessor_ac3bc4f3ef240e7f4d020ea0ebe1f30f3}{calibration\-Finished} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEarProcessor_a10ffc09e660dfa8debb698ca769c0510}{\-Ear\-Processor} ()
+\item 
+\hyperlink{classEarProcessor_a34a5e7c40c82c17d671a3cf23eb3d7b4}{$\sim$\-Ear\-Processor} ()
+\item 
+\hyperlink{classDigitalEqualizer}{\-Digital\-Equalizer} $\ast$ \hyperlink{classEarProcessor_a88b0b3888fc0b4addaf56809fb4b49cd}{left\-Equalizer} ()
+\item 
+\hyperlink{classDigitalEqualizer}{\-Digital\-Equalizer} $\ast$ \hyperlink{classEarProcessor_a92c5397f7910d17461c27748be1e3b63}{right\-Equalizer} ()
+\item 
+void \hyperlink{classEarProcessor_a23946c042c15ef509895fdc7b912e21b}{set\-Signal\-Source} (\hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcd}{\-Signal\-Source} \hyperlink{classEarProcessor_a33cf9c1ea94bea090ae1d0024a56fd47}{signal\-Source})
+\item 
+\hyperlink{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcd}{\-Signal\-Source} \hyperlink{classEarProcessor_a33cf9c1ea94bea090ae1d0024a56fd47}{signal\-Source} ()
+\item 
+bool \hyperlink{classEarProcessor_a262badf2de6296be90bc093dfc4a9ed1}{automatic\-Adaption\-Active} ()
+\item 
+bool \hyperlink{classEarProcessor_ad5239678f9a915aa8071c500f2ad9545}{bypass\-Active} ()
+\item 
+int \hyperlink{classEarProcessor_a61a08db1ae5fb61df0b8084210d8a787}{microphone\-Level\-Left} ()
+\item 
+int \hyperlink{classEarProcessor_a3347a5130ff8904e5c984a5ead56a058}{microphone\-Level\-Right} ()
+\item 
+int \hyperlink{classEarProcessor_a188f5d3673995e9e78c337023c4dd203}{signal\-Source\-Level\-Left} ()
+\item 
+int \hyperlink{classEarProcessor_a5a38edd7e3038311bead2c8be56b68d2}{signal\-Source\-Level\-Right} ()
+\item 
+void \hyperlink{classEarProcessor_a2a65b0d2bafc93871789ff7f750d0565}{process} (int samples)
+\item 
+int \hyperlink{classEarProcessor_a2a22c5d0fde18acc1c9cd9aaa9fb7dd6}{left\-Latency} ()
+\item 
+int \hyperlink{classEarProcessor_a1c619eeda07fae7c41fb4a0c4217ac65}{right\-Latency} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classEarProcessor}{\-Ear\-Processor} performs the central task of audio processing. 
+
+\begin{DoxyAuthor}{\-Author}
+\-Jacob \-Dawid ( \href{mailto:jacob.dawid@cybercatalyst.net}{\tt jacob.\-dawid@cybercatalyst.\-net} ) 
+
+\-Otto \-Ritter ( \href{mailto:otto.ritter.or@googlemail.com}{\tt otto.\-ritter.\-or@googlemail.\-com} ) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+09.\-2011
+\end{DoxyDate}
+\-The \-E\-A\-R processor compares the incoming delayed reference signal with the recorded signal usually obtained by the microphone. \-In order to compensate the differences in the the frequency spectrum it uses two independent equalizers. 
+
+\-Definition at line 50 of file earprocessor.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540}{\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Channel@{\-Channel}}
+\index{\-Channel@{\-Channel}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Ear\-Processor\-::\-Channel}}}\label{d2/dd5/classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540}
+\-Signal channels. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Left\-Channel@{\-Left\-Channel}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Left\-Channel@{\-Left\-Channel}}\item[{\em 
+\hypertarget{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a924dc5ae5a38ef89c7bfff338bd0ec15}{\-Left\-Channel}\label{d2/dd5/classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a924dc5ae5a38ef89c7bfff338bd0ec15}
+}]\index{\-Right\-Channel@{\-Right\-Channel}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Right\-Channel@{\-Right\-Channel}}\item[{\em 
+\hypertarget{classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a2a1d3b7e6b44b65dc8a59dfcdf7607b3}{\-Right\-Channel}\label{d2/dd5/classEarProcessor_a3162fccb5c2a95e000acbfa19abaa540a2a1d3b7e6b44b65dc8a59dfcdf7607b3}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 68 of file earprocessor.\-h.
+
+\hypertarget{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256}{\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Operation\-Mode@{\-Operation\-Mode}}
+\index{\-Operation\-Mode@{\-Operation\-Mode}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{\-Operation\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Ear\-Processor\-::\-Operation\-Mode}}}\label{d2/dd5/classEarProcessor_a094f42adcbeee8e171a2527dae7d1256}
+\-Operating modes. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Calibrating\-Latency@{\-Calibrating\-Latency}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Calibrating\-Latency@{\-Calibrating\-Latency}}\item[{\em 
+\hypertarget{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256ae9788d433fd538e300653d96c7a16646}{\-Calibrating\-Latency}\label{d2/dd5/classEarProcessor_a094f42adcbeee8e171a2527dae7d1256ae9788d433fd538e300653d96c7a16646}
+}]\index{\-Processing\-Audio@{\-Processing\-Audio}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Processing\-Audio@{\-Processing\-Audio}}\item[{\em 
+\hypertarget{classEarProcessor_a094f42adcbeee8e171a2527dae7d1256a9630fd2816910eba9787853679c1d9fc}{\-Processing\-Audio}\label{d2/dd5/classEarProcessor_a094f42adcbeee8e171a2527dae7d1256a9630fd2816910eba9787853679c1d9fc}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 55 of file earprocessor.\-h.
+
+\hypertarget{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcd}{\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Signal\-Source@{\-Signal\-Source}}
+\index{\-Signal\-Source@{\-Signal\-Source}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{\-Signal\-Source}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Ear\-Processor\-::\-Signal\-Source}}}\label{d2/dd5/classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcd}
+\-Different kinds of signal sources. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-External\-Source@{\-External\-Source}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-External\-Source@{\-External\-Source}}\item[{\em 
+\hypertarget{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda299de66bbce51b5337c1de3d4a88aa5a}{\-External\-Source}\label{d2/dd5/classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda299de66bbce51b5337c1de3d4a88aa5a}
+}]\index{\-White\-Noise@{\-White\-Noise}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-White\-Noise@{\-White\-Noise}}\item[{\em 
+\hypertarget{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda3ecf45c3cb438ca5e53c4ab0135e2d51}{\-White\-Noise}\label{d2/dd5/classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda3ecf45c3cb438ca5e53c4ab0135e2d51}
+}]\index{\-Pink\-Noise@{\-Pink\-Noise}!\-Ear\-Processor@{\-Ear\-Processor}}\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Pink\-Noise@{\-Pink\-Noise}}\item[{\em 
+\hypertarget{classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda47712c41ea770f75eb0c37d095ded8d6}{\-Pink\-Noise}\label{d2/dd5/classEarProcessor_a4f53a396f0e0611b389c7c86456b5bcda47712c41ea770f75eb0c37d095ded8d6}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 61 of file earprocessor.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classEarProcessor_a10ffc09e660dfa8debb698ca769c0510}{\index{\-Ear\-Processor@{\-Ear\-Processor}!\-Ear\-Processor@{\-Ear\-Processor}}
+\index{\-Ear\-Processor@{\-Ear\-Processor}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{\-Ear\-Processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ear\-Processor\-::\-Ear\-Processor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a10ffc09e660dfa8debb698ca769c0510}
+\-Constructs a new \hyperlink{classEarProcessor}{\-Ear\-Processor}. 
+
+\-Definition at line 29 of file earprocessor.\-cpp.
+
+
+
+\-References calibration\-Finished(), \-External\-Source, \-Jack\-Adapter\-::instance(), \-Processing\-Audio, \-Jack\-Adapter\-::register\-Stereo\-Input\-Port(), and \-Jack\-Adapter\-::register\-Stereo\-Output\-Port().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_a10ffc09e660dfa8debb698ca769c0510_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a34a5e7c40c82c17d671a3cf23eb3d7b4}{\index{\-Ear\-Processor@{\-Ear\-Processor}!$\sim$\-Ear\-Processor@{$\sim$\-Ear\-Processor}}
+\index{$\sim$\-Ear\-Processor@{$\sim$\-Ear\-Processor}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{$\sim$\-Ear\-Processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ear\-Processor\-::$\sim$\-Ear\-Processor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a34a5e7c40c82c17d671a3cf23eb3d7b4}
+\-Destructor. 
+
+\-Definition at line 65 of file earprocessor.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classEarProcessor_a262badf2de6296be90bc093dfc4a9ed1}{\index{\-Ear\-Processor@{\-Ear\-Processor}!automatic\-Adaption\-Active@{automatic\-Adaption\-Active}}
+\index{automatic\-Adaption\-Active@{automatic\-Adaption\-Active}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{automatic\-Adaption\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Ear\-Processor\-::automatic\-Adaption\-Active} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a262badf2de6296be90bc093dfc4a9ed1}
+\-Returns true, when the automatic adaption is active. 
+
+\-Definition at line 89 of file earprocessor.\-cpp.
+
+\hypertarget{classEarProcessor_ad5239678f9a915aa8071c500f2ad9545}{\index{\-Ear\-Processor@{\-Ear\-Processor}!bypass\-Active@{bypass\-Active}}
+\index{bypass\-Active@{bypass\-Active}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{bypass\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Ear\-Processor\-::bypass\-Active} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_ad5239678f9a915aa8071c500f2ad9545}
+\-Returns true, when the signal is being bypassed. 
+
+\-Definition at line 94 of file earprocessor.\-cpp.
+
+\hypertarget{classEarProcessor_a326156f9aaf1b984964467cb2b42ac86}{\index{\-Ear\-Processor@{\-Ear\-Processor}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{calibrate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::calibrate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}\label{d2/dd5/classEarProcessor_a326156f9aaf1b984964467cb2b42ac86}
+\-Resets the calibration. 
+
+\-Definition at line 471 of file earprocessor.\-cpp.
+
+
+
+\-References \-Calibrating\-Latency.
+
+\hypertarget{classEarProcessor_ac3bc4f3ef240e7f4d020ea0ebe1f30f3}{\index{\-Ear\-Processor@{\-Ear\-Processor}!calibration\-Finished@{calibration\-Finished}}
+\index{calibration\-Finished@{calibration\-Finished}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{calibration\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::calibration\-Finished} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{d2/dd5/classEarProcessor_ac3bc4f3ef240e7f4d020ea0ebe1f30f3}
+\-This signal is emitted when the calibration finished. 
+
+\-Referenced by \-Ear\-Processor().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_ac3bc4f3ef240e7f4d020ea0ebe1f30f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a88b0b3888fc0b4addaf56809fb4b49cd}{\index{\-Ear\-Processor@{\-Ear\-Processor}!left\-Equalizer@{left\-Equalizer}}
+\index{left\-Equalizer@{left\-Equalizer}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{left\-Equalizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Digital\-Equalizer} $\ast$ {\bf \-Ear\-Processor\-::left\-Equalizer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a88b0b3888fc0b4addaf56809fb4b49cd}
+\-Returns a pointer to the equalizer object for the left channel. 
+
+\-Definition at line 71 of file earprocessor.\-cpp.
+
+
+
+\-Referenced by \-Visualizer\-Widget\-::paint\-G\-L().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_a88b0b3888fc0b4addaf56809fb4b49cd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a2a22c5d0fde18acc1c9cd9aaa9fb7dd6}{\index{\-Ear\-Processor@{\-Ear\-Processor}!left\-Latency@{left\-Latency}}
+\index{left\-Latency@{left\-Latency}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{left\-Latency}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::left\-Latency} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d2/dd5/classEarProcessor_a2a22c5d0fde18acc1c9cd9aaa9fb7dd6}
+\-Provides the latency for the left channel.
+
+\begin{DoxyReturn}{\-Returns}
+\-Latency measured in number of samples. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\-Ear\-Processor\-::process\-Calibration(int samples) 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 120 of file earprocessor.\-h.
+
+\hypertarget{classEarProcessor_a61a08db1ae5fb61df0b8084210d8a787}{\index{\-Ear\-Processor@{\-Ear\-Processor}!microphone\-Level\-Left@{microphone\-Level\-Left}}
+\index{microphone\-Level\-Left@{microphone\-Level\-Left}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{microphone\-Level\-Left}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::microphone\-Level\-Left} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a61a08db1ae5fb61df0b8084210d8a787}
+\-Returns the average microphone amplitude for the left channel. 
+
+\-Definition at line 176 of file earprocessor.\-cpp.
+
+
+
+\-References \-Left\-Channel.
+
+\hypertarget{classEarProcessor_a3347a5130ff8904e5c984a5ead56a058}{\index{\-Ear\-Processor@{\-Ear\-Processor}!microphone\-Level\-Right@{microphone\-Level\-Right}}
+\index{microphone\-Level\-Right@{microphone\-Level\-Right}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{microphone\-Level\-Right}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::microphone\-Level\-Right} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a3347a5130ff8904e5c984a5ead56a058}
+\-Returns the average microphone amplitude for the right channel. 
+
+\-Definition at line 181 of file earprocessor.\-cpp.
+
+
+
+\-References \-Right\-Channel.
+
+\hypertarget{classEarProcessor_a2a65b0d2bafc93871789ff7f750d0565}{\index{\-Ear\-Processor@{\-Ear\-Processor}!process@{process}}
+\index{process@{process}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::process} (
+\begin{DoxyParamCaption}
+\item[{int}]{samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{d2/dd5/classEarProcessor_a2a65b0d2bafc93871789ff7f750d0565}
+\-Reimplemented from process. \-This will be called whenever there are new samples available for processing. \-Attention\-: \-This method is time critical.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em samples} & \-Number of samples that are available. \\
+\hline
+\end{DoxyParams}
+
+
+\-Implements \hyperlink{classProcessor_a3dad5d3ba8d0946e2f32acecadb1ede5}{\-Processor}.
+
+
+
+\-Definition at line 196 of file earprocessor.\-cpp.
+
+
+
+\-References \-Calibrating\-Latency, and \-Processing\-Audio.
+
+\hypertarget{classEarProcessor_a92c5397f7910d17461c27748be1e3b63}{\index{\-Ear\-Processor@{\-Ear\-Processor}!right\-Equalizer@{right\-Equalizer}}
+\index{right\-Equalizer@{right\-Equalizer}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{right\-Equalizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Digital\-Equalizer} $\ast$ {\bf \-Ear\-Processor\-::right\-Equalizer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a92c5397f7910d17461c27748be1e3b63}
+\-Returns a pointer to the equalizer object for the right channel. 
+
+\-Definition at line 75 of file earprocessor.\-cpp.
+
+
+
+\-Referenced by \-Visualizer\-Widget\-::paint\-G\-L().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_a92c5397f7910d17461c27748be1e3b63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a1c619eeda07fae7c41fb4a0c4217ac65}{\index{\-Ear\-Processor@{\-Ear\-Processor}!right\-Latency@{right\-Latency}}
+\index{right\-Latency@{right\-Latency}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{right\-Latency}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::right\-Latency} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d2/dd5/classEarProcessor_a1c619eeda07fae7c41fb4a0c4217ac65}
+\-Provides the latency for the right channel. \begin{DoxyReturn}{\-Returns}
+\-Latency measured in number of samples. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\-Ear\-Processor\-::process\-Calibration(int samples) 
+\end{DoxySeeAlso}
+
+
+\-Definition at line 127 of file earprocessor.\-h.
+
+\hypertarget{classEarProcessor_a6687adc94ee3461ec22e00f7a3adba81}{\index{\-Ear\-Processor@{\-Ear\-Processor}!set\-Automatic\-Adaption\-Active@{set\-Automatic\-Adaption\-Active}}
+\index{set\-Automatic\-Adaption\-Active@{set\-Automatic\-Adaption\-Active}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{set\-Automatic\-Adaption\-Active}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::set\-Automatic\-Adaption\-Active} (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}\label{d2/dd5/classEarProcessor_a6687adc94ee3461ec22e00f7a3adba81}
+\-Activates/deactivates automatic adaption. 
+
+\-Definition at line 489 of file earprocessor.\-cpp.
+
+\hypertarget{classEarProcessor_a7e2eaf62f210cf0117f6fdf044aea89f}{\index{\-Ear\-Processor@{\-Ear\-Processor}!set\-Bypass\-Active@{set\-Bypass\-Active}}
+\index{set\-Bypass\-Active@{set\-Bypass\-Active}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{set\-Bypass\-Active}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::set\-Bypass\-Active} (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}\label{d2/dd5/classEarProcessor_a7e2eaf62f210cf0117f6fdf044aea89f}
+\-Activates/deactivates bypassing. 
+
+\-Definition at line 494 of file earprocessor.\-cpp.
+
+\hypertarget{classEarProcessor_a94090ceb7ae0ea2b1c41ff92afa3c843}{\index{\-Ear\-Processor@{\-Ear\-Processor}!set\-Mode\-To\-Rectification@{set\-Mode\-To\-Rectification}}
+\index{set\-Mode\-To\-Rectification@{set\-Mode\-To\-Rectification}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{set\-Mode\-To\-Rectification}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::set\-Mode\-To\-Rectification} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}\label{d2/dd5/classEarProcessor_a94090ceb7ae0ea2b1c41ff92afa3c843}
+\-Set mode to \char`\"{}\-Rectification\char`\"{}. 
+
+\-Definition at line 480 of file earprocessor.\-cpp.
+
+
+
+\-References \-Processing\-Audio.
+
+\hypertarget{classEarProcessor_a23946c042c15ef509895fdc7b912e21b}{\index{\-Ear\-Processor@{\-Ear\-Processor}!set\-Signal\-Source@{set\-Signal\-Source}}
+\index{set\-Signal\-Source@{set\-Signal\-Source}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{set\-Signal\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Ear\-Processor\-::set\-Signal\-Source} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Signal\-Source}}]{signal\-Source}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a23946c042c15ef509895fdc7b912e21b}
+\-Immediately sets the signal source to use. 
+
+\-Definition at line 79 of file earprocessor.\-cpp.
+
+
+
+\-References signal\-Source().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_a23946c042c15ef509895fdc7b912e21b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a33cf9c1ea94bea090ae1d0024a56fd47}{\index{\-Ear\-Processor@{\-Ear\-Processor}!signal\-Source@{signal\-Source}}
+\index{signal\-Source@{signal\-Source}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{signal\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ear\-Processor\-::\-Signal\-Source} {\bf \-Ear\-Processor\-::signal\-Source} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a33cf9c1ea94bea090ae1d0024a56fd47}
+\-Returns the the signal source that is used for processing. 
+
+\-Definition at line 84 of file earprocessor.\-cpp.
+
+
+
+\-Referenced by set\-Signal\-Source().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd5/classEarProcessor_a33cf9c1ea94bea090ae1d0024a56fd47_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classEarProcessor_a188f5d3673995e9e78c337023c4dd203}{\index{\-Ear\-Processor@{\-Ear\-Processor}!signal\-Source\-Level\-Left@{signal\-Source\-Level\-Left}}
+\index{signal\-Source\-Level\-Left@{signal\-Source\-Level\-Left}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{signal\-Source\-Level\-Left}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::signal\-Source\-Level\-Left} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a188f5d3673995e9e78c337023c4dd203}
+\-Returns the average signal source amplitude for the left channel. 
+
+\-Definition at line 186 of file earprocessor.\-cpp.
+
+
+
+\-References \-Left\-Channel.
+
+\hypertarget{classEarProcessor_a5a38edd7e3038311bead2c8be56b68d2}{\index{\-Ear\-Processor@{\-Ear\-Processor}!signal\-Source\-Level\-Right@{signal\-Source\-Level\-Right}}
+\index{signal\-Source\-Level\-Right@{signal\-Source\-Level\-Right}!EarProcessor@{\-Ear\-Processor}}
+\subsubsection[{signal\-Source\-Level\-Right}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Ear\-Processor\-::signal\-Source\-Level\-Right} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/dd5/classEarProcessor_a5a38edd7e3038311bead2c8be56b68d2}
+\-Returns the average signal source amplitude for the right channel. 
+
+\-Definition at line 191 of file earprocessor.\-cpp.
+
+
+
+\-References \-Right\-Channel.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libear/include/\hyperlink{earprocessor_8h}{earprocessor.\-h}\item 
+libear/src/\hyperlink{earprocessor_8cpp}{earprocessor.\-cpp}\end{DoxyCompactItemize}

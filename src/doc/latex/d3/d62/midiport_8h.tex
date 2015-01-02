@@ -1,0 +1,57 @@
+\hypertarget{midiport_8h}{\section{3rdparty/jack/include/jack/midiport.h \-File \-Reference}
+\label{d3/d62/midiport_8h}\index{3rdparty/jack/include/jack/midiport.\-h@{3rdparty/jack/include/jack/midiport.\-h}}
+}
+{\ttfamily \#include $<$jack/weakmacros.\-h$>$}\*
+{\ttfamily \#include $<$jack/types.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+\-Include dependency graph for midiport.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{df/d1c/midiport_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__jack__midi__event}{\-\_\-jack\-\_\-midi\-\_\-event}
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{jack\-\_\-midi\-\_\-data\-\_\-t}
+\item 
+typedef struct \hyperlink{struct__jack__midi__event}{\-\_\-jack\-\_\-midi\-\_\-event} \hyperlink{midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}{jack\-\_\-midi\-\_\-event\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__MIDIAPI_ga0a87111085b94460401b0b688595a138}{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__MIDIAPI_ga95120a9e8cbd41bbce6d4479cfcab8fd}{jack\-\_\-midi\-\_\-event\-\_\-get} (\hyperlink{midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}{jack\-\_\-midi\-\_\-event\-\_\-t} $\ast$event, void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} event\-\_\-index) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__MIDIAPI_ga7635c6e0a4eb2314a5fb5a058c278078}{jack\-\_\-midi\-\_\-clear\-\_\-buffer} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+size\-\_\-t \hyperlink{group__MIDIAPI_gab69743a191f150757fa3708eae8fdb81}{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{jack\-\_\-midi\-\_\-data\-\_\-t} $\ast$ \hyperlink{group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}{jack\-\_\-midi\-\_\-event\-\_\-reserve} (void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} time, size\-\_\-t data\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__MIDIAPI_gaa25503c07ac3c2ed62d79be9c25d42ed}{jack\-\_\-midi\-\_\-event\-\_\-write} (void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} time, const \hyperlink{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{jack\-\_\-midi\-\_\-data\-\_\-t} $\ast$data, size\-\_\-t data\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__MIDIAPI_ga8362b5e6e516b01ab0d659dca53f1c0a}{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{\index{midiport.\-h@{midiport.\-h}!jack\-\_\-midi\-\_\-data\-\_\-t@{jack\-\_\-midi\-\_\-data\-\_\-t}}
+\index{jack\-\_\-midi\-\_\-data\-\_\-t@{jack\-\_\-midi\-\_\-data\-\_\-t}!midiport.h@{midiport.\-h}}
+\subsubsection[{jack\-\_\-midi\-\_\-data\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf jack\-\_\-midi\-\_\-data\-\_\-t}}}\label{d3/d62/midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}
+\-Type for raw event data contained in \hyperlink{midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}{jack\-\_\-midi\-\_\-event\-\_\-t}. 
+
+\-Definition at line 34 of file midiport.\-h.
+
+\hypertarget{midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}{\index{midiport.\-h@{midiport.\-h}!jack\-\_\-midi\-\_\-event\-\_\-t@{jack\-\_\-midi\-\_\-event\-\_\-t}}
+\index{jack\-\_\-midi\-\_\-event\-\_\-t@{jack\-\_\-midi\-\_\-event\-\_\-t}!midiport.h@{midiport.\-h}}
+\subsubsection[{jack\-\_\-midi\-\_\-event\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-jack\-\_\-midi\-\_\-event}  {\bf jack\-\_\-midi\-\_\-event\-\_\-t}}}\label{d3/d62/midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}
+\-A \-Jack \-M\-I\-D\-I event. 

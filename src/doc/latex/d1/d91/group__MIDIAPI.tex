@@ -1,0 +1,175 @@
+\hypertarget{group__MIDIAPI}{\section{\-Reading and writing \-M\-I\-D\-I data}
+\label{d1/d91/group__MIDIAPI}\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__MIDIAPI_ga0a87111085b94460401b0b688595a138}{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__MIDIAPI_ga95120a9e8cbd41bbce6d4479cfcab8fd}{jack\-\_\-midi\-\_\-event\-\_\-get} (\hyperlink{midiport_8h_a2e564e80b61dd77ec3de99b8b9ab259e}{jack\-\_\-midi\-\_\-event\-\_\-t} $\ast$event, void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} event\-\_\-index) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__MIDIAPI_ga7635c6e0a4eb2314a5fb5a058c278078}{jack\-\_\-midi\-\_\-clear\-\_\-buffer} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+size\-\_\-t \hyperlink{group__MIDIAPI_gab69743a191f150757fa3708eae8fdb81}{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{jack\-\_\-midi\-\_\-data\-\_\-t} $\ast$ \hyperlink{group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}{jack\-\_\-midi\-\_\-event\-\_\-reserve} (void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} time, size\-\_\-t data\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__MIDIAPI_gaa25503c07ac3c2ed62d79be9c25d42ed}{jack\-\_\-midi\-\_\-event\-\_\-write} (void $\ast$port\-\_\-buffer, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} time, const \hyperlink{midiport_8h_ad1df9c73b07584ffb69c276421ff55c9}{jack\-\_\-midi\-\_\-data\-\_\-t} $\ast$data, size\-\_\-t data\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__MIDIAPI_ga8362b5e6e516b01ab0d659dca53f1c0a}{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count} (void $\ast$port\-\_\-buffer) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__MIDIAPI_ga7635c6e0a4eb2314a5fb5a058c278078}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-clear\-\_\-buffer@{jack\-\_\-midi\-\_\-clear\-\_\-buffer}}
+\index{jack\-\_\-midi\-\_\-clear\-\_\-buffer@{jack\-\_\-midi\-\_\-clear\-\_\-buffer}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-clear\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-midi\-\_\-clear\-\_\-buffer} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_ga7635c6e0a4eb2314a5fb5a058c278078}
+\-Clear an event buffer.
+
+\-This should be called at the beginning of each process cycle before calling \hyperlink{group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}{jack\-\_\-midi\-\_\-event\-\_\-reserve} or \hyperlink{group__MIDIAPI_gaa25503c07ac3c2ed62d79be9c25d42ed}{jack\-\_\-midi\-\_\-event\-\_\-write}. \-This function may not be called on an input port's buffer.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Port buffer to clear (must be an output port buffer). \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MIDIAPI_ga95120a9e8cbd41bbce6d4479cfcab8fd}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-event\-\_\-get@{jack\-\_\-midi\-\_\-event\-\_\-get}}
+\index{jack\-\_\-midi\-\_\-event\-\_\-get@{jack\-\_\-midi\-\_\-event\-\_\-get}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-event\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-midi\-\_\-event\-\_\-get} (
+\begin{DoxyParamCaption}
+\item[{{\bf jack\-\_\-midi\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{port\-\_\-buffer, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{event\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_ga95120a9e8cbd41bbce6d4479cfcab8fd}
+\-Get a \-M\-I\-D\-I event from an event port buffer.
+
+\-Jack \-M\-I\-D\-I is normalised, the \-M\-I\-D\-I event returned by this function is guaranteed to be a complete \-M\-I\-D\-I event (the status byte will always be present, and no realtime events will interspered with the event).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em event} & \-Event structure to store retrieved event in. \\
+\hline
+{\em port\-\_\-buffer} & \-Port buffer from which to retrieve event. \\
+\hline
+{\em event\-\_\-index} & \-Index of event to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, \-E\-N\-O\-D\-A\-T\-A if buffer is empty. 
+\end{DoxyReturn}
+\hypertarget{group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-event\-\_\-reserve@{jack\-\_\-midi\-\_\-event\-\_\-reserve}}
+\index{jack\-\_\-midi\-\_\-event\-\_\-reserve@{jack\-\_\-midi\-\_\-event\-\_\-reserve}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-event\-\_\-reserve}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-midi\-\_\-data\-\_\-t}$\ast$ {\bf jack\-\_\-midi\-\_\-event\-\_\-reserve} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{time, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}
+\-Allocate space for an event to be written to an event port buffer.
+
+\-Clients are to write the actual event data to be written starting at the pointer returned by this function. \-Clients must not write more than {\itshape data\-\_\-size\/} bytes into this buffer. \-Clients must write normalised \-M\-I\-D\-I data to the port -\/ no running status and no (1-\/byte) realtime messages interspersed with other messages (realtime messages are fine when they occur on their own, like other messages).
+
+\-Events must be written in order, sorted by their sample offsets. \-J\-A\-C\-K will not sort the events for you, and will refuse to store out-\/of-\/order events.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Buffer to write event to. \\
+\hline
+{\em time} & \-Sample offset of event. \\
+\hline
+{\em data\-\_\-size} & \-Length of event's raw data in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to the beginning of the reserved event's data buffer, or \-N\-U\-L\-L on error (ie not enough space). 
+\end{DoxyReturn}
+\hypertarget{group__MIDIAPI_gaa25503c07ac3c2ed62d79be9c25d42ed}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-event\-\_\-write@{jack\-\_\-midi\-\_\-event\-\_\-write}}
+\index{jack\-\_\-midi\-\_\-event\-\_\-write@{jack\-\_\-midi\-\_\-event\-\_\-write}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-event\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-midi\-\_\-event\-\_\-write} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{time, }
+\item[{const {\bf jack\-\_\-midi\-\_\-data\-\_\-t} $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_gaa25503c07ac3c2ed62d79be9c25d42ed}
+\-Write an event into an event port buffer.
+
+\-This function is simply a wrapper for \hyperlink{group__MIDIAPI_ga150dcdc37583e1ecbe0a6f16b6ac48a9}{jack\-\_\-midi\-\_\-event\-\_\-reserve} which writes the event data into the space reserved in the buffer.
+
+\-Clients must not write more than {\itshape data\-\_\-size\/} bytes into this buffer. \-Clients must write normalised \-M\-I\-D\-I data to the port -\/ no running status and no (1-\/byte) realtime messages interspersed with other messages (realtime messages are fine when they occur on their own, like other messages).
+
+\-Events must be written in order, sorted by their sample offsets. \-J\-A\-C\-K will not sort the events for you, and will refuse to store out-\/of-\/order events.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Buffer to write event to. \\
+\hline
+{\em time} & \-Sample offset of event. \\
+\hline
+{\em data} & \-Message data to be written. \\
+\hline
+{\em data\-\_\-size} & \-Length of {\itshape data\/} in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, \-E\-N\-O\-B\-U\-F\-S if there's not enough space in buffer for event. 
+\end{DoxyReturn}
+\hypertarget{group__MIDIAPI_ga0a87111085b94460401b0b688595a138}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count@{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count}}
+\index{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count@{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-midi\-\_\-get\-\_\-event\-\_\-count} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_ga0a87111085b94460401b0b688595a138}
+\-Get number of events in a port buffer.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Port buffer from which to retrieve event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+number of events inside {\itshape port\-\_\-buffer\/} 
+\end{DoxyReturn}
+\hypertarget{group__MIDIAPI_ga8362b5e6e516b01ab0d659dca53f1c0a}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count@{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count}}
+\index{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count@{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-midi\-\_\-get\-\_\-lost\-\_\-event\-\_\-count} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_ga8362b5e6e516b01ab0d659dca53f1c0a}
+\-Get the number of events that could not be written to {\itshape port\-\_\-buffer\/}.
+
+\-This function returning a non-\/zero value implies {\itshape port\-\_\-buffer\/} is full. \-Currently the only way this can happen is if events are lost on port mixdown.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Port to receive count for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Number of events that could not be written to {\itshape port\-\_\-buffer\/}. 
+\end{DoxyReturn}
+\hypertarget{group__MIDIAPI_gab69743a191f150757fa3708eae8fdb81}{\index{\-Reading and writing M\-I\-D\-I data@{\-Reading and writing M\-I\-D\-I data}!jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size@{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size}}
+\index{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size@{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size}!Reading and writing MIDI data@{\-Reading and writing M\-I\-D\-I data}}
+\subsubsection[{jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t {\bf jack\-\_\-midi\-\_\-max\-\_\-event\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{port\-\_\-buffer}
+\end{DoxyParamCaption}
+)}}\label{d1/d91/group__MIDIAPI_gab69743a191f150757fa3708eae8fdb81}
+\-Get the size of the largest event that can be stored by the port.
+
+\-This function returns the current space available, taking into account events already stored in the port.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-buffer} & \-Port buffer to check size of. \\
+\hline
+\end{DoxyParams}

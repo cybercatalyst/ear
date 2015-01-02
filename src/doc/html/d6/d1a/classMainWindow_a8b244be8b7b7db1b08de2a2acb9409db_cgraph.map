@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d7/d2c/classJackAdapter.html#a431136befd01cac7ecbdf19099075b4d" title="JackAdapter::instance" alt="" coords="272,5,424,35"/>
+<area shape="rect" id="node5" href="$d7/d2c/classJackAdapter.html#a69d25a5529343586d8c8f3c2b5b32be1" title="JackAdapter::setProcessor" alt="" coords="259,59,437,88"/>
+<area shape="rect" id="node7" href="$d7/d2c/classJackAdapter.html#ada1468e1b1b4f853d017c480e6b989a4" title="JackAdapter::startAudioProcessing" alt="" coords="235,112,461,141"/>
+<area shape="rect" id="node9" href="$df/d89/jack_8h.html#a9800d5b29bd7670d9944a15f6ea0ecf8" title="jack_activate" alt="" coords="509,112,608,141"/>
+</map>

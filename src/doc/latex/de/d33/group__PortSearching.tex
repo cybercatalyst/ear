@@ -1,0 +1,65 @@
+\hypertarget{group__PortSearching}{\section{\-Looking up ports}
+\label{de/d33/group__PortSearching}\index{\-Looking up ports@{\-Looking up ports}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortSearching_gac8fc8e1745642cc983b1562ad43f99b1}{jack\-\_\-get\-\_\-ports} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$port\-\_\-name\-\_\-pattern, const char $\ast$type\-\_\-name\-\_\-pattern, unsigned long flags) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortSearching_ga04dfd042bb01406c1411d0be5c7cf816}{jack\-\_\-port\-\_\-by\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortSearching_ga9988b33b2121b4bedadbd04e1f40a76d}{jack\-\_\-port\-\_\-by\-\_\-id} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_a669d727ed55e90862bd1322c5c042e86}{jack\-\_\-port\-\_\-id\-\_\-t} port\-\_\-id) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__PortSearching_gac8fc8e1745642cc983b1562ad43f99b1}{\index{\-Looking up ports@{\-Looking up ports}!jack\-\_\-get\-\_\-ports@{jack\-\_\-get\-\_\-ports}}
+\index{jack\-\_\-get\-\_\-ports@{jack\-\_\-get\-\_\-ports}!Looking up ports@{\-Looking up ports}}
+\subsubsection[{jack\-\_\-get\-\_\-ports}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ {\bf jack\-\_\-get\-\_\-ports} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{const char $\ast$}]{port\-\_\-name\-\_\-pattern, }
+\item[{const char $\ast$}]{type\-\_\-name\-\_\-pattern, }
+\item[{unsigned long}]{flags}
+\end{DoxyParamCaption}
+)}}\label{de/d33/group__PortSearching_gac8fc8e1745642cc983b1562ad43f99b1}
+
+\begin{DoxyParams}{\-Parameters}
+{\em port\-\_\-name\-\_\-pattern} & \-A regular expression used to select ports by name. \-If \-N\-U\-L\-L or of zero length, no selection based on name will be carried out. \\
+\hline
+{\em type\-\_\-name\-\_\-pattern} & \-A regular expression used to select ports by type. \-If \-N\-U\-L\-L or of zero length, no selection based on type will be carried out. \\
+\hline
+{\em flags} & \-A value used to select ports by their flags. \-If zero, no selection based on flags will be carried out.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a \-N\-U\-L\-L-\/terminated array of ports that match the specified arguments. \-The caller is responsible for calling jack\-\_\-free(3) any non-\/\-N\-U\-L\-L returned value.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}, \hyperlink{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{jack\-\_\-port\-\_\-type\-\_\-size()} 
+\end{DoxySeeAlso}
+\hypertarget{group__PortSearching_ga9988b33b2121b4bedadbd04e1f40a76d}{\index{\-Looking up ports@{\-Looking up ports}!jack\-\_\-port\-\_\-by\-\_\-id@{jack\-\_\-port\-\_\-by\-\_\-id}}
+\index{jack\-\_\-port\-\_\-by\-\_\-id@{jack\-\_\-port\-\_\-by\-\_\-id}!Looking up ports@{\-Looking up ports}}
+\subsubsection[{jack\-\_\-port\-\_\-by\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-port\-\_\-t$\ast$ {\bf jack\-\_\-port\-\_\-by\-\_\-id} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-port\-\_\-id\-\_\-t}}]{port\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{de/d33/group__PortSearching_ga9988b33b2121b4bedadbd04e1f40a76d}
+\begin{DoxyReturn}{\-Returns}
+address of the jack\-\_\-port\-\_\-t of a {\itshape port\-\_\-id\/}. 
+\end{DoxyReturn}
+\hypertarget{group__PortSearching_ga04dfd042bb01406c1411d0be5c7cf816}{\index{\-Looking up ports@{\-Looking up ports}!jack\-\_\-port\-\_\-by\-\_\-name@{jack\-\_\-port\-\_\-by\-\_\-name}}
+\index{jack\-\_\-port\-\_\-by\-\_\-name@{jack\-\_\-port\-\_\-by\-\_\-name}!Looking up ports@{\-Looking up ports}}
+\subsubsection[{jack\-\_\-port\-\_\-by\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-port\-\_\-t$\ast$ {\bf jack\-\_\-port\-\_\-by\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{const char $\ast$}]{port\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{de/d33/group__PortSearching_ga04dfd042bb01406c1411d0be5c7cf816}
+\begin{DoxyReturn}{\-Returns}
+address of the jack\-\_\-port\-\_\-t named {\itshape port\-\_\-name\/}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()} 
+\end{DoxySeeAlso}

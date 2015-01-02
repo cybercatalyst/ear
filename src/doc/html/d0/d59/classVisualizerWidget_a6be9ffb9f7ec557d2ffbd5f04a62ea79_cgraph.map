@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$de/d28/classDigitalEqualizer.html#a8dd84de986b4a50170f2a296342f55da" title="DigitalEqualizer::acquireControls" alt="" coords="228,5,439,35"/>
+<area shape="rect" id="node5" href="$de/d28/classDigitalEqualizer.html#a1328730773d4415bf8ad010e0dce0ec1" title="DigitalEqualizer::controls" alt="" coords="251,59,416,88"/>
+<area shape="rect" id="node7" href="$d2/dd5/classEarProcessor.html#a88b0b3888fc0b4addaf56809fb4b49cd" title="EarProcessor::leftEqualizer" alt="" coords="243,112,424,141"/>
+<area shape="rect" id="node9" href="$de/d28/classDigitalEqualizer.html#a38314bc1535c71f2a20c179f98330d43" title="DigitalEqualizer::releaseControls" alt="" coords="228,165,439,195"/>
+<area shape="rect" id="node11" href="$d2/dd5/classEarProcessor.html#a92c5397f7910d17461c27748be1e3b63" title="EarProcessor::rightEqualizer" alt="" coords="240,219,427,248"/>
+</map>

@@ -1,0 +1,347 @@
+\hypertarget{classDigitalEqualizer}{\section{\-Digital\-Equalizer \-Class \-Reference}
+\label{de/d28/classDigitalEqualizer}\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}}
+}
+
+
+\-Modifies the frequency spectrum of the sampled audio signal.  
+
+
+
+
+{\ttfamily \#include $<$digitalequalizer.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDigitalEqualizer_ae73196a702a995b74874c229f0ac11de}{\-Digital\-Equalizer} ()
+\item 
+\hyperlink{classDigitalEqualizer_a2b5c4ba64b279d781c76a05424f34ab8}{$\sim$\-Digital\-Equalizer} ()
+\item 
+void \hyperlink{classDigitalEqualizer_a1ef9715686cd404bfc0aa95958928be4}{set\-Number\-Of\-Controls} (int n)
+\item 
+int \hyperlink{classDigitalEqualizer_a18cb2658f2daba42520eff1afe6e67c3}{number\-Of\-Controls} ()
+\item 
+void \hyperlink{classDigitalEqualizer_a8dd84de986b4a50170f2a296342f55da}{acquire\-Controls} ()
+\item 
+double $\ast$ \hyperlink{classDigitalEqualizer_a1328730773d4415bf8ad010e0dce0ec1}{controls} ()
+\item 
+void \hyperlink{classDigitalEqualizer_a38314bc1535c71f2a20c179f98330d43}{release\-Controls} ()
+\item 
+bool \hyperlink{classDigitalEqualizer_a4b878ffb698ba3fea5b36e51328489eb}{save\-Controls\-To\-File} (\-Q\-String file\-Name)
+\item 
+bool \hyperlink{classDigitalEqualizer_a97abb9d7b75b6515f48ffcbc2d1591d1}{load\-Controls\-From\-File} (\-Q\-String file\-Name)
+\item 
+void \hyperlink{classDigitalEqualizer_aa4a96390ed7480d85fbe4fac36239ec2}{generate\-Filter} ()
+\item 
+void \hyperlink{classDigitalEqualizer_aa65783c000b904e1b937196f9b1f6f4a}{process} (fftw\-\_\-complex $\ast$sample\-Buffer, fftw\-\_\-complex $\ast$result, int samples)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Modifies the frequency spectrum of the sampled audio signal. 
+
+\begin{DoxyAuthor}{\-Author}
+\-Jacob \-Dawid ( \href{mailto:jacob.dawid@cybercatalyst.net}{\tt jacob.\-dawid@cybercatalyst.\-net} ) 
+
+\-Otto \-Ritter ( \href{mailto:otto.ritter.or@googlemail.com}{\tt otto.\-ritter.\-or@googlemail.\-com} ) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+09.\-2011 
+\end{DoxyDate}
+
+
+\-Definition at line 37 of file digitalequalizer.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classDigitalEqualizer_ae73196a702a995b74874c229f0ac11de}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!\-Digital\-Equalizer@{\-Digital\-Equalizer}}
+\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{\-Digital\-Equalizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Digital\-Equalizer\-::\-Digital\-Equalizer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_ae73196a702a995b74874c229f0ac11de}
+\-Constructs a new digital equalizer. 
+
+\-Definition at line 27 of file digitalequalizer.\-cpp.
+
+
+
+\-References acquire\-Controls(), generate\-Filter(), and release\-Controls().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_ae73196a702a995b74874c229f0ac11de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_a2b5c4ba64b279d781c76a05424f34ab8}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!$\sim$\-Digital\-Equalizer@{$\sim$\-Digital\-Equalizer}}
+\index{$\sim$\-Digital\-Equalizer@{$\sim$\-Digital\-Equalizer}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{$\sim$\-Digital\-Equalizer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Digital\-Equalizer\-::$\sim$\-Digital\-Equalizer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a2b5c4ba64b279d781c76a05424f34ab8}
+\-Destructor. 
+
+\-Definition at line 42 of file digitalequalizer.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classDigitalEqualizer_a8dd84de986b4a50170f2a296342f55da}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!acquire\-Controls@{acquire\-Controls}}
+\index{acquire\-Controls@{acquire\-Controls}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{acquire\-Controls}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Digital\-Equalizer\-::acquire\-Controls} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a8dd84de986b4a50170f2a296342f55da}
+\-Grants exclusive access access to equalizer controls. \-Blocks in case anyone else has been accessing these. 
+
+\-Definition at line 63 of file digitalequalizer.\-cpp.
+
+
+
+\-Referenced by \-Digital\-Equalizer(), generate\-Filter(), and \-Visualizer\-Widget\-::paint\-G\-L().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_a8dd84de986b4a50170f2a296342f55da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_a1328730773d4415bf8ad010e0dce0ec1}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!controls@{controls}}
+\index{controls@{controls}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{controls}]{\setlength{\rightskip}{0pt plus 5cm}double $\ast$ {\bf \-Digital\-Equalizer\-::controls} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a1328730773d4415bf8ad010e0dce0ec1}
+\-Pointer to the controls array. \-W\-A\-R\-N\-I\-N\-G\-: \-Before accessing controls, make sure you have acquired exclusive access to these by calling acquire\-Controls. \-Also, you have to call release\-Controls after you are done. 
+
+\-Definition at line 67 of file digitalequalizer.\-cpp.
+
+
+
+\-Referenced by \-Visualizer\-Widget\-::paint\-G\-L().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_a1328730773d4415bf8ad010e0dce0ec1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_aa4a96390ed7480d85fbe4fac36239ec2}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!generate\-Filter@{generate\-Filter}}
+\index{generate\-Filter@{generate\-Filter}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{generate\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Digital\-Equalizer\-::generate\-Filter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_aa4a96390ed7480d85fbe4fac36239ec2}
+\-Updates the filter from the given set of equalizer control values. 
+\begin{DoxyParams}{\-Parameters}
+{\em values} & \-Equalizer control values. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 98 of file digitalequalizer.\-cpp.
+
+
+
+\-References acquire\-Controls(), \-Fftw\-Adapter\-::perform\-Inverse\-F\-F\-T(), and release\-Controls().
+
+
+
+\-Referenced by \-Digital\-Equalizer(), load\-Controls\-From\-File(), and set\-Number\-Of\-Controls().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_aa4a96390ed7480d85fbe4fac36239ec2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_aa4a96390ed7480d85fbe4fac36239ec2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_a97abb9d7b75b6515f48ffcbc2d1591d1}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!load\-Controls\-From\-File@{load\-Controls\-From\-File}}
+\index{load\-Controls\-From\-File@{load\-Controls\-From\-File}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{load\-Controls\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Digital\-Equalizer\-::load\-Controls\-From\-File} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a97abb9d7b75b6515f48ffcbc2d1591d1}
+\-Attempts to restore control values from a file. 
+\begin{DoxyParams}{\-Parameters}
+{\em file\-Name} & \-File name of the file form which shall be loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true on success, otherwise false. 
+\end{DoxyReturn}
+
+
+\-Definition at line 86 of file digitalequalizer.\-cpp.
+
+
+
+\-References generate\-Filter().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_a97abb9d7b75b6515f48ffcbc2d1591d1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_a18cb2658f2daba42520eff1afe6e67c3}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!number\-Of\-Controls@{number\-Of\-Controls}}
+\index{number\-Of\-Controls@{number\-Of\-Controls}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{number\-Of\-Controls}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Digital\-Equalizer\-::number\-Of\-Controls} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a18cb2658f2daba42520eff1afe6e67c3}
+\-Returns the number of controls in linear frequency steps. 
+
+\-Definition at line 58 of file digitalequalizer.\-cpp.
+
+\hypertarget{classDigitalEqualizer_aa65783c000b904e1b937196f9b1f6f4a}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!process@{process}}
+\index{process@{process}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Digital\-Equalizer\-::process} (
+\begin{DoxyParamCaption}
+\item[{fftw\-\_\-complex $\ast$}]{sample\-Buffer, }
+\item[{fftw\-\_\-complex $\ast$}]{result, }
+\item[{int}]{samples}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_aa65783c000b904e1b937196f9b1f6f4a}
+\-Processes a given number of samples. \-In order to function properly, this method expects a consecutive stream of samples. \-Do not call this method more than once on a given set of samples, since this will lead to erroneous results. 
+\begin{DoxyParams}{\-Parameters}
+{\em sample\-Buffer} & \-Input sample buffer. \\
+\hline
+{\em result} & \-Result sample buffer. \\
+\hline
+{\em samples} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 199 of file digitalequalizer.\-cpp.
+
+\hypertarget{classDigitalEqualizer_a38314bc1535c71f2a20c179f98330d43}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!release\-Controls@{release\-Controls}}
+\index{release\-Controls@{release\-Controls}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{release\-Controls}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Digital\-Equalizer\-::release\-Controls} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a38314bc1535c71f2a20c179f98330d43}
+\-Releases exclusive access to equalizer controls. 
+
+\-Definition at line 71 of file digitalequalizer.\-cpp.
+
+
+
+\-Referenced by \-Digital\-Equalizer(), generate\-Filter(), and \-Visualizer\-Widget\-::paint\-G\-L().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_a38314bc1535c71f2a20c179f98330d43_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classDigitalEqualizer_a4b878ffb698ba3fea5b36e51328489eb}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!save\-Controls\-To\-File@{save\-Controls\-To\-File}}
+\index{save\-Controls\-To\-File@{save\-Controls\-To\-File}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{save\-Controls\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Digital\-Equalizer\-::save\-Controls\-To\-File} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a4b878ffb698ba3fea5b36e51328489eb}
+\-Attempts to write control values into a file. 
+\begin{DoxyParams}{\-Parameters}
+{\em file\-Name} & \-File name of the file that shall be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true on success, otherwise false. 
+\end{DoxyReturn}
+
+
+\-Definition at line 75 of file digitalequalizer.\-cpp.
+
+\hypertarget{classDigitalEqualizer_a1ef9715686cd404bfc0aa95958928be4}{\index{\-Digital\-Equalizer@{\-Digital\-Equalizer}!set\-Number\-Of\-Controls@{set\-Number\-Of\-Controls}}
+\index{set\-Number\-Of\-Controls@{set\-Number\-Of\-Controls}!DigitalEqualizer@{\-Digital\-Equalizer}}
+\subsubsection[{set\-Number\-Of\-Controls}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Digital\-Equalizer\-::set\-Number\-Of\-Controls} (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{de/d28/classDigitalEqualizer_a1ef9715686cd404bfc0aa95958928be4}
+\-Sets the number of controls in linear frequency steps. 
+
+\-Definition at line 47 of file digitalequalizer.\-cpp.
+
+
+
+\-References generate\-Filter().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d28/classDigitalEqualizer_a1ef9715686cd404bfc0aa95958928be4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libear/include/\hyperlink{digitalequalizer_8h}{digitalequalizer.\-h}\item 
+libear/src/\hyperlink{digitalequalizer_8cpp}{digitalequalizer.\-cpp}\end{DoxyCompactItemize}

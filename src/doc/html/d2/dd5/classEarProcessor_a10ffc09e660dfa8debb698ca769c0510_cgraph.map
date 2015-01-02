@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d2/dd5/classEarProcessor.html#ac3bc4f3ef240e7f4d020ea0ebe1f30f3" title="EarProcessor::calibrationFinished" alt="" coords="259,5,475,35"/>
+<area shape="rect" id="node5" href="$d7/d2c/classJackAdapter.html#a431136befd01cac7ecbdf19099075b4d" title="JackAdapter::instance" alt="" coords="291,59,443,88"/>
+<area shape="rect" id="node7" href="$d7/d2c/classJackAdapter.html#a675123d2fa6f327d18985fecf305bb56" title="JackAdapter::registerStereoInputPort" alt="" coords="248,112,485,141"/>
+<area shape="rect" id="node11" href="$d7/d2c/classJackAdapter.html#a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd" title="JackAdapter::registerStereoOutputPort" alt="" coords="244,165,489,195"/>
+<area shape="rect" id="node9" href="$de/d5e/group__PortFunctions.html#ga3e21d145c3c82d273a889272f0e405e7" title="jack_port_register" alt="" coords="539,139,664,168"/>
+</map>

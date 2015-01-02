@@ -1,0 +1,159 @@
+\hypertarget{namespaceFftwAdapter}{\section{\-Fftw\-Adapter \-Namespace \-Reference}
+\label{d5/dfd/namespaceFftwAdapter}\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceFftwAdapter_af16eacc6111835c6344b8cbb600ef8e4}{blit} (fftw\-\_\-complex $\ast$fftw\-\_\-complex\-In, jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-Out, int n)
+\item 
+void \hyperlink{namespaceFftwAdapter_a46c21b54cb76d7aa8bd92b4dabbd7871}{blit} (jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-In, fftw\-\_\-complex $\ast$fftw\-\_\-complex\-Out, int n)
+\item 
+void \hyperlink{namespaceFftwAdapter_ae8d6409c3606e181a28b24340e45a173}{blit} (jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-In, jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-Out, int n)
+\item 
+void \hyperlink{namespaceFftwAdapter_a4388aede2b4e4e6f5731dcb57407cb31}{blit} (fftw\-\_\-complex $\ast$fftw\-\_\-complex\-In, fftw\-\_\-complex $\ast$fftw\-\_\-complex\-Out, int n)
+\item 
+void \hyperlink{namespaceFftwAdapter_a6e1648d33af4f88a3307e25eee03d945}{perform\-F\-F\-T} (fftw\-\_\-complex $\ast$input, fftw\-\_\-complex $\ast$result, int n)
+\item 
+void \hyperlink{namespaceFftwAdapter_ae8e0488a742dd23810797b05a737ebd5}{perform\-Inverse\-F\-F\-T} (fftw\-\_\-complex $\ast$input, fftw\-\_\-complex $\ast$result, int n)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespaceFftwAdapter_af16eacc6111835c6344b8cbb600ef8e4}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!blit@{blit}}
+\index{blit@{blit}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{blit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::blit} (
+\begin{DoxyParamCaption}
+\item[{fftw\-\_\-complex $\ast$}]{fftw\-\_\-complex\-In, }
+\item[{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$}]{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-Out, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_af16eacc6111835c6344b8cbb600ef8e4}
+fftw works with arrays of fftw\-\_\-complex numbers. \-In order to use fftw, you have to convert between \-J\-A\-C\-K samples, which are mere real numbers and fftw\-\_\-complex arrays. \-This method copies over from fftw\-\_\-complex to \-J\-A\-C\-K sample values. 
+\begin{DoxyParams}{\-Parameters}
+{\em fftw\-\_\-complex\-In} & \-Input array of fftw\-\_\-complex numbers. \\
+\hline
+{\em jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-Out} & \-Output array of \-J\-A\-C\-K samples. \\
+\hline
+{\em n} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 24 of file fftwadapter.\-cpp.
+
+\hypertarget{namespaceFftwAdapter_a46c21b54cb76d7aa8bd92b4dabbd7871}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!blit@{blit}}
+\index{blit@{blit}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{blit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::blit} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$}]{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-In, }
+\item[{fftw\-\_\-complex $\ast$}]{fftw\-\_\-complex\-Out, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_a46c21b54cb76d7aa8bd92b4dabbd7871}
+fftw works with arrays of fftw\-\_\-complex numbers. \-In order to use fftw, you have to convert between \-J\-A\-C\-K samples, which are mere real numbers and fftw\-\_\-complex arrays. \-This method copies over from \-J\-A\-C\-K sample to fftw\-\_\-complex values. 
+\begin{DoxyParams}{\-Parameters}
+{\em jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-In} & \-Input array of fftw\-\_\-complex numbers. \\
+\hline
+{\em fftw\-\_\-complex\-Out} & \-Output array of \-J\-A\-C\-K samples. \\
+\hline
+{\em n} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 32 of file fftwadapter.\-cpp.
+
+\hypertarget{namespaceFftwAdapter_ae8d6409c3606e181a28b24340e45a173}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!blit@{blit}}
+\index{blit@{blit}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{blit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::blit} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$}]{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-In, }
+\item[{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-t $\ast$}]{jack\-\_\-default\-\_\-audio\-\_\-sample\-\_\-ts\-Out, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_ae8d6409c3606e181a28b24340e45a173}
+
+
+\-Definition at line 41 of file fftwadapter.\-cpp.
+
+\hypertarget{namespaceFftwAdapter_a4388aede2b4e4e6f5731dcb57407cb31}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!blit@{blit}}
+\index{blit@{blit}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{blit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::blit} (
+\begin{DoxyParamCaption}
+\item[{fftw\-\_\-complex $\ast$}]{fftw\-\_\-complex\-In, }
+\item[{fftw\-\_\-complex $\ast$}]{fftw\-\_\-complex\-Out, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_a4388aede2b4e4e6f5731dcb57407cb31}
+
+
+\-Definition at line 49 of file fftwadapter.\-cpp.
+
+\hypertarget{namespaceFftwAdapter_a6e1648d33af4f88a3307e25eee03d945}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!perform\-F\-F\-T@{perform\-F\-F\-T}}
+\index{perform\-F\-F\-T@{perform\-F\-F\-T}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{perform\-F\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::perform\-F\-F\-T} (
+\begin{DoxyParamCaption}
+\item[{fftw\-\_\-complex $\ast$}]{input, }
+\item[{fftw\-\_\-complex $\ast$}]{result, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_a6e1648d33af4f88a3307e25eee03d945}
+\-Performs the fft. 
+\begin{DoxyParams}{\-Parameters}
+{\em fftw\-\_\-complex} & \-Input array of comples numbers. \\
+\hline
+{\em result} & \-Output array of fftw\-\_\-complex numbers. \\
+\hline
+{\em n} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 58 of file fftwadapter.\-cpp.
+
+
+
+\-References \-F\-F\-T\-W\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E, and \-F\-F\-T\-W\-\_\-\-F\-O\-R\-W\-A\-R\-D.
+
+\hypertarget{namespaceFftwAdapter_ae8e0488a742dd23810797b05a737ebd5}{\index{\-Fftw\-Adapter@{\-Fftw\-Adapter}!perform\-Inverse\-F\-F\-T@{perform\-Inverse\-F\-F\-T}}
+\index{perform\-Inverse\-F\-F\-T@{perform\-Inverse\-F\-F\-T}!FftwAdapter@{\-Fftw\-Adapter}}
+\subsubsection[{perform\-Inverse\-F\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fftw\-Adapter\-::perform\-Inverse\-F\-F\-T} (
+\begin{DoxyParamCaption}
+\item[{fftw\-\_\-complex $\ast$}]{input, }
+\item[{fftw\-\_\-complex $\ast$}]{result, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{d5/dfd/namespaceFftwAdapter_ae8e0488a742dd23810797b05a737ebd5}
+\-Performs the inverse fft. 
+\begin{DoxyParams}{\-Parameters}
+{\em fftw\-\_\-complex} & \-Input array of comples numbers. \\
+\hline
+{\em result} & \-Output array of fftw\-\_\-complex numbers. \\
+\hline
+{\em n} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 65 of file fftwadapter.\-cpp.
+
+
+
+\-References \-F\-F\-T\-W\-\_\-\-B\-A\-C\-K\-W\-A\-R\-D, and \-F\-F\-T\-W\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E.
+
+
+
+\-Referenced by \-Digital\-Equalizer\-::generate\-Filter().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfd/namespaceFftwAdapter_ae8e0488a742dd23810797b05a737ebd5_icgraph}
+\end{center}
+\end{figure}
+
+

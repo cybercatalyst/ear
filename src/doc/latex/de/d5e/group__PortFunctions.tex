@@ -1,0 +1,507 @@
+\hypertarget{group__PortFunctions}{\section{\-Creating \& manipulating ports}
+\label{de/d5e/group__PortFunctions}\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortFunctions_ga3e21d145c3c82d273a889272f0e405e7}{jack\-\_\-port\-\_\-register} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-name, const char $\ast$port\-\_\-type, unsigned long flags, unsigned long buffer\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga9ac3ccd93be18999c0bd817bc032e876}{jack\-\_\-port\-\_\-unregister} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void $\ast$ \hyperlink{group__PortFunctions_ga209880b64774dd039c703ea8e3b9ca63}{jack\-\_\-port\-\_\-get\-\_\-buffer} (jack\-\_\-port\-\_\-t $\ast$, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_ga2abf1e9c3fa7d2afae6fd85a6e2ba843}{jack\-\_\-port\-\_\-name} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_gaf1554d11abaff29321db1daf1fa614c1}{jack\-\_\-port\-\_\-short\-\_\-name} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga2c9ed0ee016e19070b2e42f7f0a12b95}{jack\-\_\-port\-\_\-flags} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_gae2b2ef9ef3ba606be342a7d2c292cb00}{jack\-\_\-port\-\_\-type} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aaa73ac8abfc0f11db61444f9a4812e42}{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t} \hyperlink{group__PortFunctions_ga443f950e5fe4dd3ba9e1f4530bb172a4}{jack\-\_\-port\-\_\-type\-\_\-id} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga2935e21ef49da7a420aca8cd25e179e6}{jack\-\_\-port\-\_\-is\-\_\-mine} (const jack\-\_\-client\-\_\-t $\ast$, const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gafa704768d67d1a30f263a9384d845b14}{jack\-\_\-port\-\_\-connected} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga996d8f5176b87bb8d333208468b6af12}{jack\-\_\-port\-\_\-connected\-\_\-to} (const jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortFunctions_gac1c942d03daee62ac6d0ed0ad044de43}{jack\-\_\-port\-\_\-get\-\_\-connections} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortFunctions_ga4e1bd29a68acb4fb45f75931de0d36b2}{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections} (const jack\-\_\-client\-\_\-t $\ast$client, const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga14afcad849c17bcd6cb739d14899cecf}{jack\-\_\-port\-\_\-tie} (jack\-\_\-port\-\_\-t $\ast$src, jack\-\_\-port\-\_\-t $\ast$dst) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__PortFunctions_gaab2cfe13d90991fbf1d03a2050b93f54}{jack\-\_\-port\-\_\-untie} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__PortFunctions_ga9d335578836fd76d4a922403efaedc5c}{jack\-\_\-port\-\_\-set\-\_\-name} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gae76a201e7a6dfe3af6ee78b99a055117}{jack\-\_\-port\-\_\-set\-\_\-alias} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$alias) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga51af66966211d2a81a749ab2f689872d}{jack\-\_\-port\-\_\-unset\-\_\-alias} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$alias) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga3fcae6e043fdb3ac87b173ff4cbf88d9}{jack\-\_\-port\-\_\-get\-\_\-aliases} (const jack\-\_\-port\-\_\-t $\ast$port, char $\ast$const aliases\mbox{[}2\mbox{]}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gab30737dde8a3168a575863de35ed5895}{jack\-\_\-port\-\_\-request\-\_\-monitor} (jack\-\_\-port\-\_\-t $\ast$port, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga5fd1725d66427287abbec29fbae9214b}{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-name, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga75f0438ba447ad96ae890c1922e4af0d}{jack\-\_\-port\-\_\-ensure\-\_\-monitor} (jack\-\_\-port\-\_\-t $\ast$port, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga5e52890253590c913913765edf0f9606}{jack\-\_\-port\-\_\-monitoring\-\_\-input} (jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gae6090e81f2ee23b5c0e432a899085ec8}{jack\-\_\-connect} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$source\-\_\-port, const char $\ast$destination\-\_\-port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}{jack\-\_\-disconnect} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$source\-\_\-port, const char $\ast$destination\-\_\-port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga92f84d611d7dea399bc97516799ef89d}{jack\-\_\-port\-\_\-disconnect} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size} (void) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{jack\-\_\-port\-\_\-type\-\_\-size} (void) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+size\-\_\-t \hyperlink{group__PortFunctions_ga52a65a0dd00695ecf75e23f1bd48f96a}{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-type) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__PortFunctions_gae6090e81f2ee23b5c0e432a899085ec8}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-connect@{jack\-\_\-connect}}
+\index{jack\-\_\-connect@{jack\-\_\-connect}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-connect} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{const char $\ast$}]{source\-\_\-port, }
+\item[{const char $\ast$}]{destination\-\_\-port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gae6090e81f2ee23b5c0e432a899085ec8}
+\-Establish a connection between two ports.
+
+\-When a connection exists, data written to the source port will be available to be read at the destination port.
+
+\begin{DoxyPrecond}{\-Precondition}
+\-The port types must be identical.
+
+\-The \-Jack\-Port\-Flags of the {\itshape source\-\_\-port\/} must include \-Jack\-Port\-Is\-Output.
+
+\-The \-Jack\-Port\-Flags of the {\itshape destination\-\_\-port\/} must include \-Jack\-Port\-Is\-Input.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{\-Returns}
+0 on success, \-E\-E\-X\-I\-S\-T if the connection is already made, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-disconnect@{jack\-\_\-disconnect}}
+\index{jack\-\_\-disconnect@{jack\-\_\-disconnect}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-disconnect} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{const char $\ast$}]{source\-\_\-port, }
+\item[{const char $\ast$}]{destination\-\_\-port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}
+\-Remove a connection between two ports.
+
+\begin{DoxyPrecond}{\-Precondition}
+\-The port types must be identical.
+
+\-The \-Jack\-Port\-Flags of the {\itshape source\-\_\-port\/} must include \-Jack\-Port\-Is\-Output.
+
+\-The \-Jack\-Port\-Flags of the {\itshape destination\-\_\-port\/} must include \-Jack\-Port\-Is\-Input.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_gafa704768d67d1a30f263a9384d845b14}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-connected@{jack\-\_\-port\-\_\-connected}}
+\index{jack\-\_\-port\-\_\-connected@{jack\-\_\-port\-\_\-connected}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-connected} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gafa704768d67d1a30f263a9384d845b14}
+\begin{DoxyReturn}{\-Returns}
+number of connections to or from {\itshape port\/}.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{\-Precondition}
+\-The calling client must own {\itshape port\/}. 
+\end{DoxyPrecond}
+\hypertarget{group__PortFunctions_ga996d8f5176b87bb8d333208468b6af12}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-connected\-\_\-to@{jack\-\_\-port\-\_\-connected\-\_\-to}}
+\index{jack\-\_\-port\-\_\-connected\-\_\-to@{jack\-\_\-port\-\_\-connected\-\_\-to}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-connected\-\_\-to}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-connected\-\_\-to} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{const char $\ast$}]{port\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga996d8f5176b87bb8d333208468b6af12}
+\begin{DoxyReturn}{\-Returns}
+\-T\-R\-U\-E if the locally-\/owned {\itshape port\/} is {\bfseries directly} connected to the {\itshape port\-\_\-name\/}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()} 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_ga92f84d611d7dea399bc97516799ef89d}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-disconnect@{jack\-\_\-port\-\_\-disconnect}}
+\index{jack\-\_\-port\-\_\-disconnect@{jack\-\_\-port\-\_\-disconnect}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-disconnect} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga92f84d611d7dea399bc97516799ef89d}
+\-Perform the same function as \hyperlink{group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}{jack\-\_\-disconnect()} using port handles rather than names. \-This avoids the name lookup inherent in the name-\/based version.
+
+\-Clients connecting their own ports are likely to use this function, while generic connection clients (e.\-g. patchbays) would use \hyperlink{group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}{jack\-\_\-disconnect()}. \hypertarget{group__PortFunctions_ga75f0438ba447ad96ae890c1922e4af0d}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-ensure\-\_\-monitor@{jack\-\_\-port\-\_\-ensure\-\_\-monitor}}
+\index{jack\-\_\-port\-\_\-ensure\-\_\-monitor@{jack\-\_\-port\-\_\-ensure\-\_\-monitor}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-ensure\-\_\-monitor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-ensure\-\_\-monitor} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{int}]{onoff}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga75f0438ba447ad96ae890c1922e4af0d}
+\-If \-Jack\-Port\-Can\-Monitor is set for a port, this function turns on input monitoring if it was off, and turns it off if only one request has been made to turn it on. \-Otherwise it does nothing.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga2c9ed0ee016e19070b2e42f7f0a12b95}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-flags@{jack\-\_\-port\-\_\-flags}}
+\index{jack\-\_\-port\-\_\-flags@{jack\-\_\-port\-\_\-flags}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-flags} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga2c9ed0ee016e19070b2e42f7f0a12b95}
+\begin{DoxyReturn}{\-Returns}
+the \-Jack\-Port\-Flags of the jack\-\_\-port\-\_\-t. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga3fcae6e043fdb3ac87b173ff4cbf88d9}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-get\-\_\-aliases@{jack\-\_\-port\-\_\-get\-\_\-aliases}}
+\index{jack\-\_\-port\-\_\-get\-\_\-aliases@{jack\-\_\-port\-\_\-get\-\_\-aliases}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-aliases}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-get\-\_\-aliases} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{char $\ast$const}]{aliases\mbox{[}2\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga3fcae6e043fdb3ac87b173ff4cbf88d9}
+\-Get any aliases known for .
+
+\begin{DoxyReturn}{\-Returns}
+the number of aliases discovered for the port 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga4e1bd29a68acb4fb45f75931de0d36b2}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections@{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections}}
+\index{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections@{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ {\bf jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga4e1bd29a68acb4fb45f75931de0d36b2}
+\begin{DoxyReturn}{\-Returns}
+a null-\/terminated array of full port names to which the {\itshape port\/} is connected. \-If none, returns \-N\-U\-L\-L.
+\end{DoxyReturn}
+\-The caller is responsible for calling jack\-\_\-free(3) on any non-\/\-N\-U\-L\-L returned value.
+
+\-This differs from \hyperlink{group__PortFunctions_gac1c942d03daee62ac6d0ed0ad044de43}{jack\-\_\-port\-\_\-get\-\_\-connections()} in two important respects\-:
+
+1) \-You may not call this function from code that is executed in response to a \-J\-A\-C\-K event. \-For example, you cannot use it in a \-Graph\-Reordered handler.
+
+2) \-You need not be the owner of the port to get information about its connections.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()} 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_ga209880b64774dd039c703ea8e3b9ca63}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-get\-\_\-buffer@{jack\-\_\-port\-\_\-get\-\_\-buffer}}
+\index{jack\-\_\-port\-\_\-get\-\_\-buffer@{jack\-\_\-port\-\_\-get\-\_\-buffer}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf jack\-\_\-port\-\_\-get\-\_\-buffer} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga209880b64774dd039c703ea8e3b9ca63}
+\-This returns a pointer to the memory area associated with the specified port. \-For an output port, it will be a memory area that can be written to; for an input port, it will be an area containing the data from the port's connection(s), or zero-\/filled. if there are multiple inbound connections, the data will be mixed appropriately.
+
+\-F\-O\-R \-O\-U\-T\-P\-U\-T \-P\-O\-R\-T\-S \-O\-N\-L\-Y \-: \-D\-E\-P\-R\-E\-C\-A\-T\-E\-D in \-Jack 2.\-0 !! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ \-You may cache the value returned, but only between calls to your \char`\"{}blocksize\char`\"{} callback. \-For this reason alone, you should either never cache the return value or ensure you have a \char`\"{}blocksize\char`\"{} callback and be sure to invalidate the cached address from there.
+
+\-Caching output ports is \-D\-E\-P\-R\-E\-C\-A\-T\-E\-D in \-Jack 2.\-0, due to some new optimization (like \char`\"{}pipelining\char`\"{}). \-Port buffers have to be retrieved in each callback for proper functionning. 
+
+\-Referenced by \-Stereo\-Port\-::left\-Channel\-Buffer(), and \-Stereo\-Port\-::right\-Channel\-Buffer().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d5e/group__PortFunctions_ga209880b64774dd039c703ea8e3b9ca63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__PortFunctions_gac1c942d03daee62ac6d0ed0ad044de43}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-get\-\_\-connections@{jack\-\_\-port\-\_\-get\-\_\-connections}}
+\index{jack\-\_\-port\-\_\-get\-\_\-connections@{jack\-\_\-port\-\_\-get\-\_\-connections}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-connections}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ {\bf jack\-\_\-port\-\_\-get\-\_\-connections} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gac1c942d03daee62ac6d0ed0ad044de43}
+\begin{DoxyReturn}{\-Returns}
+a null-\/terminated array of full port names to which the {\itshape port\/} is connected. \-If none, returns \-N\-U\-L\-L.
+\end{DoxyReturn}
+\-The caller is responsible for calling jack\-\_\-free(3) on any non-\/\-N\-U\-L\-L returned value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & locally owned jack\-\_\-port\-\_\-t pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}, \hyperlink{group__PortFunctions_ga4e1bd29a68acb4fb45f75931de0d36b2}{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections()} 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_ga2935e21ef49da7a420aca8cd25e179e6}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-is\-\_\-mine@{jack\-\_\-port\-\_\-is\-\_\-mine}}
+\index{jack\-\_\-port\-\_\-is\-\_\-mine@{jack\-\_\-port\-\_\-is\-\_\-mine}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-is\-\_\-mine}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-is\-\_\-mine} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga2935e21ef49da7a420aca8cd25e179e6}
+\begin{DoxyReturn}{\-Returns}
+\-T\-R\-U\-E if the jack\-\_\-port\-\_\-t belongs to the jack\-\_\-client\-\_\-t. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga5e52890253590c913913765edf0f9606}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-monitoring\-\_\-input@{jack\-\_\-port\-\_\-monitoring\-\_\-input}}
+\index{jack\-\_\-port\-\_\-monitoring\-\_\-input@{jack\-\_\-port\-\_\-monitoring\-\_\-input}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-monitoring\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-monitoring\-\_\-input} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga5e52890253590c913913765edf0f9606}
+\begin{DoxyReturn}{\-Returns}
+\-T\-R\-U\-E if input monitoring has been requested for {\itshape port\/}. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga2abf1e9c3fa7d2afae6fd85a6e2ba843}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-name@{jack\-\_\-port\-\_\-name}}
+\index{jack\-\_\-port\-\_\-name@{jack\-\_\-port\-\_\-name}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jack\-\_\-port\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga2abf1e9c3fa7d2afae6fd85a6e2ba843}
+\begin{DoxyReturn}{\-Returns}
+the full name of the jack\-\_\-port\-\_\-t (including the {\itshape \char`\"{}client\-\_\-name\-:\char`\"{}\/} prefix).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}. 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-name\-\_\-size@{jack\-\_\-port\-\_\-name\-\_\-size}}
+\index{jack\-\_\-port\-\_\-name\-\_\-size@{jack\-\_\-port\-\_\-name\-\_\-size}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-name\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-name\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}
+\begin{DoxyReturn}{\-Returns}
+the maximum number of characters in a full \-J\-A\-C\-K port name including the final \-N\-U\-L\-L character. \-This value is a constant.
+\end{DoxyReturn}
+\-A port's full name contains the owning client name concatenated with a colon (\-:) followed by its short name and a \-N\-U\-L\-L character. \hypertarget{group__PortFunctions_ga3e21d145c3c82d273a889272f0e405e7}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-register@{jack\-\_\-port\-\_\-register}}
+\index{jack\-\_\-port\-\_\-register@{jack\-\_\-port\-\_\-register}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-port\-\_\-t$\ast$ {\bf jack\-\_\-port\-\_\-register} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const char $\ast$}]{port\-\_\-name, }
+\item[{const char $\ast$}]{port\-\_\-type, }
+\item[{unsigned long}]{flags, }
+\item[{unsigned long}]{buffer\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga3e21d145c3c82d273a889272f0e405e7}
+\-Create a new port for the client. \-This is an object used for moving data of any type in or out of the client. \-Ports may be connected in various ways.
+
+\-Each port has a short name. \-The port's full name contains the name of the client concatenated with a colon (\-:) followed by its short name. \-The \hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()} is the maximum length of this full name. \-Exceeding that will cause the port registration to fail and return \-N\-U\-L\-L.
+
+\-The {\itshape port\-\_\-name\/} must be unique among all ports owned by this client. \-If the name is not unique, the registration will fail.
+
+\-All ports have a type, which may be any non-\/\-N\-U\-L\-L and non-\/zero length string, passed as an argument. \-Some port types are built into the \-J\-A\-C\-K \-A\-P\-I, currently only \-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & pointer to \-J\-A\-C\-K client structure. \\
+\hline
+{\em port\-\_\-name} & non-\/empty short name for the new port (not including the leading {\itshape \char`\"{}client\-\_\-name\-:\char`\"{}\/}). \-Must be unique. \\
+\hline
+{\em port\-\_\-type} & port type name. \-If longer than \hyperlink{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{jack\-\_\-port\-\_\-type\-\_\-size()}, only that many characters are significant. \\
+\hline
+{\em flags} & \-Jack\-Port\-Flags bit mask. \\
+\hline
+{\em buffer\-\_\-size} & must be non-\/zero if this is not a built-\/in {\itshape port\-\_\-type\/}. \-Otherwise, it is ignored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+jack\-\_\-port\-\_\-t pointer on success, otherwise \-N\-U\-L\-L. 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Jack\-Adapter\-::register\-Stereo\-Input\-Port(), and \-Jack\-Adapter\-::register\-Stereo\-Output\-Port().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d5e/group__PortFunctions_ga3e21d145c3c82d273a889272f0e405e7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__PortFunctions_gab30737dde8a3168a575863de35ed5895}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-request\-\_\-monitor@{jack\-\_\-port\-\_\-request\-\_\-monitor}}
+\index{jack\-\_\-port\-\_\-request\-\_\-monitor@{jack\-\_\-port\-\_\-request\-\_\-monitor}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-request\-\_\-monitor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-request\-\_\-monitor} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{int}]{onoff}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gab30737dde8a3168a575863de35ed5895}
+\-If \-Jack\-Port\-Can\-Monitor is set for this {\itshape port\/}, turn input monitoring on or off. \-Otherwise, do nothing. \hypertarget{group__PortFunctions_ga5fd1725d66427287abbec29fbae9214b}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name@{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name}}
+\index{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name@{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const char $\ast$}]{port\-\_\-name, }
+\item[{int}]{onoff}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga5fd1725d66427287abbec29fbae9214b}
+\-If \-Jack\-Port\-Can\-Monitor is set for this {\itshape port\-\_\-name\/}, turn input monitoring on or off. \-Otherwise, do nothing.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()} 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_gae76a201e7a6dfe3af6ee78b99a055117}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-set\-\_\-alias@{jack\-\_\-port\-\_\-set\-\_\-alias}}
+\index{jack\-\_\-port\-\_\-set\-\_\-alias@{jack\-\_\-port\-\_\-set\-\_\-alias}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-set\-\_\-alias}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-set\-\_\-alias} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{const char $\ast$}]{alias}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gae76a201e7a6dfe3af6ee78b99a055117}
+\-Set {\itshape alias\/} as an alias for {\itshape port\/}. \-May be called at any time. \-If the alias is longer than \hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}, it will be truncated.
+
+\-After a successful call, and until \-J\-A\-C\-K exits or  \hyperlink{group__PortFunctions_ga51af66966211d2a81a749ab2f689872d}{jack\-\_\-port\-\_\-unset\-\_\-alias()} is called,  may be used as a alternate name for the port.
+
+\-Ports can have up to two aliases -\/ if both are already set, this function will return an error.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga9d335578836fd76d4a922403efaedc5c}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-set\-\_\-name@{jack\-\_\-port\-\_\-set\-\_\-name}}
+\index{jack\-\_\-port\-\_\-set\-\_\-name@{jack\-\_\-port\-\_\-set\-\_\-name}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-set\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-set\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{const char $\ast$}]{port\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga9d335578836fd76d4a922403efaedc5c}
+\-Modify a port's short name. \-May be called at any time. \-If the resulting full name (including the {\itshape \char`\"{}client\-\_\-name\-:\char`\"{}\/} prefix) is longer than \hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}, it will be truncated.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_gaf1554d11abaff29321db1daf1fa614c1}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-short\-\_\-name@{jack\-\_\-port\-\_\-short\-\_\-name}}
+\index{jack\-\_\-port\-\_\-short\-\_\-name@{jack\-\_\-port\-\_\-short\-\_\-name}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-short\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jack\-\_\-port\-\_\-short\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gaf1554d11abaff29321db1daf1fa614c1}
+\begin{DoxyReturn}{\-Returns}
+the short name of the jack\-\_\-port\-\_\-t (not including the {\itshape \char`\"{}client\-\_\-name\-:\char`\"{}\/} prefix).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size()}. 
+\end{DoxySeeAlso}
+\hypertarget{group__PortFunctions_ga14afcad849c17bcd6cb739d14899cecf}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-tie@{jack\-\_\-port\-\_\-tie}}
+\index{jack\-\_\-port\-\_\-tie@{jack\-\_\-port\-\_\-tie}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-tie}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-tie} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{src, }
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga14afcad849c17bcd6cb739d14899cecf}
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000006}{\-Deprecated}]\-This function will be removed from a future version of \-J\-A\-C\-K. \-Do not use it. \-There is no replacement. \-It has turned out to serve essentially no purpose in real-\/life \-J\-A\-C\-K clients. \end{DoxyRefDesc}
+\hypertarget{group__PortFunctions_gae2b2ef9ef3ba606be342a7d2c292cb00}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-type@{jack\-\_\-port\-\_\-type}}
+\index{jack\-\_\-port\-\_\-type@{jack\-\_\-port\-\_\-type}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jack\-\_\-port\-\_\-type} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gae2b2ef9ef3ba606be342a7d2c292cb00}
+\begin{DoxyReturn}{\-Returns}
+the {\itshape port\/} type, at most \hyperlink{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{jack\-\_\-port\-\_\-type\-\_\-size()} characters including a final \-N\-U\-L\-L. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga52a65a0dd00695ecf75e23f1bd48f96a}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size@{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size}}
+\index{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size@{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t {\bf jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{const char $\ast$}]{port\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga52a65a0dd00695ecf75e23f1bd48f96a}
+\begin{DoxyReturn}{\-Returns}
+the buffersize of a port of type \begin{DoxyItemize}
+\item port\-\_\-type.\end{DoxyItemize}
+this function may only be called in a buffer\-\_\-size callback. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga443f950e5fe4dd3ba9e1f4530bb172a4}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-type\-\_\-id@{jack\-\_\-port\-\_\-type\-\_\-id}}
+\index{jack\-\_\-port\-\_\-type\-\_\-id@{jack\-\_\-port\-\_\-type\-\_\-id}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-type\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t} {\bf jack\-\_\-port\-\_\-type\-\_\-id} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga443f950e5fe4dd3ba9e1f4530bb172a4}
+\begin{DoxyReturn}{\-Returns}
+the {\itshape port\/} type id. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-type\-\_\-size@{jack\-\_\-port\-\_\-type\-\_\-size}}
+\index{jack\-\_\-port\-\_\-type\-\_\-size@{jack\-\_\-port\-\_\-type\-\_\-size}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-type\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-type\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}
+\begin{DoxyReturn}{\-Returns}
+the maximum number of characters in a \-J\-A\-C\-K port type name including the final \-N\-U\-L\-L character. \-This value is a constant. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga9ac3ccd93be18999c0bd817bc032e876}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-unregister@{jack\-\_\-port\-\_\-unregister}}
+\index{jack\-\_\-port\-\_\-unregister@{jack\-\_\-port\-\_\-unregister}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-unregister}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-unregister} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga9ac3ccd93be18999c0bd817bc032e876}
+\-Remove the port from the client, disconnecting any existing connections.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_ga51af66966211d2a81a749ab2f689872d}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-unset\-\_\-alias@{jack\-\_\-port\-\_\-unset\-\_\-alias}}
+\index{jack\-\_\-port\-\_\-unset\-\_\-alias@{jack\-\_\-port\-\_\-unset\-\_\-alias}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-unset\-\_\-alias}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-unset\-\_\-alias} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{const char $\ast$}]{alias}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_ga51af66966211d2a81a749ab2f689872d}
+\-Remove {\itshape alias\/} as an alias for {\itshape port\/}. \-May be called at any time.
+
+\-After a successful call, {\itshape alias\/} can no longer be used as a alternate name for the port.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__PortFunctions_gaab2cfe13d90991fbf1d03a2050b93f54}{\index{\-Creating \& manipulating ports@{\-Creating \& manipulating ports}!jack\-\_\-port\-\_\-untie@{jack\-\_\-port\-\_\-untie}}
+\index{jack\-\_\-port\-\_\-untie@{jack\-\_\-port\-\_\-untie}!Creating & manipulating ports@{\-Creating \& manipulating ports}}
+\subsubsection[{jack\-\_\-port\-\_\-untie}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-port\-\_\-untie} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{de/d5e/group__PortFunctions_gaab2cfe13d90991fbf1d03a2050b93f54}
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000007}{\-Deprecated}]\-This function will be removed from a future version of \-J\-A\-C\-K. \-Do not use it. \-There is no replacement. \-It has turned out to serve essentially no purpose in real-\/life \-J\-A\-C\-K clients. \end{DoxyRefDesc}

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$de/d28/classDigitalEqualizer.html#a8dd84de986b4a50170f2a296342f55da" title="DigitalEqualizer::acquireControls" alt="" coords="516,5,727,35"/>
+<area shape="rect" id="node5" href="$de/d28/classDigitalEqualizer.html#aa4a96390ed7480d85fbe4fac36239ec2" title="DigitalEqualizer::generateFilter" alt="" coords="267,59,467,88"/>
+<area shape="rect" id="node8" href="$de/d28/classDigitalEqualizer.html#a38314bc1535c71f2a20c179f98330d43" title="DigitalEqualizer::releaseControls" alt="" coords="516,112,727,141"/>
+<area shape="rect" id="node10" href="$d5/dfd/namespaceFftwAdapter.html#ae8e0488a742dd23810797b05a737ebd5" title="FftwAdapter::performInverseFFT" alt="" coords="516,59,727,88"/>
+</map>

@@ -1,0 +1,52 @@
+\hypertarget{statistics_8h}{\section{3rdparty/jack/include/jack/statistics.h \-File \-Reference}
+\label{d7/dc5/statistics_8h}\index{3rdparty/jack/include/jack/statistics.\-h@{3rdparty/jack/include/jack/statistics.\-h}}
+}
+{\ttfamily \#include $<$jack/types.\-h$>$}\*
+\-Include dependency graph for statistics.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{d2/d11/statistics_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{statistics_8h_ab4adfe9509eef86e4a44ccc6c38bda1f}{jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs} (jack\-\_\-client\-\_\-t $\ast$client)
+\item 
+float \hyperlink{statistics_8h_a1594a8e3bbd718f128a9725057cf8877}{jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs} (jack\-\_\-client\-\_\-t $\ast$client)
+\item 
+void \hyperlink{statistics_8h_aeb7d2667d5f8281f4fe9c88db71a1843}{jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs} (jack\-\_\-client\-\_\-t $\ast$client)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{statistics_8h_ab4adfe9509eef86e4a44ccc6c38bda1f}{\index{statistics.\-h@{statistics.\-h}!jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs@{jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs}}
+\index{jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs@{jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs}!statistics.h@{statistics.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf jack\-\_\-get\-\_\-max\-\_\-delayed\-\_\-usecs} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d7/dc5/statistics_8h_ab4adfe9509eef86e4a44ccc6c38bda1f}
+\begin{DoxyReturn}{\-Returns}
+the maximum delay reported by the backend since startup or reset. \-When compared to the period size in usecs, this can be used to estimate the ideal period size for a given setup. 
+\end{DoxyReturn}
+\hypertarget{statistics_8h_a1594a8e3bbd718f128a9725057cf8877}{\index{statistics.\-h@{statistics.\-h}!jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs@{jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs}}
+\index{jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs@{jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs}!statistics.h@{statistics.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf jack\-\_\-get\-\_\-xrun\-\_\-delayed\-\_\-usecs} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d7/dc5/statistics_8h_a1594a8e3bbd718f128a9725057cf8877}
+\begin{DoxyReturn}{\-Returns}
+the delay in microseconds due to the most recent \-X\-R\-U\-N occurrence. \-This probably only makes sense when called from a \-Jack\-X\-Run\-Callback defined using \hyperlink{group__ClientCallbacks_ga08196c75f06d9e68f9a3570dfcb1e323}{jack\-\_\-set\-\_\-xrun\-\_\-callback()}. 
+\end{DoxyReturn}
+\hypertarget{statistics_8h_aeb7d2667d5f8281f4fe9c88db71a1843}{\index{statistics.\-h@{statistics.\-h}!jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs@{jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs}}
+\index{jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs@{jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs}!statistics.h@{statistics.\-h}}
+\subsubsection[{jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-reset\-\_\-max\-\_\-delayed\-\_\-usecs} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d7/dc5/statistics_8h_aeb7d2667d5f8281f4fe9c88db71a1843}
+\-Reset the maximum delay counter. \-This would be useful to estimate the effect that a change to the configuration of a running system (e.\-g. toggling kernel preemption) has on the delay experienced by \-J\-A\-C\-K, without having to restart the \-J\-A\-C\-K engine. 

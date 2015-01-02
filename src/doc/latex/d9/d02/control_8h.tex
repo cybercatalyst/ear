@@ -1,0 +1,228 @@
+\hypertarget{control_8h}{\section{3rdparty/jack/include/jack/control.h \-File \-Reference}
+\label{d9/d02/control_8h}\index{3rdparty/jack/include/jack/control.\-h@{3rdparty/jack/include/jack/control.\-h}}
+}
+
+
+\-J\-A\-C\-K control \-A\-P\-I.  
+
+
+{\ttfamily \#include $<$jack/jslist.\-h$>$}\*
+{\ttfamily \#include $<$jack/systemdeps.\-h$>$}\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+\-Include dependency graph for control.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{dd/d3c/control_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value}
+\begin{DoxyCompactList}\small\item\em \-Type for parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{control_8h_a38aa16c0a62708eb58c893657f4fb5ff}{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X}~(\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840a766feed3831809abe9b67872086f241f}{\-Jack\-Param\-Bool} + 1)
+\begin{DoxyCompactList}\small\item\em \-Max value that jackctl\-\_\-param\-\_\-type\-\_\-t type can have. \end{DoxyCompactList}\item 
+\#define \hyperlink{control_8h_a582463bb97200e584edaa215180e16d4}{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}~127
+\begin{DoxyCompactList}\small\item\em \-Max length of string parameter value, excluding terminating null char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{control_8h_a8be566939474d34179654524d98e13e5}{jackctl\-\_\-server}
+\item 
+typedef struct \hyperlink{control_8h_aeb95a63c17093fc922ecdbf952884f41}{jackctl\-\_\-driver}
+\item 
+typedef struct \hyperlink{control_8h_a19844c4bc0885de2fec0bcf3119f38d4}{jackctl\-\_\-internal}
+\item 
+typedef struct \hyperlink{control_8h_a1217bbb5a2efd11d6dd45bb3882df66a}{jackctl\-\_\-parameter}
+\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{control_8h_ac71832cf5445a694a178d15345d67840}{jackctl\-\_\-param\-\_\-type\-\_\-t} \{ \*
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840a257077c62b40f8c7c6b253c21fcaa5e6}{\-Jack\-Param\-Int} =  1, 
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840a574c962072518406c2aebf6b3d6ddc71}{\-Jack\-Param\-U\-Int}, 
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840aab44adbfbb163aa6b6ad52eac90b2bfb}{\-Jack\-Param\-Char}, 
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840aabd8d7557b32d28d8bc7c22449a74b0b}{\-Jack\-Param\-String}, 
+\*
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840a766feed3831809abe9b67872086f241f}{\-Jack\-Param\-Bool}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+sigset\-\_\-t \hyperlink{group__ServerControl_gaaf1bee06690f756a6ffb463580590518}{jackctl\-\_\-setup\-\_\-signals} (unsigned int flags)
+\item 
+void \hyperlink{group__ServerControl_ga90d8e0221779a24483fe4f4cce775d51}{jackctl\-\_\-wait\-\_\-signals} (sigset\-\_\-t signals)
+\item 
+jackctl\-\_\-server\-\_\-t $\ast$ \hyperlink{group__ServerControl_ga8b8c36f1be47c0d582e36ee2ea21e7bb}{jackctl\-\_\-server\-\_\-create} (bool($\ast$on\-\_\-device\-\_\-acquire)(const char $\ast$device\-\_\-name), void($\ast$on\-\_\-device\-\_\-release)(const char $\ast$device\-\_\-name))
+\item 
+void \hyperlink{group__ServerControl_gab6f848f11e9853f49d82f253c1df1121}{jackctl\-\_\-server\-\_\-destroy} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gad2b438d61acdadc96368ff2dd4e9e62f}{jackctl\-\_\-server\-\_\-open} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_gaa573e4c5e35e853d199cf5b7368700b5}{jackctl\-\_\-server\-\_\-start} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gaf71c3fbc808e15305277e667ca6cfac4}{jackctl\-\_\-server\-\_\-stop} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_gab09dea0a3ffc38e439cbceaa33951a2c}{jackctl\-\_\-server\-\_\-close} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_ga3edd82a413260dc1f4de2862f0a6a669}{jackctl\-\_\-server\-\_\-get\-\_\-drivers\-\_\-list} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gaeaefa3144a6a9d843467d4951ca71f70}{jackctl\-\_\-server\-\_\-get\-\_\-parameters} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gacf1e2a650fec3f019bb36e49ffacde4f}{jackctl\-\_\-server\-\_\-get\-\_\-internals\-\_\-list} (jackctl\-\_\-server\-\_\-t $\ast$server)
+\item 
+bool \hyperlink{group__ServerControl_ga338effc099ff0cf03648971df51f9086}{jackctl\-\_\-server\-\_\-load\-\_\-internal} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+bool \hyperlink{group__ServerControl_gac0d0b9b2c5323da9193db9a0aa84bdf9}{jackctl\-\_\-server\-\_\-unload\-\_\-internal} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+bool \hyperlink{group__ServerControl_gadacbb19d2f9e614ce33c8aedaa04fda1}{jackctl\-\_\-server\-\_\-add\-\_\-slave} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_gac71a7c5d85e891a51a57f2575aea627c}{jackctl\-\_\-server\-\_\-remove\-\_\-slave} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+bool \hyperlink{group__ServerControl_ga3bfe5d4befb9d9bab8f05e13d37ca7b3}{jackctl\-\_\-server\-\_\-switch\-\_\-master} (jackctl\-\_\-server\-\_\-t $\ast$server, jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga9e28945c015f343e7a82c4e76e9cb1b4}{jackctl\-\_\-driver\-\_\-get\-\_\-name} (jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_ga0f73cfb0c40a401ca6aa617073303e72}{jackctl\-\_\-driver\-\_\-get\-\_\-parameters} (jackctl\-\_\-driver\-\_\-t $\ast$driver)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga4d14a6526174de9d085b203a7b7d632a}{jackctl\-\_\-internal\-\_\-get\-\_\-name} (jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+const \-J\-S\-List $\ast$ \hyperlink{group__ServerControl_gade591618ee972b92724be7ee87a3943a}{jackctl\-\_\-internal\-\_\-get\-\_\-parameters} (jackctl\-\_\-internal\-\_\-t $\ast$internal)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga3a123ee66e7605b1f17db88d4f5b8ac8}{jackctl\-\_\-parameter\-\_\-get\-\_\-name} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_gaac9fe5577753455308a53f5569fe3106}{jackctl\-\_\-parameter\-\_\-get\-\_\-short\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_ga97aae5c29e16539b71bc7dc2bddafc4b}{jackctl\-\_\-parameter\-\_\-get\-\_\-long\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+\hyperlink{control_8h_ac71832cf5445a694a178d15345d67840}{jackctl\-\_\-param\-\_\-type\-\_\-t} \hyperlink{group__ServerControl_ga37fe25ce3d3fdbc631a12cab91c460bb}{jackctl\-\_\-parameter\-\_\-get\-\_\-type} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+char \hyperlink{group__ServerControl_ga864ee9036a98736910f264b1a62f0fe9}{jackctl\-\_\-parameter\-\_\-get\-\_\-id} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_ga439234cd9c8cb1ff35a8bffef526f04b}{jackctl\-\_\-parameter\-\_\-is\-\_\-set} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gac75904b4d63158841b6f4667a7928788}{jackctl\-\_\-parameter\-\_\-reset} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_ga9881e66c9c235484e5b8879ce27bc9f2}{jackctl\-\_\-parameter\-\_\-get\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gab769622731339e7d35e3b7093db347e6}{jackctl\-\_\-parameter\-\_\-set\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, const union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$value\-\_\-ptr)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_gaa71bfc637794e50ccd5c39d0449b982a}{jackctl\-\_\-parameter\-\_\-get\-\_\-default\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gae7228c1726b5ecaae6458134bf4ab4d7}{jackctl\-\_\-parameter\-\_\-has\-\_\-range\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_ga823ae164d023267b57002226444fe708}{jackctl\-\_\-parameter\-\_\-has\-\_\-enum\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+uint32\-\_\-t \hyperlink{group__ServerControl_ga1578b61842cf7a7cfb0d8fe54cf286ff}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraints\-\_\-count} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} \hyperlink{group__ServerControl_ga12fbe98c92f84dcfbd2de23421181567}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, uint32\-\_\-t index)
+\item 
+const char $\ast$ \hyperlink{group__ServerControl_gadbaa1566bcd829aa4233aac9234125ed}{jackctl\-\_\-parameter\-\_\-get\-\_\-enum\-\_\-constraint\-\_\-description} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, uint32\-\_\-t index)
+\item 
+void \hyperlink{group__ServerControl_ga132d53b3fe319e84baf5a2381bd50fc6}{jackctl\-\_\-parameter\-\_\-get\-\_\-range\-\_\-constraint} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter, union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$min\-\_\-ptr, union \hyperlink{unionjackctl__parameter__value}{jackctl\-\_\-parameter\-\_\-value} $\ast$max\-\_\-ptr)
+\item 
+bool \hyperlink{group__ServerControl_gac1d74fdcc7125293b7c2d329c0b09e9a}{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-strict} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+bool \hyperlink{group__ServerControl_gafd1b5bc48305a978135692997abc8996}{jackctl\-\_\-parameter\-\_\-constraint\-\_\-is\-\_\-fake\-\_\-value} (jackctl\-\_\-parameter\-\_\-t $\ast$parameter)
+\item 
+void \hyperlink{group__ServerControl_gac6448626e0b75fc6d9da1ccbdca0355e}{jack\-\_\-error} (const char $\ast$format,...)
+\item 
+void \hyperlink{group__ServerControl_ga21328fd378306e0da7270952196eb717}{jack\-\_\-info} (const char $\ast$format,...)
+\item 
+void \hyperlink{group__ServerControl_ga35f69faaee3bb9b958ed8c9a5f62246c}{jack\-\_\-log} (const char $\ast$format,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-J\-A\-C\-K control \-A\-P\-I. 
+
+\-Definition in file \hyperlink{control_8h_source}{control.\-h}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{control_8h_a38aa16c0a62708eb58c893657f4fb5ff}{\index{control.\-h@{control.\-h}!\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X@{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X}}
+\index{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X@{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X}!control.h@{control.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-M\-A\-X}~({\bf \-Jack\-Param\-Bool} + 1)}}\label{d9/d02/control_8h_a38aa16c0a62708eb58c893657f4fb5ff}
+
+
+\-Max value that jackctl\-\_\-param\-\_\-type\-\_\-t type can have. 
+
+
+
+\-Definition at line 49 of file control.\-h.
+
+\hypertarget{control_8h_a582463bb97200e584edaa215180e16d4}{\index{control.\-h@{control.\-h}!\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X@{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}}
+\index{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X@{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}!control.h@{control.\-h}}
+\subsubsection[{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}~127}}\label{d9/d02/control_8h_a582463bb97200e584edaa215180e16d4}
+
+
+\-Max length of string parameter value, excluding terminating null char. 
+
+
+
+\-Definition at line 52 of file control.\-h.
+
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{control_8h_aeb95a63c17093fc922ecdbf952884f41}{\index{control.\-h@{control.\-h}!jackctl\-\_\-driver@{jackctl\-\_\-driver}}
+\index{jackctl\-\_\-driver@{jackctl\-\_\-driver}!control.h@{control.\-h}}
+\subsubsection[{jackctl\-\_\-driver}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf jackctl\-\_\-driver}}}\label{d9/d02/control_8h_aeb95a63c17093fc922ecdbf952884f41}
+opaque type for driver object 
+
+\-Definition at line 69 of file control.\-h.
+
+\hypertarget{control_8h_a19844c4bc0885de2fec0bcf3119f38d4}{\index{control.\-h@{control.\-h}!jackctl\-\_\-internal@{jackctl\-\_\-internal}}
+\index{jackctl\-\_\-internal@{jackctl\-\_\-internal}!control.h@{control.\-h}}
+\subsubsection[{jackctl\-\_\-internal}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf jackctl\-\_\-internal}}}\label{d9/d02/control_8h_a19844c4bc0885de2fec0bcf3119f38d4}
+opaque type for internal client object 
+
+\-Definition at line 72 of file control.\-h.
+
+\hypertarget{control_8h_a1217bbb5a2efd11d6dd45bb3882df66a}{\index{control.\-h@{control.\-h}!jackctl\-\_\-parameter@{jackctl\-\_\-parameter}}
+\index{jackctl\-\_\-parameter@{jackctl\-\_\-parameter}!control.h@{control.\-h}}
+\subsubsection[{jackctl\-\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf jackctl\-\_\-parameter}}}\label{d9/d02/control_8h_a1217bbb5a2efd11d6dd45bb3882df66a}
+opaque type for parameter object 
+
+\-Definition at line 75 of file control.\-h.
+
+\hypertarget{control_8h_a8be566939474d34179654524d98e13e5}{\index{control.\-h@{control.\-h}!jackctl\-\_\-server@{jackctl\-\_\-server}}
+\index{jackctl\-\_\-server@{jackctl\-\_\-server}!control.h@{control.\-h}}
+\subsubsection[{jackctl\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf jackctl\-\_\-server}}}\label{d9/d02/control_8h_a8be566939474d34179654524d98e13e5}
+opaque type for server object 
+
+\-Definition at line 66 of file control.\-h.
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840}{\index{control.\-h@{control.\-h}!jackctl\-\_\-param\-\_\-type\-\_\-t@{jackctl\-\_\-param\-\_\-type\-\_\-t}}
+\index{jackctl\-\_\-param\-\_\-type\-\_\-t@{jackctl\-\_\-param\-\_\-type\-\_\-t}!control.h@{control.\-h}}
+\subsubsection[{jackctl\-\_\-param\-\_\-type\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf jackctl\-\_\-param\-\_\-type\-\_\-t}}}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840}
+\-Parameter types, intentionally similar to jack\-\_\-driver\-\_\-param\-\_\-type\-\_\-t \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Jack\-Param\-Int@{\-Jack\-Param\-Int}!control.\-h@{control.\-h}}\index{control.\-h@{control.\-h}!\-Jack\-Param\-Int@{\-Jack\-Param\-Int}}\item[{\em 
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840a257077c62b40f8c7c6b253c21fcaa5e6}{\-Jack\-Param\-Int}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840a257077c62b40f8c7c6b253c21fcaa5e6}
+}]value type is a signed integer \index{\-Jack\-Param\-U\-Int@{\-Jack\-Param\-U\-Int}!control.\-h@{control.\-h}}\index{control.\-h@{control.\-h}!\-Jack\-Param\-U\-Int@{\-Jack\-Param\-U\-Int}}\item[{\em 
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840a574c962072518406c2aebf6b3d6ddc71}{\-Jack\-Param\-U\-Int}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840a574c962072518406c2aebf6b3d6ddc71}
+}]value type is an unsigned integer \index{\-Jack\-Param\-Char@{\-Jack\-Param\-Char}!control.\-h@{control.\-h}}\index{control.\-h@{control.\-h}!\-Jack\-Param\-Char@{\-Jack\-Param\-Char}}\item[{\em 
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840aab44adbfbb163aa6b6ad52eac90b2bfb}{\-Jack\-Param\-Char}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840aab44adbfbb163aa6b6ad52eac90b2bfb}
+}]value type is a char \index{\-Jack\-Param\-String@{\-Jack\-Param\-String}!control.\-h@{control.\-h}}\index{control.\-h@{control.\-h}!\-Jack\-Param\-String@{\-Jack\-Param\-String}}\item[{\em 
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840aabd8d7557b32d28d8bc7c22449a74b0b}{\-Jack\-Param\-String}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840aabd8d7557b32d28d8bc7c22449a74b0b}
+}]value type is a string with max size of \hyperlink{control_8h_a582463bb97200e584edaa215180e16d4}{\-J\-A\-C\-K\-\_\-\-P\-A\-R\-A\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-M\-A\-X}+1 chars \index{\-Jack\-Param\-Bool@{\-Jack\-Param\-Bool}!control.\-h@{control.\-h}}\index{control.\-h@{control.\-h}!\-Jack\-Param\-Bool@{\-Jack\-Param\-Bool}}\item[{\em 
+\hypertarget{control_8h_ac71832cf5445a694a178d15345d67840a766feed3831809abe9b67872086f241f}{\-Jack\-Param\-Bool}\label{d9/d02/control_8h_ac71832cf5445a694a178d15345d67840a766feed3831809abe9b67872086f241f}
+}]value type is a boolean \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 39 of file control.\-h.
+

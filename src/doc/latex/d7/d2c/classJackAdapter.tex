@@ -1,0 +1,446 @@
+\hypertarget{classJackAdapter}{\section{\-Jack\-Adapter \-Class \-Reference}
+\label{d7/d2c/classJackAdapter}\index{\-Jack\-Adapter@{\-Jack\-Adapter}}
+}
+
+
+\-C++ \-Wrapper for the \-J\-A\-C\-K \-Audio \-Connection \-Kit client \-A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$jackadapter.\-h$>$}
+
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classJackAdapter_a55123c4a317c8c6c2a186b6a66867902}{error} (const \-Q\-String \&error\-Message)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classJackAdapter_a221a1ac7a60ab38558de730c64428af7}{connect\-To\-Server} (\-Q\-String name)
+\item 
+void \hyperlink{classJackAdapter_a675123d2fa6f327d18985fecf305bb56}{register\-Stereo\-Input\-Port} (\-Q\-String label)
+\item 
+void \hyperlink{classJackAdapter_a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd}{register\-Stereo\-Output\-Port} (\-Q\-String label)
+\item 
+void \hyperlink{classJackAdapter_a69d25a5529343586d8c8f3c2b5b32be1}{set\-Processor} (\hyperlink{classProcessor}{\-Processor} $\ast$processor)
+\item 
+void \hyperlink{classJackAdapter_ada1468e1b1b4f853d017c480e6b989a4}{start\-Audio\-Processing} ()
+\item 
+void \hyperlink{classJackAdapter_aa8bdeea946ee8d2e67920e7eb355d74e}{stop\-Audio\-Processing} ()
+\item 
+int \hyperlink{classJackAdapter_ab66793a663a251a706f4c7b4843fed88}{sample\-Rate} ()
+\item 
+int \hyperlink{classJackAdapter_a6a957ded47affe20ca51e98f87124a42}{buffer\-Size} ()
+\item 
+float \hyperlink{classJackAdapter_afa5994297183b374b8a01e6fa683a654}{cpu\-Load} ()
+\item 
+\hyperlink{structStereoPort}{\-Stereo\-Port} \hyperlink{classJackAdapter_a0f52179d6826823348d4b336d40aa71e}{stereo\-Input\-Port} (\-Q\-String label)
+\item 
+\hyperlink{structStereoPort}{\-Stereo\-Port} \hyperlink{classJackAdapter_a4b480c31bfe78d7e64b342014aacab2c}{stereo\-Output\-Port} (\-Q\-String label)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classJackAdapter}{\-Jack\-Adapter} $\ast$ \hyperlink{classJackAdapter_a431136befd01cac7ecbdf19099075b4d}{instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-C++ \-Wrapper for the \-J\-A\-C\-K \-Audio \-Connection \-Kit client \-A\-P\-I. 
+
+\begin{DoxyAuthor}{\-Author}
+\-Jacob \-Dawid ( \href{mailto:jacob.dawid@cybercatalyst.net}{\tt jacob.\-dawid@cybercatalyst.\-net} ) 
+
+\-Otto \-Ritter ( \href{mailto:otto.ritter.or@googlemail.com}{\tt otto.\-ritter.\-or@googlemail.\-com} ) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+09.\-2011
+\end{DoxyDate}
+\-This class wraps a singleton around the \-C \-A\-P\-I of \-J\-A\-C\-K in order to provide some additional features. \-Since it derives from \-Q\-Object it can be integrated into \-Qt's signals and slots system. \-Also, it includes a few routines to simplify the integration of fftw. 
+
+\-Definition at line 114 of file jackadapter.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classJackAdapter_a6a957ded47affe20ca51e98f87124a42}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!buffer\-Size@{buffer\-Size}}
+\index{buffer\-Size@{buffer\-Size}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{buffer\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Jack\-Adapter\-::buffer\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a6a957ded47affe20ca51e98f87124a42}
+\-Returns the current sample buffer size. \begin{DoxyReturn}{\-Returns}
+\-Buffer size in samples. 
+\end{DoxyReturn}
+
+
+\-Definition at line 75 of file jackadapter.\-cpp.
+
+\hypertarget{classJackAdapter_a221a1ac7a60ab38558de730c64428af7}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!connect\-To\-Server@{connect\-To\-Server}}
+\index{connect\-To\-Server@{connect\-To\-Server}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{connect\-To\-Server}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Jack\-Adapter\-::connect\-To\-Server} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{name}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a221a1ac7a60ab38558de730c64428af7}
+\-This method attempts to connect to the audio server. 
+\begin{DoxyParams}{\-Parameters}
+{\em name} & \-Name that will be used to register this application as a client. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 47 of file jackadapter.\-cpp.
+
+
+
+\-References jack\-\_\-client\-\_\-open(), jack\-\_\-set\-\_\-buffer\-\_\-size\-\_\-callback(), jack\-\_\-set\-\_\-error\-\_\-function(), jack\-\_\-set\-\_\-info\-\_\-function(), jack\-\_\-set\-\_\-process\-\_\-callback(), jack\-\_\-set\-\_\-sample\-\_\-rate\-\_\-callback(), and \-Jack\-Null\-Option.
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a221a1ac7a60ab38558de730c64428af7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_afa5994297183b374b8a01e6fa683a654}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!cpu\-Load@{cpu\-Load}}
+\index{cpu\-Load@{cpu\-Load}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{cpu\-Load}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Jack\-Adapter\-::cpu\-Load} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_afa5994297183b374b8a01e6fa683a654}
+\-Returns the current \-C\-P\-U load in percent. 
+
+\-Definition at line 79 of file jackadapter.\-cpp.
+
+
+
+\-References jack\-\_\-cpu\-\_\-load().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d7/d2c/classJackAdapter_afa5994297183b374b8a01e6fa683a654_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_a55123c4a317c8c6c2a186b6a66867902}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!error@{error}}
+\index{error@{error}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::error} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{error\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{d7/d2c/classJackAdapter_a55123c4a317c8c6c2a186b6a66867902}
+\-This signal will be emitted when an error occurs. \hypertarget{classJackAdapter_a431136befd01cac7ecbdf19099075b4d}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!instance@{instance}}
+\index{instance@{instance}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Jack\-Adapter} $\ast$ {\bf \-Jack\-Adapter\-::instance} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{d7/d2c/classJackAdapter_a431136befd01cac7ecbdf19099075b4d}
+\-Returns the instance for this singleton. 
+
+\-Definition at line 43 of file jackadapter.\-cpp.
+
+
+
+\-Referenced by \-Main\-Window\-::close\-Event(), \-Ear\-Processor\-::\-Ear\-Processor(), and \-Main\-Window\-::\-Main\-Window().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a431136befd01cac7ecbdf19099075b4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_a675123d2fa6f327d18985fecf305bb56}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!register\-Stereo\-Input\-Port@{register\-Stereo\-Input\-Port}}
+\index{register\-Stereo\-Input\-Port@{register\-Stereo\-Input\-Port}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{register\-Stereo\-Input\-Port}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::register\-Stereo\-Input\-Port} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{label}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a675123d2fa6f327d18985fecf305bb56}
+\-Tries to register a new stereo input port. 
+\begin{DoxyParams}{\-Parameters}
+{\em label} & \-Name that will be used to register this port. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 91 of file jackadapter.\-cpp.
+
+
+
+\-References \-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E, and jack\-\_\-port\-\_\-register().
+
+
+
+\-Referenced by \-Ear\-Processor\-::\-Ear\-Processor().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a675123d2fa6f327d18985fecf305bb56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a675123d2fa6f327d18985fecf305bb56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!register\-Stereo\-Output\-Port@{register\-Stereo\-Output\-Port}}
+\index{register\-Stereo\-Output\-Port@{register\-Stereo\-Output\-Port}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{register\-Stereo\-Output\-Port}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::register\-Stereo\-Output\-Port} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{label}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd}
+\-Tries to register a new stereo output port. 
+\begin{DoxyParams}{\-Parameters}
+{\em label} & \-Name that will be used to register this port. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 102 of file jackadapter.\-cpp.
+
+
+
+\-References \-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-A\-U\-D\-I\-O\-\_\-\-T\-Y\-P\-E, and jack\-\_\-port\-\_\-register().
+
+
+
+\-Referenced by \-Ear\-Processor\-::\-Ear\-Processor().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a3cbec70a8bbaecb9f4d1fbdbdbf5a4fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_ab66793a663a251a706f4c7b4843fed88}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!sample\-Rate@{sample\-Rate}}
+\index{sample\-Rate@{sample\-Rate}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Jack\-Adapter\-::sample\-Rate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_ab66793a663a251a706f4c7b4843fed88}
+\-Returns the current sample rate. \begin{DoxyReturn}{\-Returns}
+\-Sample rate in \-Hz. 
+\end{DoxyReturn}
+
+
+\-Definition at line 71 of file jackadapter.\-cpp.
+
+\hypertarget{classJackAdapter_a69d25a5529343586d8c8f3c2b5b32be1}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!set\-Processor@{set\-Processor}}
+\index{set\-Processor@{set\-Processor}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{set\-Processor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::set\-Processor} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Processor} $\ast$}]{processor}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a69d25a5529343586d8c8f3c2b5b32be1}
+\-Assigns a processor that will handle audio processing. 
+\begin{DoxyParams}{\-Parameters}
+{\em processor} & \-The processor that will handle audio processing. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 113 of file jackadapter.\-cpp.
+
+
+
+\-Referenced by \-Main\-Window\-::\-Main\-Window().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_a69d25a5529343586d8c8f3c2b5b32be1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_ada1468e1b1b4f853d017c480e6b989a4}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!start\-Audio\-Processing@{start\-Audio\-Processing}}
+\index{start\-Audio\-Processing@{start\-Audio\-Processing}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{start\-Audio\-Processing}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::start\-Audio\-Processing} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_ada1468e1b1b4f853d017c480e6b989a4}
+\-Activates audio processing. 
+
+\-Definition at line 61 of file jackadapter.\-cpp.
+
+
+
+\-References jack\-\_\-activate().
+
+
+
+\-Referenced by \-Main\-Window\-::\-Main\-Window().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_ada1468e1b1b4f853d017c480e6b989a4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_ada1468e1b1b4f853d017c480e6b989a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classJackAdapter_a0f52179d6826823348d4b336d40aa71e}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!stereo\-Input\-Port@{stereo\-Input\-Port}}
+\index{stereo\-Input\-Port@{stereo\-Input\-Port}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{stereo\-Input\-Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Stereo\-Port} {\bf \-Jack\-Adapter\-::stereo\-Input\-Port} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{label}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a0f52179d6826823348d4b336d40aa71e}
+\-Returns the input stereo port associated with this label. 
+\begin{DoxyParams}{\-Parameters}
+{\em label} & \-Name of the stereo port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Stereo port that has been requested. 
+\end{DoxyReturn}
+
+
+\-Definition at line 83 of file jackadapter.\-cpp.
+
+\hypertarget{classJackAdapter_a4b480c31bfe78d7e64b342014aacab2c}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!stereo\-Output\-Port@{stereo\-Output\-Port}}
+\index{stereo\-Output\-Port@{stereo\-Output\-Port}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{stereo\-Output\-Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Stereo\-Port} {\bf \-Jack\-Adapter\-::stereo\-Output\-Port} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{label}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_a4b480c31bfe78d7e64b342014aacab2c}
+\-Returns the output stereo port associated with this label. 
+\begin{DoxyParams}{\-Parameters}
+{\em label} & \-Name of the stereo port. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Stereo port that has been requested. 
+\end{DoxyReturn}
+
+
+\-Definition at line 87 of file jackadapter.\-cpp.
+
+\hypertarget{classJackAdapter_aa8bdeea946ee8d2e67920e7eb355d74e}{\index{\-Jack\-Adapter@{\-Jack\-Adapter}!stop\-Audio\-Processing@{stop\-Audio\-Processing}}
+\index{stop\-Audio\-Processing@{stop\-Audio\-Processing}!JackAdapter@{\-Jack\-Adapter}}
+\subsubsection[{stop\-Audio\-Processing}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jack\-Adapter\-::stop\-Audio\-Processing} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d7/d2c/classJackAdapter_aa8bdeea946ee8d2e67920e7eb355d74e}
+\-Deactivates audio processing and disconnects from the audio server. 
+
+\-Definition at line 67 of file jackadapter.\-cpp.
+
+
+
+\-References jack\-\_\-deactivate().
+
+
+
+\-Referenced by \-Main\-Window\-::close\-Event().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_aa8bdeea946ee8d2e67920e7eb355d74e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d2c/classJackAdapter_aa8bdeea946ee8d2e67920e7eb355d74e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libear/include/\hyperlink{jackadapter_8h}{jackadapter.\-h}\item 
+libear/src/\hyperlink{jackadapter_8cpp}{jackadapter.\-cpp}\end{DoxyCompactItemize}

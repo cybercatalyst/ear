@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d9/d02/control_8h.html" title="JACK control API." alt="" coords="88,160,312,189"/>
+<area shape="rect" id="node5" href="$df/d89/jack_8h.html" title="3rdparty/jack/include/jack/jack.h" alt="" coords="364,237,572,267"/>
+<area shape="rect" id="node38" href="$d2/df2/jslist_8h.html" title="3rdparty/jack/include/jack/jslist.h" alt="" coords="169,83,380,112"/>
+<area shape="rect" id="node41" href="$db/dd5/thread_8h.html" title="3rdparty/jack/include/jack/thread.h" alt="" coords="755,83,976,112"/>
+<area shape="rect" id="node43" href="$d9/d49/types_8h.html" title="3rdparty/jack/include/jack/types.h" alt="" coords="515,83,731,112"/>
+<area shape="rect" id="node7" href="$db/da1/jackadapter_8h.html" title="libear/include/jackadapter.h" alt="" coords="316,392,495,421"/>
+<area shape="rect" id="node33" href="$d7/d55/fftwadapter_8h.html" title="libear/include/fftwadapter.h" alt="" coords="443,315,621,344"/>
+<area shape="rect" id="node9" href="$d9/d53/mainwindow_8h.html" title="gui/include/mainwindow.h" alt="" coords="5,701,176,731"/>
+<area shape="rect" id="node13" href="$d8/dd9/mainwindow_8cpp.html" title="gui/src/mainwindow.cpp" alt="" coords="331,779,493,808"/>
+<area shape="rect" id="node16" href="$d6/def/digitalequalizer_8h.html" title="libear/include/digitalequalizer.h" alt="" coords="307,469,504,499"/>
+<area shape="rect" id="node18" href="$d2/de4/earprocessor_8h.html" title="libear/include/earprocessor.h" alt="" coords="123,547,309,576"/>
+<area shape="rect" id="node31" href="$d6/df6/jackadapter_8cpp.html" title="libear/src/jackadapter.cpp" alt="" coords="597,469,768,499"/>
+<area shape="rect" id="node11" href="$d0/db5/launcher_8cpp.html" title="gui/src/launcher.cpp" alt="" coords="21,779,160,808"/>
+<area shape="rect" id="node28" href="$dc/d2f/digitalequalizer_8cpp.html" title="libear/src/digitalequalizer.cpp" alt="" coords="333,547,523,576"/>
+<area shape="rect" id="node21" href="$d6/d0c/visualizerwidget_8h.html" title="gui/include/visualizerwidget.h" alt="" coords="128,624,320,653"/>
+<area shape="rect" id="node26" href="$d7/d53/earprocessor_8cpp.html" title="libear/src/earprocessor.cpp" alt="" coords="344,624,523,653"/>
+<area shape="rect" id="node24" href="$db/d0a/visualizerwidget_8cpp.html" title="gui/src/visualizerwidget.cpp" alt="" coords="200,701,381,731"/>
+<area shape="rect" id="node36" href="$da/d45/fftwadapter_8cpp.html" title="libear/src/fftwadapter.cpp" alt="" coords="519,392,687,421"/>
+<area shape="rect" id="node45" href="$d4/d89/intclient_8h.html" title="3rdparty/jack/include/jack/intclient.h" alt="" coords="764,160,993,189"/>
+<area shape="rect" id="node48" href="$d3/d62/midiport_8h.html" title="3rdparty/jack/include/jack/midiport.h" alt="" coords="1017,160,1247,189"/>
+<area shape="rect" id="node50" href="$d7/dc5/statistics_8h.html" title="3rdparty/jack/include/jack/statistics.h" alt="" coords="1271,160,1508,189"/>
+<area shape="rect" id="node52" href="$d2/d02/transport_8h.html" title="3rdparty/jack/include/jack/transport.h" alt="" coords="505,160,740,189"/>
+</map>

@@ -1,0 +1,42 @@
+
+\begin{DoxyRefList}
+\item[\label{da/d58/deprecated__deprecated000001}%
+\hypertarget{da/d58/deprecated__deprecated000001}{}%
+\-Global \hyperlink{jack_8h_a97482adad8116b76635a63f646a2d2f5}{jack\-\_\-client\-\_\-new} (const char $\ast$client\-\_\-name) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-Please use \hyperlink{jack_8h_abbd2041bca191943b6ef29a991a131c5}{jack\-\_\-client\-\_\-open()}.  
+\item[\label{da/d58/deprecated__deprecated000005}%
+\hypertarget{da/d58/deprecated__deprecated000005}{}%
+\-Global \hyperlink{group__ServerClientControl_ga2db0a4e9ab7b6d9984e91abba27ab71d}{jack\-\_\-engine\-\_\-takeover\-\_\-timebase} (jack\-\_\-client\-\_\-t $\ast$) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This function still exists for compatibility with the earlier transport interface, but it does nothing. \-Instead, see \hyperlink{transport_8h}{transport.\-h} and use \hyperlink{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{jack\-\_\-set\-\_\-timebase\-\_\-callback()}. 
+\item[\label{da/d58/deprecated__deprecated000012}%
+\hypertarget{da/d58/deprecated__deprecated000012}{}%
+\-Global \hyperlink{group__TransportControl_gaa3f548f66e8c9a4f271ef97a87ecb240}{jack\-\_\-get\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T]\-This is for compatibility with the earlier transport interface. \-Use \hyperlink{group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}{jack\-\_\-transport\-\_\-query()}, instead. 
+\item[\label{da/d58/deprecated__deprecated000003}%
+\hypertarget{da/d58/deprecated__deprecated000003}{}%
+\-Global \hyperlink{jack_8h_a0ad890884c983c78ba93ed2d9b8ee8cc}{jack\-\_\-internal\-\_\-client\-\_\-close} (const char $\ast$client\-\_\-name) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-Please use \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()}.  
+\item[\label{da/d58/deprecated__deprecated000002}%
+\hypertarget{da/d58/deprecated__deprecated000002}{}%
+\-Global \hyperlink{jack_8h_a87be6679700acc40a0da17ac9ba3a31e}{jack\-\_\-internal\-\_\-client\-\_\-new} (const char $\ast$client\-\_\-name, const char $\ast$load\-\_\-name, const char $\ast$load\-\_\-init) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-Please use \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()}. 
+\item[\label{da/d58/deprecated__deprecated000009}%
+\hypertarget{da/d58/deprecated__deprecated000009}{}%
+\-Global \hyperlink{group__LatencyFunctions_ga47fa957309f9b3111010284e10cc1de0}{jack\-\_\-port\-\_\-get\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()} in any existing use cases.  
+\item[\label{da/d58/deprecated__deprecated000010}%
+\hypertarget{da/d58/deprecated__deprecated000010}{}%
+\-Global \hyperlink{group__LatencyFunctions_ga7f5835f17cb55a5ed64bb63cb18c462c}{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()} in any existing use cases.  
+\item[\label{da/d58/deprecated__deprecated000008}%
+\hypertarget{da/d58/deprecated__deprecated000008}{}%
+\-Global \hyperlink{group__LatencyFunctions_gaba121996f00bd96ceec5b1c1012fc767}{jack\-\_\-port\-\_\-set\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$, jack\-\_\-nframes\-\_\-t) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by a latency callback that calls \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()}.  
+\item[\label{da/d58/deprecated__deprecated000006}%
+\hypertarget{da/d58/deprecated__deprecated000006}{}%
+\-Global \hyperlink{group__PortFunctions_ga14afcad849c17bcd6cb739d14899cecf}{jack\-\_\-port\-\_\-tie} (jack\-\_\-port\-\_\-t $\ast$src, jack\-\_\-port\-\_\-t $\ast$dst) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This function will be removed from a future version of \-J\-A\-C\-K. \-Do not use it. \-There is no replacement. \-It has turned out to serve essentially no purpose in real-\/life \-J\-A\-C\-K clients.  
+\item[\label{da/d58/deprecated__deprecated000007}%
+\hypertarget{da/d58/deprecated__deprecated000007}{}%
+\-Global \hyperlink{group__PortFunctions_gaab2cfe13d90991fbf1d03a2050b93f54}{jack\-\_\-port\-\_\-untie} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This function will be removed from a future version of \-J\-A\-C\-K. \-Do not use it. \-There is no replacement. \-It has turned out to serve essentially no purpose in real-\/life \-J\-A\-C\-K clients.  
+\item[\label{da/d58/deprecated__deprecated000011}%
+\hypertarget{da/d58/deprecated__deprecated000011}{}%
+\-Global \hyperlink{group__LatencyFunctions_ga56372ab81d673cc4a419fd04cd3bfb8a}{jack\-\_\-recompute\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}{jack\-\_\-recompute\-\_\-total\-\_\-latencies()} in any existing use cases.  
+\item[\label{da/d58/deprecated__deprecated000013}%
+\hypertarget{da/d58/deprecated__deprecated000013}{}%
+\-Global \hyperlink{group__TransportControl_ga2539e041b424eab678e7ba1ee4777579}{jack\-\_\-set\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T]\-This function still exists for compatibility with the earlier transport interface, but it does nothing. \-Instead, define a \-::\-Jack\-Timebase\-Callback.  
+\item[\label{da/d58/deprecated__deprecated000004}%
+\hypertarget{da/d58/deprecated__deprecated000004}{}%
+\-Global \hyperlink{group__NonCallbackAPI_ga86dc8141bad2b111e2a753ec3fa3af26}{jack\-\_\-thread\-\_\-wait} (jack\-\_\-client\-\_\-t $\ast$, int status) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T]\-Please use \hyperlink{group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}{jack\-\_\-cycle\-\_\-wait()} and \hyperlink{group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}{jack\-\_\-cycle\-\_\-signal()} functions. 
+\end{DoxyRefList}

@@ -1,0 +1,86 @@
+\hypertarget{group__TimeFunctions}{\section{\-Handling time}
+\label{d8/dcd/group__TimeFunctions}\index{\-Handling time@{\-Handling time}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_gad52dc447fd9027922d466f695e697660}{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start} (const jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_ga45cec2e76db58e72b46339229de64697}{jack\-\_\-frame\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_gae09e1c61ff0c43d4daea6cf480b7b915}{jack\-\_\-last\-\_\-frame\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} \hyperlink{group__TimeFunctions_ga9338f5b4866b3e749647d9c4b41c23b6}{jack\-\_\-frames\-\_\-to\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_ga968ec852b3a33127425fbc479c99f14e}{jack\-\_\-time\-\_\-to\-\_\-frames} (const jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} \hyperlink{group__TimeFunctions_ga7cdc1d48f51bab3e88317b774b3b4193}{jack\-\_\-get\-\_\-time} () \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-J\-A\-C\-K time is in units of 'frames', according to the current sample rate. \-The absolute value of frame times is meaningless, frame times have meaning only relative to each other. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__TimeFunctions_ga45cec2e76db58e72b46339229de64697}{\index{\-Handling time@{\-Handling time}!jack\-\_\-frame\-\_\-time@{jack\-\_\-frame\-\_\-time}}
+\index{jack\-\_\-frame\-\_\-time@{jack\-\_\-frame\-\_\-time}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-frame\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-frame\-\_\-time} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_ga45cec2e76db58e72b46339229de64697}
+\begin{DoxyReturn}{\-Returns}
+the estimated current time in frames. \-This function is intended for use in other threads (not the process callback). \-The return value can be compared with the value of jack\-\_\-last\-\_\-frame\-\_\-time to relate time in other threads to \-J\-A\-C\-K time. 
+\end{DoxyReturn}
+\hypertarget{group__TimeFunctions_gad52dc447fd9027922d466f695e697660}{\index{\-Handling time@{\-Handling time}!jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start@{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start}}
+\index{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start@{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_gad52dc447fd9027922d466f695e697660}
+\begin{DoxyReturn}{\-Returns}
+the estimated time in frames that has passed since the \-J\-A\-C\-K server began the current process cycle. 
+\end{DoxyReturn}
+\hypertarget{group__TimeFunctions_ga9338f5b4866b3e749647d9c4b41c23b6}{\index{\-Handling time@{\-Handling time}!jack\-\_\-frames\-\_\-to\-\_\-time@{jack\-\_\-frames\-\_\-to\-\_\-time}}
+\index{jack\-\_\-frames\-\_\-to\-\_\-time@{jack\-\_\-frames\-\_\-to\-\_\-time}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-frames\-\_\-to\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-time\-\_\-t} {\bf jack\-\_\-frames\-\_\-to\-\_\-time} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_ga9338f5b4866b3e749647d9c4b41c23b6}
+\begin{DoxyReturn}{\-Returns}
+the estimated time in microseconds of the specified frame time 
+\end{DoxyReturn}
+\hypertarget{group__TimeFunctions_ga7cdc1d48f51bab3e88317b774b3b4193}{\index{\-Handling time@{\-Handling time}!jack\-\_\-get\-\_\-time@{jack\-\_\-get\-\_\-time}}
+\index{jack\-\_\-get\-\_\-time@{jack\-\_\-get\-\_\-time}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-get\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-time\-\_\-t} {\bf jack\-\_\-get\-\_\-time} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_ga7cdc1d48f51bab3e88317b774b3b4193}
+\begin{DoxyReturn}{\-Returns}
+return \-J\-A\-C\-K's current system time in microseconds, using the \-J\-A\-C\-K clock source.
+\end{DoxyReturn}
+\-The value returned is guaranteed to be monotonic, but not linear. \hypertarget{group__TimeFunctions_gae09e1c61ff0c43d4daea6cf480b7b915}{\index{\-Handling time@{\-Handling time}!jack\-\_\-last\-\_\-frame\-\_\-time@{jack\-\_\-last\-\_\-frame\-\_\-time}}
+\index{jack\-\_\-last\-\_\-frame\-\_\-time@{jack\-\_\-last\-\_\-frame\-\_\-time}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-last\-\_\-frame\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-last\-\_\-frame\-\_\-time} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_gae09e1c61ff0c43d4daea6cf480b7b915}
+\begin{DoxyReturn}{\-Returns}
+the precise time at the start of the current process cycle. \-This function may only be used from the process callback, and can be used to interpret timestamps generated by \hyperlink{group__TimeFunctions_ga45cec2e76db58e72b46339229de64697}{jack\-\_\-frame\-\_\-time()} in other threads with respect to the current process cycle.
+\end{DoxyReturn}
+\-This is the only jack time function that returns exact time\-: when used during the process callback it always returns the same value (until the next process callback, where it will return that value + nframes, etc). \-The return value is guaranteed to be monotonic and linear in this fashion unless an xrun occurs. \-If an xrun occurs, clients must check this value again, as time may have advanced in a non-\/linear way (e.\-g. cycles may have been skipped). \hypertarget{group__TimeFunctions_ga968ec852b3a33127425fbc479c99f14e}{\index{\-Handling time@{\-Handling time}!jack\-\_\-time\-\_\-to\-\_\-frames@{jack\-\_\-time\-\_\-to\-\_\-frames}}
+\index{jack\-\_\-time\-\_\-to\-\_\-frames@{jack\-\_\-time\-\_\-to\-\_\-frames}!Handling time@{\-Handling time}}
+\subsubsection[{jack\-\_\-time\-\_\-to\-\_\-frames}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-time\-\_\-to\-\_\-frames} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-time\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)}}\label{d8/dcd/group__TimeFunctions_ga968ec852b3a33127425fbc479c99f14e}
+\begin{DoxyReturn}{\-Returns}
+the estimated time in frames for the specified system time. 
+\end{DoxyReturn}

@@ -1,0 +1,351 @@
+\hypertarget{classPRBSGenerator}{\section{\-P\-R\-B\-S\-Generator \-Class \-Reference}
+\label{d6/db0/classPRBSGenerator}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}
+}
+
+
+{\ttfamily \#include $<$prbsgenerator.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \*
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcacf570f7420964756a71bc150d4622563}{\-G7} =  0x00000041, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca5ae6a89e9466218eeff42c23fccfc13f}{\-G8} =  0x0000008\-E, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcad37981381999a9cedbcb07c5c506d7cc}{\-G15} =  0x00004001, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca74d706cd120035b8ad5ade6afd4a764a}{\-G16} =  0x00008016, 
+\*
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca2c0916d9ea4f4f0a645dca7268dfe6f7}{\-G23} =  0x00400010, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcae4c01340f8921a9cd5ccfe51299ef671}{\-G24} =  0x0080000\-D, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcaa107bcb3d2c735cf3882b7e04759a5ad}{\-G31} =  0x40000004, 
+\hyperlink{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca6af75e7a6681f228e4ff8757f62333ab}{\-G32} =  0x80000057
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPRBSGenerator_ac503ed16e187261a8d724a02c231b11f}{\-P\-R\-B\-S\-Generator} (void)
+\item 
+void \hyperlink{classPRBSGenerator_a177cbca8f3cc1da63b4a29bc50cf2ad9}{set\-Poly} (uint32\-\_\-t \hyperlink{classPRBSGenerator_a19a3b9cb35dbff18b83d34bcafe22e05}{poly})
+\item 
+void \hyperlink{classPRBSGenerator_a5a5792cabc8312d00ed83decfb1c205a}{set\-Stat} (uint32\-\_\-t \hyperlink{classPRBSGenerator_ac72b113883fbfb329e105e34229cfd48}{stat})
+\item 
+void \hyperlink{classPRBSGenerator_aa72a859590fc719a74999da624824057}{sync\-\_\-forw} (uint32\-\_\-t bits)
+\item 
+void \hyperlink{classPRBSGenerator_a4cea29dcf49bc94d68b5673b9e37cc9f}{sync\-\_\-back} (uint32\-\_\-t bits)
+\item 
+int \hyperlink{classPRBSGenerator_a2c8b9d44afcef8dae17f7363ac1042a4}{step} (void)
+\item 
+void \hyperlink{classPRBSGenerator_afe70bb6ab4a6d59e58879ae38ebb9eed}{crc\-\_\-in} (int b)
+\item 
+int \hyperlink{classPRBSGenerator_a6a4ee8647635273b6709ee47eec55666}{crc\-\_\-out} (void)
+\item 
+uint32\-\_\-t \hyperlink{classPRBSGenerator_ac72b113883fbfb329e105e34229cfd48}{stat} (void) const 
+\item 
+uint32\-\_\-t \hyperlink{classPRBSGenerator_a19a3b9cb35dbff18b83d34bcafe22e05}{poly} (void) const 
+\item 
+uint32\-\_\-t \hyperlink{classPRBSGenerator_a3631d484226638d2a2d82e41394ee0be}{mask} (void) const 
+\item 
+uint32\-\_\-t \hyperlink{classPRBSGenerator_a9a13fad9b0e1b7bb19ddebc6e47e001b}{hbit} (void) const 
+\item 
+int \hyperlink{classPRBSGenerator_a817102ac5bb77f9af0665b595d54990a}{degr} (void) const 
+\item 
+\hyperlink{classPRBSGenerator_a3f52fa0d989363782e0363c3117fb1a1}{$\sim$\-P\-R\-B\-S\-Generator} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 102 of file prbsgenerator.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbc}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbc}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-G7@{\-G7}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G7@{\-G7}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcacf570f7420964756a71bc150d4622563}{\-G7}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcacf570f7420964756a71bc150d4622563}
+}]\index{\-G8@{\-G8}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G8@{\-G8}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca5ae6a89e9466218eeff42c23fccfc13f}{\-G8}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca5ae6a89e9466218eeff42c23fccfc13f}
+}]\index{\-G15@{\-G15}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G15@{\-G15}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcad37981381999a9cedbcb07c5c506d7cc}{\-G15}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcad37981381999a9cedbcb07c5c506d7cc}
+}]\index{\-G16@{\-G16}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G16@{\-G16}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca74d706cd120035b8ad5ade6afd4a764a}{\-G16}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca74d706cd120035b8ad5ade6afd4a764a}
+}]\index{\-G23@{\-G23}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G23@{\-G23}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca2c0916d9ea4f4f0a645dca7268dfe6f7}{\-G23}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca2c0916d9ea4f4f0a645dca7268dfe6f7}
+}]\index{\-G24@{\-G24}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G24@{\-G24}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcae4c01340f8921a9cd5ccfe51299ef671}{\-G24}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcae4c01340f8921a9cd5ccfe51299ef671}
+}]\index{\-G31@{\-G31}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G31@{\-G31}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcaa107bcb3d2c735cf3882b7e04759a5ad}{\-G31}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbcaa107bcb3d2c735cf3882b7e04759a5ad}
+}]\index{\-G32@{\-G32}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-G32@{\-G32}}\item[{\em 
+\hypertarget{classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca6af75e7a6681f228e4ff8757f62333ab}{\-G32}\label{d6/db0/classPRBSGenerator_a9c6fec99cf1a565c95e5e8488cdc4dbca6af75e7a6681f228e4ff8757f62333ab}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 106 of file prbsgenerator.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classPRBSGenerator_ac503ed16e187261a8d724a02c231b11f}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}}
+\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{\-P\-R\-B\-S\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-P\-R\-B\-S\-Generator\-::\-P\-R\-B\-S\-Generator} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_ac503ed16e187261a8d724a02c231b11f}
+
+
+\-Definition at line 149 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a3f52fa0d989363782e0363c3117fb1a1}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!$\sim$\-P\-R\-B\-S\-Generator@{$\sim$\-P\-R\-B\-S\-Generator}}
+\index{$\sim$\-P\-R\-B\-S\-Generator@{$\sim$\-P\-R\-B\-S\-Generator}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{$\sim$\-P\-R\-B\-S\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-P\-R\-B\-S\-Generator\-::$\sim$\-P\-R\-B\-S\-Generator} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a3f52fa0d989363782e0363c3117fb1a1}
+
+
+\-Definition at line 155 of file prbsgenerator.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classPRBSGenerator_afe70bb6ab4a6d59e58879ae38ebb9eed}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!crc\-\_\-in@{crc\-\_\-in}}
+\index{crc\-\_\-in@{crc\-\_\-in}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{crc\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-R\-B\-S\-Generator\-::crc\-\_\-in} (
+\begin{DoxyParamCaption}
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_afe70bb6ab4a6d59e58879ae38ebb9eed}
+
+
+\-Definition at line 230 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a6a4ee8647635273b6709ee47eec55666}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!crc\-\_\-out@{crc\-\_\-out}}
+\index{crc\-\_\-out@{crc\-\_\-out}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{crc\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-P\-R\-B\-S\-Generator\-::crc\-\_\-out} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a6a4ee8647635273b6709ee47eec55666}
+
+
+\-Definition at line 242 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a817102ac5bb77f9af0665b595d54990a}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!degr@{degr}}
+\index{degr@{degr}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{degr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-P\-R\-B\-S\-Generator\-::degr} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a817102ac5bb77f9af0665b595d54990a}
+
+
+\-Definition at line 262 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a9a13fad9b0e1b7bb19ddebc6e47e001b}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!hbit@{hbit}}
+\index{hbit@{hbit}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{hbit}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-P\-R\-B\-S\-Generator\-::hbit} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a9a13fad9b0e1b7bb19ddebc6e47e001b}
+
+
+\-Definition at line 260 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a3631d484226638d2a2d82e41394ee0be}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!mask@{mask}}
+\index{mask@{mask}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-P\-R\-B\-S\-Generator\-::mask} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a3631d484226638d2a2d82e41394ee0be}
+
+
+\-Definition at line 258 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_a19a3b9cb35dbff18b83d34bcafe22e05}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!poly@{poly}}
+\index{poly@{poly}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{poly}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-P\-R\-B\-S\-Generator\-::poly} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a19a3b9cb35dbff18b83d34bcafe22e05}
+
+
+\-Definition at line 256 of file prbsgenerator.\-h.
+
+
+
+\-Referenced by set\-Poly().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_a19a3b9cb35dbff18b83d34bcafe22e05_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classPRBSGenerator_a177cbca8f3cc1da63b4a29bc50cf2ad9}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!set\-Poly@{set\-Poly}}
+\index{set\-Poly@{set\-Poly}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{set\-Poly}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-R\-B\-S\-Generator\-::set\-Poly} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{poly}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a177cbca8f3cc1da63b4a29bc50cf2ad9}
+
+
+\-Definition at line 160 of file prbsgenerator.\-h.
+
+
+
+\-References poly().
+
+
+
+\-Referenced by \-Random\-Generator\-::init().
+
+
+
+\-Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_a177cbca8f3cc1da63b4a29bc50cf2ad9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_a177cbca8f3cc1da63b4a29bc50cf2ad9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classPRBSGenerator_a5a5792cabc8312d00ed83decfb1c205a}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!set\-Stat@{set\-Stat}}
+\index{set\-Stat@{set\-Stat}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{set\-Stat}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-R\-B\-S\-Generator\-::set\-Stat} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{stat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a5a5792cabc8312d00ed83decfb1c205a}
+
+
+\-Definition at line 178 of file prbsgenerator.\-h.
+
+
+
+\-Referenced by \-Random\-Generator\-::init().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_a5a5792cabc8312d00ed83decfb1c205a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classPRBSGenerator_ac72b113883fbfb329e105e34229cfd48}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!stat@{stat}}
+\index{stat@{stat}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{stat}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-P\-R\-B\-S\-Generator\-::stat} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_ac72b113883fbfb329e105e34229cfd48}
+
+
+\-Definition at line 254 of file prbsgenerator.\-h.
+
+
+
+\-Referenced by \-Random\-Generator\-::init().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_ac72b113883fbfb329e105e34229cfd48_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classPRBSGenerator_a2c8b9d44afcef8dae17f7363ac1042a4}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!step@{step}}
+\index{step@{step}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-P\-R\-B\-S\-Generator\-::step} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a2c8b9d44afcef8dae17f7363ac1042a4}
+
+
+\-Definition at line 188 of file prbsgenerator.\-h.
+
+
+
+\-Referenced by \-Random\-Generator\-::init().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db0/classPRBSGenerator_a2c8b9d44afcef8dae17f7363ac1042a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classPRBSGenerator_a4cea29dcf49bc94d68b5673b9e37cc9f}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!sync\-\_\-back@{sync\-\_\-back}}
+\index{sync\-\_\-back@{sync\-\_\-back}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{sync\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-R\-B\-S\-Generator\-::sync\-\_\-back} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_a4cea29dcf49bc94d68b5673b9e37cc9f}
+
+
+\-Definition at line 215 of file prbsgenerator.\-h.
+
+\hypertarget{classPRBSGenerator_aa72a859590fc719a74999da624824057}{\index{\-P\-R\-B\-S\-Generator@{\-P\-R\-B\-S\-Generator}!sync\-\_\-forw@{sync\-\_\-forw}}
+\index{sync\-\_\-forw@{sync\-\_\-forw}!PRBSGenerator@{\-P\-R\-B\-S\-Generator}}
+\subsubsection[{sync\-\_\-forw}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-R\-B\-S\-Generator\-::sync\-\_\-forw} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{d6/db0/classPRBSGenerator_aa72a859590fc719a74999da624824057}
+
+
+\-Definition at line 202 of file prbsgenerator.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libear/include/jnoise/\hyperlink{prbsgenerator_8h}{prbsgenerator.\-h}\end{DoxyCompactItemize}

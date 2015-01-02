@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$df/d89/jack_8h.html#abbd2041bca191943b6ef29a991a131c5" title="jack_client_open" alt="" coords="300,5,417,35"/>
+<area shape="rect" id="node5" href="$d7/d4f/group__ClientCallbacks.html#ga030cc371acb19abe52861492acb960ad" title="jack_set_buffer_size_callback" alt="" coords="260,59,457,88"/>
+<area shape="rect" id="node7" href="$d2/dd9/group__ErrorOutput.html#ga550faaef2bb17b03b0068fe094e7b92f" title="jack_set_error_function" alt="" coords="280,112,437,141"/>
+<area shape="rect" id="node9" href="$d2/dd9/group__ErrorOutput.html#ga1555b7b4ae4056a42c70a3fa278ae17f" title="jack_set_info_function" alt="" coords="283,165,435,195"/>
+<area shape="rect" id="node11" href="$d7/d4f/group__ClientCallbacks.html#gafb5ec9fb4b736606d676c135fb97888b" title="jack_set_process_callback" alt="" coords="269,219,448,248"/>
+<area shape="rect" id="node13" href="$d7/d4f/group__ClientCallbacks.html#gac1b3eb298cfa2869b8773c6cecf7f4b3" title="jack_set_sample_rate_callback" alt="" coords="257,272,460,301"/>
+</map>

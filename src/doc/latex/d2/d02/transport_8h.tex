@@ -1,0 +1,48 @@
+\hypertarget{transport_8h}{\section{3rdparty/jack/include/jack/transport.h \-File \-Reference}
+\label{d2/d02/transport_8h}\index{3rdparty/jack/include/jack/transport.\-h@{3rdparty/jack/include/jack/transport.\-h}}
+}
+{\ttfamily \#include $<$jack/types.\-h$>$}\*
+{\ttfamily \#include $<$jack/weakmacros.\-h$>$}\*
+\-Include dependency graph for transport.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{da/d53/transport_8h__incl}
+\end{center}
+\end{figure}
+\-This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d4e/transport_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__TransportControl_gaea06ff63b129ec6266b2b805b6c8216a}{jack\-\_\-release\-\_\-timebase} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Sync\-Callback sync\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga2e89b0bb8702d34bcbbe1eac70685ab2}{jack\-\_\-set\-\_\-sync\-\_\-timeout} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} timeout) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{jack\-\_\-set\-\_\-timebase\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, int conditional, \-Jack\-Timebase\-Callback timebase\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_gab3f52a42084aead87fd1ee75ed25b240}{jack\-\_\-transport\-\_\-locate} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} frame) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-transport\-\_\-state\-\_\-t \hyperlink{group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}{jack\-\_\-transport\-\_\-query} (const jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-position\-\_\-t $\ast$pos) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TransportControl_gaef1df9479faa3b7f400c787be173f805}{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame} (const jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga6e51cb0600c5ba298546dc5420e0ccbc}{jack\-\_\-transport\-\_\-reposition} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-position\-\_\-t $\ast$pos) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_gab7b158bec8f27c03da29795f142d1caf}{jack\-\_\-transport\-\_\-start} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_ga6be6637c314bd88344826e9bcc1957b0}{jack\-\_\-transport\-\_\-stop} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_gaa3f548f66e8c9a4f271ef97a87ecb240}{jack\-\_\-get\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_ga2539e041b424eab678e7ba1ee4777579}{jack\-\_\-set\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}

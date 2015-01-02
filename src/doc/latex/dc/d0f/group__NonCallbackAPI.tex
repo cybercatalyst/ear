@@ -1,0 +1,79 @@
+\hypertarget{group__NonCallbackAPI}{\section{\-The non-\/callback \-A\-P\-I}
+\label{dc/d0f/group__NonCallbackAPI}\index{\-The non-\/callback A\-P\-I@{\-The non-\/callback A\-P\-I}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__NonCallbackAPI_ga86dc8141bad2b111e2a753ec3fa3af26}{jack\-\_\-thread\-\_\-wait} (jack\-\_\-client\-\_\-t $\ast$, int status) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}{jack\-\_\-cycle\-\_\-wait} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}{jack\-\_\-cycle\-\_\-signal} (jack\-\_\-client\-\_\-t $\ast$client, int status) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__NonCallbackAPI_ga4aacb70f0e10eb6b9db9d58c415d8633}{jack\-\_\-set\-\_\-process\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Thread\-Callback thread\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}{\index{\-The non-\/callback A\-P\-I@{\-The non-\/callback A\-P\-I}!jack\-\_\-cycle\-\_\-signal@{jack\-\_\-cycle\-\_\-signal}}
+\index{jack\-\_\-cycle\-\_\-signal@{jack\-\_\-cycle\-\_\-signal}!The non-callback API@{\-The non-\/callback A\-P\-I}}
+\subsubsection[{jack\-\_\-cycle\-\_\-signal}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-cycle\-\_\-signal} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{int}]{status}
+\end{DoxyParamCaption}
+)}}\label{dc/d0f/group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}
+\-Signal next clients in the graph.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & -\/ pointer to a \-J\-A\-C\-K client structure \\
+\hline
+{\em status} & -\/ if non-\/zero, calling thread should exit \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}{\index{\-The non-\/callback A\-P\-I@{\-The non-\/callback A\-P\-I}!jack\-\_\-cycle\-\_\-wait@{jack\-\_\-cycle\-\_\-wait}}
+\index{jack\-\_\-cycle\-\_\-wait@{jack\-\_\-cycle\-\_\-wait}!The non-callback API@{\-The non-\/callback A\-P\-I}}
+\subsubsection[{jack\-\_\-cycle\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-cycle\-\_\-wait} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{dc/d0f/group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}
+\-Wait until this \-J\-A\-C\-K client should process data.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & -\/ pointer to a \-J\-A\-C\-K client structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the number of frames of data to process 
+\end{DoxyReturn}
+\hypertarget{group__NonCallbackAPI_ga4aacb70f0e10eb6b9db9d58c415d8633}{\index{\-The non-\/callback A\-P\-I@{\-The non-\/callback A\-P\-I}!jack\-\_\-set\-\_\-process\-\_\-thread@{jack\-\_\-set\-\_\-process\-\_\-thread}}
+\index{jack\-\_\-set\-\_\-process\-\_\-thread@{jack\-\_\-set\-\_\-process\-\_\-thread}!The non-callback API@{\-The non-\/callback A\-P\-I}}
+\subsubsection[{jack\-\_\-set\-\_\-process\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-process\-\_\-thread} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{\-Jack\-Thread\-Callback}]{thread\-\_\-callback, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{dc/d0f/group__NonCallbackAPI_ga4aacb70f0e10eb6b9db9d58c415d8633}
+\-Tell the \-Jack server to call {\itshape thread\-\_\-callback\/} in the \-R\-T thread. \-Typical use are in conjunction with {\itshape jack\-\_\-cycle\-\_\-wait\/} and {\itshape jack\-\_\-cycle\-\_\-signal\/} functions. \-The code in the supplied function must be suitable for real-\/time execution. \-That means that it cannot call functions that might block for a long time. \-This includes malloc, free, printf, pthread\-\_\-mutex\-\_\-lock, sleep, wait, poll, select, pthread\-\_\-join, pthread\-\_\-cond\-\_\-wait, etc, etc. \-See \href{http://jackit.sourceforge.net/docs/design/design.html#SECTION00411000000000000000}{\tt http\-://jackit.\-sourceforge.\-net/docs/design/design.\-html\#\-S\-E\-C\-T\-I\-O\-N00411000000000000000} for more information.
+
+\-N\-O\-T\-E\-: this function cannot be called while the client is activated (after jack\-\_\-activate has been called.)
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__NonCallbackAPI_ga86dc8141bad2b111e2a753ec3fa3af26}{\index{\-The non-\/callback A\-P\-I@{\-The non-\/callback A\-P\-I}!jack\-\_\-thread\-\_\-wait@{jack\-\_\-thread\-\_\-wait}}
+\index{jack\-\_\-thread\-\_\-wait@{jack\-\_\-thread\-\_\-wait}!The non-callback API@{\-The non-\/callback A\-P\-I}}
+\subsubsection[{jack\-\_\-thread\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-thread\-\_\-wait} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{int}]{status}
+\end{DoxyParamCaption}
+)}}\label{dc/d0f/group__NonCallbackAPI_ga86dc8141bad2b111e2a753ec3fa3af26}
+\-T\-H\-I\-S \-F\-U\-N\-C\-T\-I\-O\-N \-I\-S \-D\-E\-P\-R\-E\-C\-A\-T\-E\-D \-A\-N\-D \-S\-H\-O\-U\-L\-D \-N\-O\-T \-B\-E \-U\-S\-E\-D \-I\-N \-N\-E\-W \-J\-A\-C\-K \-C\-L\-I\-E\-N\-T\-S.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{\-Deprecated}]\-Please use \hyperlink{group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}{jack\-\_\-cycle\-\_\-wait()} and \hyperlink{group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}{jack\-\_\-cycle\-\_\-signal()} functions. \end{DoxyRefDesc}

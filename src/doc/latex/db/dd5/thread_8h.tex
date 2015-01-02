@@ -1,0 +1,59 @@
+\hypertarget{thread_8h}{\section{3rdparty/jack/include/jack/thread.h \-File \-Reference}
+\label{db/dd5/thread_8h}\index{3rdparty/jack/include/jack/thread.\-h@{3rdparty/jack/include/jack/thread.\-h}}
+}
+{\ttfamily \#include $<$jack/systemdeps.\-h$>$}\*
+{\ttfamily \#include $<$jack/weakmacros.\-h$>$}\*
+\-Include dependency graph for thread.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{d8/d2d/thread_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{thread_8h_af9a5d6addf893be0502ae41f52e794b2}{\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K}~524288
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}{jack\-\_\-thread\-\_\-creator\-\_\-t} )(pthread\-\_\-t $\ast$, const pthread\-\_\-attr\-\_\-t $\ast$, void $\ast$($\ast$function)(void $\ast$), void $\ast$arg)
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__ClientThreads_ga4ee2fcbb266618d66a2cf354d8c54359}{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gaa266166c958e1b745ce48ef7ca89890f}{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gaec301b7cb1dcd39d7fc88fa9f769dab8}{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling} (jack\-\_\-native\-\_\-thread\-\_\-t thread, int priority) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga522094adfc39ec4770d8e82bd601e365}{jack\-\_\-client\-\_\-create\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t $\ast$thread, int priority, int realtime, void $\ast$($\ast$start\-\_\-routine)(void $\ast$), void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga0d75ca78f4088f515f1befc108f3f2e7}{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling} (jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga2a9f33ed2464d4b110a27c9c35792b24}{jack\-\_\-client\-\_\-stop\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gad170c52942d07538dc0b3d4886405526}{jack\-\_\-client\-\_\-kill\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ClientThreads_ga157ab0ade60e266ffd26ddffdb5545af}{jack\-\_\-set\-\_\-thread\-\_\-creator} (\hyperlink{group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}{jack\-\_\-thread\-\_\-creator\-\_\-t} creator) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Library functions to standardize thread creation for \-J\-A\-C\-K and its clients. \-These interfaces hide some system variations in the handling of realtime scheduling and associated privileges. 
+
+\-Definition in file \hyperlink{thread_8h_source}{thread.\-h}.
+
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{thread_8h_af9a5d6addf893be0502ae41f52e794b2}{\index{thread.\-h@{thread.\-h}!\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K@{\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K}}
+\index{\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K@{\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K}!thread.h@{thread.\-h}}
+\subsubsection[{\-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-H\-R\-E\-A\-D\-\_\-\-S\-T\-A\-C\-K}~524288}}\label{db/dd5/thread_8h_af9a5d6addf893be0502ae41f52e794b2}
+
+
+\-Definition at line 33 of file thread.\-h.
+

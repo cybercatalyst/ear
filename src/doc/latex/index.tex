@@ -1,0 +1,39 @@
+\subsection*{\-Description}
+
+\-This project started as an academic elaboration at the \-University of \-Applied \-Science in \-Iserlohn, the \-Institute \-C\-V \& \-C\-I (\-Institute for \-Computer \-Science, \-Vision and \-Computational \-Intelligence). \-E\-A\-R tries to compensate the difference between the audio signal source as a reference and the measured input obtained by a microphone. \-This way, \-E\-A\-R tries to compensate the impacts of the loudspeakers on the music. \par
+ \subsection*{\-Jack}
+
+\-J\-A\-C\-K is a system for handling real-\/time, low latency audio (and \-M\-I\-D\-I). \-It runs on \-G\-N\-U/\-Linux, \-Solaris, \-Free\-B\-S\-D, \-O\-S \-X and \-Windows (and can be ported to other \-P\-O\-S\-I\-X-\/conformant platforms). \-It can connect a number of different applications to an audio device, as well as allowing them to share audio between themselves. \-Its clients can run in their own processes (ie. as normal applications), or can they can run within the \-J\-A\-C\-K server (ie. as a \char`\"{}plugin\char`\"{}). \-J\-A\-C\-K also has support for distributing audio processing across a network, both fast \& reliable \-L\-A\-Ns as well as slower, less reliable \-W\-A\-Ns. \par
+ \-J\-A\-C\-K was designed from the ground up for professional audio work, and its design focuses on two key areas\-: synchronous execution of all clients, and low latency operation. \par
+ \-This description was copied from \href{http://jackaudio.org/}{\tt \-Jack \-Audio \-Connection \-Kit -\/ \-Copyright 2001-\/2006 \-Paul \-Davis} at 21.\-09.\-2011. \par
+ \subsubsection*{\-Setting up \-E\-A\-R}
+
+\-E\-A\-R is running on top of \-J\-A\-C\-K. \-At first, you need to download and install \-J\-A\-C\-K for your operating system. \-Though \-J\-A\-C\-K is running as a separate process and can be configured via the command line it is recommended to use \-Q\-Jack\-Control, which provides a graphical user interface that allows you to set up the \-J\-A\-C\-K audio server, draw connections and view system messages. \par
+\par
+ {\bfseries \-Required \-J\-A\-C\-K server \-Settings for \-Windows \-X\-P and \-Windows 7\-:}
+\begin{DoxyItemize}
+\item \-Driver\-: portaudio
+\item \-Real-\/time\-: \-On
+\item \-Frames\-: 4096
+\item \-Sample\-Rate\-: 44100
+\item \-Buffer\-: 2
+\end{DoxyItemize}
+
+\par
+ {\bfseries \-Required \-J\-A\-C\-K server settings for \-Ubuntu\-:}
+\begin{DoxyItemize}
+\item \-Driver\-: alsa
+\item \-Real-\/time\-: \-On
+\item \-Frames\-: 4096
+\item \-Sample\-Rate\-: 44100
+\item \-Buffer\-: 2
+\end{DoxyItemize}
+
+\-Make sure the server is running and launch \-E\-A\-R. \-Connect your music player of choice to the 'source' input. \-On \-Windows, the developers have successfully used \-Mixxx, which provides native \-J\-A\-C\-K support on \-Windows. \-Connect the 'main'-\/output to your speakers. \-Now you should be able to loop through music. \-Finally, connect a microphone to your computer and connect it to the 'mic'-\/input in \-J\-A\-C\-K. \par
+ \subsection*{\-Latency \-Calibration}
+
+\-To achieve best results, you will need to find out the latency for the regulating loop. \-Click on '\-Calibrate'. \-This will send out a click tone on your speakers that will be received through the microphone. \-As soon as the click sound will be received, the next will be send. \-Try to avoid making noise during the calibration process. \begin{DoxyAuthor}{\-Author}
+\-Jacob \-Dawid (\href{mailto:jacob.dawid@cybercatalyst.net}{\tt jacob.\-dawid@cybercatalyst.\-net}) 
+
+\-Otto \-Ritter (\href{mailto:otto.ritter.or@googlemail.com}{\tt otto.\-ritter.\-or@googlemail.\-com}) 
+\end{DoxyAuthor}

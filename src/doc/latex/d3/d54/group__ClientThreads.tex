@@ -1,0 +1,183 @@
+\hypertarget{group__ClientThreads}{\section{\-Creating and managing client threads}
+\label{d3/d54/group__ClientThreads}\index{\-Creating and managing client threads@{\-Creating and managing client threads}}
+}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}{jack\-\_\-thread\-\_\-creator\-\_\-t} )(pthread\-\_\-t $\ast$, const pthread\-\_\-attr\-\_\-t $\ast$, void $\ast$($\ast$function)(void $\ast$), void $\ast$arg)
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__ClientThreads_ga4ee2fcbb266618d66a2cf354d8c54359}{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gaa266166c958e1b745ce48ef7ca89890f}{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gaec301b7cb1dcd39d7fc88fa9f769dab8}{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling} (jack\-\_\-native\-\_\-thread\-\_\-t thread, int priority) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga522094adfc39ec4770d8e82bd601e365}{jack\-\_\-client\-\_\-create\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t $\ast$thread, int priority, int realtime, void $\ast$($\ast$start\-\_\-routine)(void $\ast$), void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga0d75ca78f4088f515f1befc108f3f2e7}{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling} (jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_ga2a9f33ed2464d4b110a27c9c35792b24}{jack\-\_\-client\-\_\-stop\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientThreads_gad170c52942d07538dc0b3d4886405526}{jack\-\_\-client\-\_\-kill\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-native\-\_\-thread\-\_\-t thread) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ClientThreads_ga157ab0ade60e266ffd26ddffdb5545af}{jack\-\_\-set\-\_\-thread\-\_\-creator} (\hyperlink{group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}{jack\-\_\-thread\-\_\-creator\-\_\-t} creator) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-thread\-\_\-creator\-\_\-t@{jack\-\_\-thread\-\_\-creator\-\_\-t}}
+\index{jack\-\_\-thread\-\_\-creator\-\_\-t@{jack\-\_\-thread\-\_\-creator\-\_\-t}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-thread\-\_\-creator\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ {\bf jack\-\_\-thread\-\_\-creator\-\_\-t})(pthread\-\_\-t $\ast$, const pthread\-\_\-attr\-\_\-t $\ast$, void $\ast$($\ast$function)(void $\ast$), void $\ast$arg)}}\label{d3/d54/group__ClientThreads_ga9f8adda8b9aad771b6b3bb663f798264}
+
+
+\-Definition at line 127 of file thread.\-h.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__ClientThreads_gaec301b7cb1dcd39d7fc88fa9f769dab8}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling@{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling}}
+\index{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling@{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-acquire\-\_\-real\-\_\-time\-\_\-scheduling} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-native\-\_\-thread\-\_\-t}]{thread, }
+\item[{int}]{priority}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_gaec301b7cb1dcd39d7fc88fa9f769dab8}
+\-Attempt to enable realtime scheduling for a thread. \-On some systems that may require special privileges.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em thread} & \-P\-O\-S\-I\-X thread \-I\-D. \\
+\hline
+{\em priority} & requested thread priority.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0, if successful; \-E\-P\-E\-R\-M, if the calling process lacks required realtime privileges; otherwise some other error number. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_ga522094adfc39ec4770d8e82bd601e365}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-client\-\_\-create\-\_\-thread@{jack\-\_\-client\-\_\-create\-\_\-thread}}
+\index{jack\-\_\-client\-\_\-create\-\_\-thread@{jack\-\_\-client\-\_\-create\-\_\-thread}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-client\-\_\-create\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-create\-\_\-thread} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-native\-\_\-thread\-\_\-t $\ast$}]{thread, }
+\item[{int}]{priority, }
+\item[{int}]{realtime, }
+\item[{void $\ast$($\ast$)(void $\ast$)}]{start\-\_\-routine, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_ga522094adfc39ec4770d8e82bd601e365}
+\-Create a thread for \-J\-A\-C\-K or one of its clients. \-The thread is created executing {\itshape start\-\_\-routine\/} with {\itshape arg\/} as its sole argument.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client for whom the thread is being created. \-May be \-N\-U\-L\-L if the client is being created within the \-J\-A\-C\-K server. \\
+\hline
+{\em thread} & place to return \-P\-O\-S\-I\-X thread \-I\-D. \\
+\hline
+{\em priority} & thread priority, if realtime. \\
+\hline
+{\em realtime} & true for the thread to use realtime scheduling. \-On some systems that may require special privileges. \\
+\hline
+{\em start\-\_\-routine} & function the thread calls when it starts. \\
+\hline
+{\em arg} & parameter passed to the {\itshape start\-\_\-routine\/}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0, if successful; otherwise some error number. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_gad170c52942d07538dc0b3d4886405526}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-client\-\_\-kill\-\_\-thread@{jack\-\_\-client\-\_\-kill\-\_\-thread}}
+\index{jack\-\_\-client\-\_\-kill\-\_\-thread@{jack\-\_\-client\-\_\-kill\-\_\-thread}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-client\-\_\-kill\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-kill\-\_\-thread} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-native\-\_\-thread\-\_\-t}]{thread}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_gad170c52942d07538dc0b3d4886405526}
+\-Cancel the thread then waits for the thread handler to terminate.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em thread} & \-P\-O\-S\-I\-X thread \-I\-D.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0, if successful; otherwise an error number. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_gaa266166c958e1b745ce48ef7ca89890f}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority@{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority}}
+\index{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority@{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-max\-\_\-real\-\_\-time\-\_\-priority} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_gaa266166c958e1b745ce48ef7ca89890f}
+\begin{DoxyReturn}{\-Returns}
+if \-J\-A\-C\-K is running with realtime scheduling, this returns the maximum priority that a \-J\-A\-C\-K client thread should use if the thread is subject to realtime scheduling. \-Otherwise returns -\/1. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_ga4ee2fcbb266618d66a2cf354d8c54359}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority@{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority}}
+\index{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority@{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-real\-\_\-time\-\_\-priority} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_ga4ee2fcbb266618d66a2cf354d8c54359}
+\begin{DoxyReturn}{\-Returns}
+if \-J\-A\-C\-K is running with realtime scheduling, this returns the priority that any \-J\-A\-C\-K-\/created client threads will run at. \-Otherwise returns -\/1. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_ga2a9f33ed2464d4b110a27c9c35792b24}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-client\-\_\-stop\-\_\-thread@{jack\-\_\-client\-\_\-stop\-\_\-thread}}
+\index{jack\-\_\-client\-\_\-stop\-\_\-thread@{jack\-\_\-client\-\_\-stop\-\_\-thread}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-client\-\_\-stop\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-stop\-\_\-thread} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-native\-\_\-thread\-\_\-t}]{thread}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_ga2a9f33ed2464d4b110a27c9c35792b24}
+\-Stop the thread, waiting for the thread handler to terminate.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em thread} & \-P\-O\-S\-I\-X thread \-I\-D.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0, if successful; otherwise an error number. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_ga0d75ca78f4088f515f1befc108f3f2e7}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling@{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling}}
+\index{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling@{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-drop\-\_\-real\-\_\-time\-\_\-scheduling} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-native\-\_\-thread\-\_\-t}]{thread}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_ga0d75ca78f4088f515f1befc108f3f2e7}
+\-Drop realtime scheduling for a thread.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em thread} & \-P\-O\-S\-I\-X thread \-I\-D.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0, if successful; otherwise an error number. 
+\end{DoxyReturn}
+\hypertarget{group__ClientThreads_ga157ab0ade60e266ffd26ddffdb5545af}{\index{\-Creating and managing client threads@{\-Creating and managing client threads}!jack\-\_\-set\-\_\-thread\-\_\-creator@{jack\-\_\-set\-\_\-thread\-\_\-creator}}
+\index{jack\-\_\-set\-\_\-thread\-\_\-creator@{jack\-\_\-set\-\_\-thread\-\_\-creator}!Creating and managing client threads@{\-Creating and managing client threads}}
+\subsubsection[{jack\-\_\-set\-\_\-thread\-\_\-creator}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-set\-\_\-thread\-\_\-creator} (
+\begin{DoxyParamCaption}
+\item[{{\bf jack\-\_\-thread\-\_\-creator\-\_\-t}}]{creator}
+\end{DoxyParamCaption}
+)}}\label{d3/d54/group__ClientThreads_ga157ab0ade60e266ffd26ddffdb5545af}
+\-This function can be used in very very specialized cases where it is necessary that client threads created by \-J\-A\-C\-K are created by something other than pthread\-\_\-create(). \-After it is used, any threads that \-J\-A\-C\-K needs for the client will will be created by calling the function passed to this function.
+
+\-No normal application/client should consider calling this. \-The specific case for which it was created involves running win32/x86 plugins under \-Wine on \-Linux, where it is necessary that all threads that might call win32 functions are known to \-Wine.
+
+\-Set it to \-N\-U\-L\-L to restore thread creation function.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em creator} & a function that creates a new thread \\
+\hline
+\end{DoxyParams}

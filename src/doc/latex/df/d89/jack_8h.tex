@@ -1,0 +1,513 @@
+\hypertarget{jack_8h}{\section{3rdparty/jack/include/jack/jack.h \-File \-Reference}
+\label{df/d89/jack_8h}\index{3rdparty/jack/include/jack/jack.\-h@{3rdparty/jack/include/jack/jack.\-h}}
+}
+{\ttfamily \#include $<$jack/systemdeps.\-h$>$}\*
+{\ttfamily \#include $<$jack/types.\-h$>$}\*
+{\ttfamily \#include $<$jack/transport.\-h$>$}\*
+{\ttfamily \#include $<$jack/weakmacros.\-h$>$}\*
+\-Include dependency graph for jack.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{df/d8e/jack_8h__incl}
+\end{center}
+\end{figure}
+\-This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d21/jack_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{jack_8h_a6b79d486b8b5365750cec851c6d076f7}{jack\-\_\-get\-\_\-version} (int $\ast$major\-\_\-ptr, int $\ast$minor\-\_\-ptr, int $\ast$micro\-\_\-ptr, int $\ast$proto\-\_\-ptr) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{jack_8h_a47723977d5370170f3b9498eeb932ce3}{jack\-\_\-get\-\_\-version\-\_\-string} () \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-client\-\_\-t $\ast$ \hyperlink{jack_8h_abbd2041bca191943b6ef29a991a131c5}{jack\-\_\-client\-\_\-open} (const char $\ast$client\-\_\-name, jack\-\_\-options\-\_\-t options, jack\-\_\-status\-\_\-t $\ast$status,...) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-client\-\_\-t $\ast$ \hyperlink{jack_8h_a97482adad8116b76635a63f646a2d2f5}{jack\-\_\-client\-\_\-new} (const char $\ast$client\-\_\-name) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{jack_8h_a405646705e600d8bf66327bdbab8e363}{jack\-\_\-client\-\_\-close} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{jack\-\_\-client\-\_\-name\-\_\-size} (void) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+char $\ast$ \hyperlink{jack_8h_a49f7d301475b45a8a3cc0da848d81e2f}{jack\-\_\-get\-\_\-client\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_a87be6679700acc40a0da17ac9ba3a31e}{jack\-\_\-internal\-\_\-client\-\_\-new} (const char $\ast$client\-\_\-name, const char $\ast$load\-\_\-name, const char $\ast$load\-\_\-init) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{jack_8h_a0ad890884c983c78ba93ed2d9b8ee8cc}{jack\-\_\-internal\-\_\-client\-\_\-close} (const char $\ast$client\-\_\-name) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8}{jack\-\_\-activate} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_a2c6447b766b13d3aa356aba2b48e51fa}{jack\-\_\-deactivate} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_a061be5cff05ea66cc4de032bb51f414a}{jack\-\_\-get\-\_\-client\-\_\-pid} (const char $\ast$name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-native\-\_\-thread\-\_\-t \hyperlink{jack_8h_a4e78f0a2ca6c837709c7ec641afd9954}{jack\-\_\-client\-\_\-thread\-\_\-id} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_a15719a4abdcc5fa8415167dd6ed6512c}{jack\-\_\-is\-\_\-realtime} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__NonCallbackAPI_ga86dc8141bad2b111e2a753ec3fa3af26}{jack\-\_\-thread\-\_\-wait} (jack\-\_\-client\-\_\-t $\ast$, int status) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__NonCallbackAPI_gabf0867ccf1ba257d84455d95ef3e1632}{jack\-\_\-cycle\-\_\-wait} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__NonCallbackAPI_ga4da168f4fb79585b19bc40db3bb06409}{jack\-\_\-cycle\-\_\-signal} (jack\-\_\-client\-\_\-t $\ast$client, int status) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__NonCallbackAPI_ga4aacb70f0e10eb6b9db9d58c415d8633}{jack\-\_\-set\-\_\-process\-\_\-thread} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Thread\-Callback thread\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_gad5a6904292f5c9790223c18aeab202bf}{jack\-\_\-set\-\_\-thread\-\_\-init\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Thread\-Init\-Callback thread\-\_\-init\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ClientCallbacks_gac23222530f27e0fc3a4b3a033036abdb}{jack\-\_\-on\-\_\-shutdown} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Shutdown\-Callback shutdown\-\_\-callback, void $\ast$arg) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__ClientCallbacks_ga2a23a30390a65f7f1a4f66315647413a}{jack\-\_\-on\-\_\-info\-\_\-shutdown} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Info\-Shutdown\-Callback shutdown\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_gafb5ec9fb4b736606d676c135fb97888b}{jack\-\_\-set\-\_\-process\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Process\-Callback process\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_gae797e2cde20faecb9be510c8873fbdd6}{jack\-\_\-set\-\_\-freewheel\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Freewheel\-Callback freewheel\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga030cc371acb19abe52861492acb960ad}{jack\-\_\-set\-\_\-buffer\-\_\-size\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Buffer\-Size\-Callback bufsize\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_gac1b3eb298cfa2869b8773c6cecf7f4b3}{jack\-\_\-set\-\_\-sample\-\_\-rate\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Sample\-Rate\-Callback srate\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga51b01a31e56c92f4e2788a94840f0f37}{jack\-\_\-set\-\_\-client\-\_\-registration\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Client\-Registration\-Callback registration\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga30983a0478551a3cd20b71d692b24007}{jack\-\_\-set\-\_\-port\-\_\-registration\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Port\-Registration\-Callback registration\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga5312576d779c0664a7c703c87a9dba89}{jack\-\_\-set\-\_\-port\-\_\-connect\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Port\-Connect\-Callback connect\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga0c73095c1d8ebba413de6834bd7757b9}{jack\-\_\-set\-\_\-port\-\_\-rename\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Port\-Rename\-Callback rename\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_gacd0804ccef7c6891d8265bd88e7429ee}{jack\-\_\-set\-\_\-graph\-\_\-order\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Graph\-Order\-Callback graph\-\_\-callback, void $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ClientCallbacks_ga08196c75f06d9e68f9a3570dfcb1e323}{jack\-\_\-set\-\_\-xrun\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-X\-Run\-Callback xrun\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}{jack\-\_\-set\-\_\-latency\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$, \-Jack\-Latency\-Callback latency\-\_\-callback, void $\ast$) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__ServerClientControl_gad65c741a1d1d2fb09efacf51437b841a}{jack\-\_\-set\-\_\-freewheel} (jack\-\_\-client\-\_\-t $\ast$client, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ServerClientControl_gad96bda0901b924f5996e02e41a979685}{jack\-\_\-set\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} nframes) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__ServerClientControl_ga62022d4f2fbfba065f0874a497afd3b4}{jack\-\_\-get\-\_\-sample\-\_\-rate} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__ServerClientControl_gad1f5972836af7e72e6d79ed6bc53916f}{jack\-\_\-get\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__ServerClientControl_ga2db0a4e9ab7b6d9984e91abba27ab71d}{jack\-\_\-engine\-\_\-takeover\-\_\-timebase} (jack\-\_\-client\-\_\-t $\ast$) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+float \hyperlink{group__ServerClientControl_ga9136d56397ad4f394a8b169462f5683b}{jack\-\_\-cpu\-\_\-load} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortFunctions_ga3e21d145c3c82d273a889272f0e405e7}{jack\-\_\-port\-\_\-register} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-name, const char $\ast$port\-\_\-type, unsigned long flags, unsigned long buffer\-\_\-size) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga9ac3ccd93be18999c0bd817bc032e876}{jack\-\_\-port\-\_\-unregister} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void $\ast$ \hyperlink{group__PortFunctions_ga209880b64774dd039c703ea8e3b9ca63}{jack\-\_\-port\-\_\-get\-\_\-buffer} (jack\-\_\-port\-\_\-t $\ast$, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_ga2abf1e9c3fa7d2afae6fd85a6e2ba843}{jack\-\_\-port\-\_\-name} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_gaf1554d11abaff29321db1daf1fa614c1}{jack\-\_\-port\-\_\-short\-\_\-name} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga2c9ed0ee016e19070b2e42f7f0a12b95}{jack\-\_\-port\-\_\-flags} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$ \hyperlink{group__PortFunctions_gae2b2ef9ef3ba606be342a7d2c292cb00}{jack\-\_\-port\-\_\-type} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aaa73ac8abfc0f11db61444f9a4812e42}{jack\-\_\-port\-\_\-type\-\_\-id\-\_\-t} \hyperlink{group__PortFunctions_ga443f950e5fe4dd3ba9e1f4530bb172a4}{jack\-\_\-port\-\_\-type\-\_\-id} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga2935e21ef49da7a420aca8cd25e179e6}{jack\-\_\-port\-\_\-is\-\_\-mine} (const jack\-\_\-client\-\_\-t $\ast$, const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gafa704768d67d1a30f263a9384d845b14}{jack\-\_\-port\-\_\-connected} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga996d8f5176b87bb8d333208468b6af12}{jack\-\_\-port\-\_\-connected\-\_\-to} (const jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortFunctions_gac1c942d03daee62ac6d0ed0ad044de43}{jack\-\_\-port\-\_\-get\-\_\-connections} (const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortFunctions_ga4e1bd29a68acb4fb45f75931de0d36b2}{jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections} (const jack\-\_\-client\-\_\-t $\ast$client, const jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga14afcad849c17bcd6cb739d14899cecf}{jack\-\_\-port\-\_\-tie} (jack\-\_\-port\-\_\-t $\ast$src, jack\-\_\-port\-\_\-t $\ast$dst) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__PortFunctions_gaab2cfe13d90991fbf1d03a2050b93f54}{jack\-\_\-port\-\_\-untie} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__PortFunctions_ga9d335578836fd76d4a922403efaedc5c}{jack\-\_\-port\-\_\-set\-\_\-name} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gae76a201e7a6dfe3af6ee78b99a055117}{jack\-\_\-port\-\_\-set\-\_\-alias} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$alias) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga51af66966211d2a81a749ab2f689872d}{jack\-\_\-port\-\_\-unset\-\_\-alias} (jack\-\_\-port\-\_\-t $\ast$port, const char $\ast$alias) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga3fcae6e043fdb3ac87b173ff4cbf88d9}{jack\-\_\-port\-\_\-get\-\_\-aliases} (const jack\-\_\-port\-\_\-t $\ast$port, char $\ast$const aliases\mbox{[}2\mbox{]}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gab30737dde8a3168a575863de35ed5895}{jack\-\_\-port\-\_\-request\-\_\-monitor} (jack\-\_\-port\-\_\-t $\ast$port, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga5fd1725d66427287abbec29fbae9214b}{jack\-\_\-port\-\_\-request\-\_\-monitor\-\_\-by\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-name, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga75f0438ba447ad96ae890c1922e4af0d}{jack\-\_\-port\-\_\-ensure\-\_\-monitor} (jack\-\_\-port\-\_\-t $\ast$port, int onoff) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga5e52890253590c913913765edf0f9606}{jack\-\_\-port\-\_\-monitoring\-\_\-input} (jack\-\_\-port\-\_\-t $\ast$port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gae6090e81f2ee23b5c0e432a899085ec8}{jack\-\_\-connect} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$source\-\_\-port, const char $\ast$destination\-\_\-port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gaf2bd9f649c51dafdb382847f0c15963f}{jack\-\_\-disconnect} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$source\-\_\-port, const char $\ast$destination\-\_\-port) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga92f84d611d7dea399bc97516799ef89d}{jack\-\_\-port\-\_\-disconnect} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_gabaebfd70bedfaecc834ebb02f4546eb1}{jack\-\_\-port\-\_\-name\-\_\-size} (void) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__PortFunctions_ga8acf71c319f50c5789f7454e4b6ef2e5}{jack\-\_\-port\-\_\-type\-\_\-size} (void) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+size\-\_\-t \hyperlink{group__PortFunctions_ga52a65a0dd00695ecf75e23f1bd48f96a}{jack\-\_\-port\-\_\-type\-\_\-get\-\_\-buffer\-\_\-size} (jack\-\_\-client\-\_\-t $\ast$client, const char $\ast$port\-\_\-type) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__LatencyFunctions_gaba121996f00bd96ceec5b1c1012fc767}{jack\-\_\-port\-\_\-set\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range} (jack\-\_\-port\-\_\-t $\ast$port, jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t mode, jack\-\_\-latency\-\_\-range\-\_\-t $\ast$range) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range} (jack\-\_\-port\-\_\-t $\ast$port, jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t mode, jack\-\_\-latency\-\_\-range\-\_\-t $\ast$range) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}{jack\-\_\-recompute\-\_\-total\-\_\-latencies} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__LatencyFunctions_ga47fa957309f9b3111010284e10cc1de0}{jack\-\_\-port\-\_\-get\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__LatencyFunctions_ga7f5835f17cb55a5ed64bb63cb18c462c}{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__LatencyFunctions_ga56372ab81d673cc4a419fd04cd3bfb8a}{jack\-\_\-recompute\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+const char $\ast$$\ast$ \hyperlink{group__PortSearching_gac8fc8e1745642cc983b1562ad43f99b1}{jack\-\_\-get\-\_\-ports} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$port\-\_\-name\-\_\-pattern, const char $\ast$type\-\_\-name\-\_\-pattern, unsigned long flags) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortSearching_ga04dfd042bb01406c1411d0be5c7cf816}{jack\-\_\-port\-\_\-by\-\_\-name} (jack\-\_\-client\-\_\-t $\ast$, const char $\ast$port\-\_\-name) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-port\-\_\-t $\ast$ \hyperlink{group__PortSearching_ga9988b33b2121b4bedadbd04e1f40a76d}{jack\-\_\-port\-\_\-by\-\_\-id} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_a669d727ed55e90862bd1322c5c042e86}{jack\-\_\-port\-\_\-id\-\_\-t} port\-\_\-id) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_gad52dc447fd9027922d466f695e697660}{jack\-\_\-frames\-\_\-since\-\_\-cycle\-\_\-start} (const jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_ga45cec2e76db58e72b46339229de64697}{jack\-\_\-frame\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_gae09e1c61ff0c43d4daea6cf480b7b915}{jack\-\_\-last\-\_\-frame\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} \hyperlink{group__TimeFunctions_ga9338f5b4866b3e749647d9c4b41c23b6}{jack\-\_\-frames\-\_\-to\-\_\-time} (const jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TimeFunctions_ga968ec852b3a33127425fbc479c99f14e}{jack\-\_\-time\-\_\-to\-\_\-frames} (const jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t}) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} \hyperlink{group__TimeFunctions_ga7cdc1d48f51bab3e88317b774b3b4193}{jack\-\_\-get\-\_\-time} () \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ErrorOutput_ga550faaef2bb17b03b0068fe094e7b92f}{jack\-\_\-set\-\_\-error\-\_\-function} (void($\ast$func)(const char $\ast$)) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__ErrorOutput_ga1555b7b4ae4056a42c70a3fa278ae17f}{jack\-\_\-set\-\_\-info\-\_\-function} (void($\ast$func)(const char $\ast$)) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{jack_8h_a437010097629ac8124a56c752c02f299}{jack\-\_\-free} (void $\ast$ptr) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \hyperlink{group__ErrorOutput_gadabaab075f11a7149f8bc3143d638780}{jack\-\_\-error\-\_\-callback} )(const char $\ast$msg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void($\ast$ \hyperlink{group__ErrorOutput_ga4fd590171478e9ef1c0686c8911041b7}{jack\-\_\-info\-\_\-callback} )(const char $\ast$msg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8}{\index{jack.\-h@{jack.\-h}!jack\-\_\-activate@{jack\-\_\-activate}}
+\index{jack\-\_\-activate@{jack\-\_\-activate}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-activate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-activate} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8}
+\-Tell the \-Jack server that the program is ready to start processing audio.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Jack\-Adapter\-::start\-Audio\-Processing().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d89/jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{jack_8h_a405646705e600d8bf66327bdbab8e363}{\index{jack.\-h@{jack.\-h}!jack\-\_\-client\-\_\-close@{jack\-\_\-client\-\_\-close}}
+\index{jack\-\_\-client\-\_\-close@{jack\-\_\-client\-\_\-close}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-client\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-close} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a405646705e600d8bf66327bdbab8e363}
+\-Disconnects an external client from a \-J\-A\-C\-K server.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{\index{jack.\-h@{jack.\-h}!jack\-\_\-client\-\_\-name\-\_\-size@{jack\-\_\-client\-\_\-name\-\_\-size}}
+\index{jack\-\_\-client\-\_\-name\-\_\-size@{jack\-\_\-client\-\_\-name\-\_\-size}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-client\-\_\-name\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-client\-\_\-name\-\_\-size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_ab8b16ee616207532d0585d04a0bd1d60}
+\begin{DoxyReturn}{\-Returns}
+the maximum number of characters in a \-J\-A\-C\-K client name including the final \-N\-U\-L\-L character. \-This value is a constant. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a97482adad8116b76635a63f646a2d2f5}{\index{jack.\-h@{jack.\-h}!jack\-\_\-client\-\_\-new@{jack\-\_\-client\-\_\-new}}
+\index{jack\-\_\-client\-\_\-new@{jack\-\_\-client\-\_\-new}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-client\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-client\-\_\-t$\ast$ {\bf jack\-\_\-client\-\_\-new} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{client\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a97482adad8116b76635a63f646a2d2f5}
+\-T\-H\-I\-S \-F\-U\-N\-C\-T\-I\-O\-N \-I\-S \-D\-E\-P\-R\-E\-C\-A\-T\-E\-D \-A\-N\-D \-S\-H\-O\-U\-L\-D \-N\-O\-T \-B\-E \-U\-S\-E\-D \-I\-N \-N\-E\-W \-J\-A\-C\-K \-C\-L\-I\-E\-N\-T\-S
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{\-Deprecated}]\-Please use \hyperlink{jack_8h_abbd2041bca191943b6ef29a991a131c5}{jack\-\_\-client\-\_\-open()}. \end{DoxyRefDesc}
+\hypertarget{jack_8h_abbd2041bca191943b6ef29a991a131c5}{\index{jack.\-h@{jack.\-h}!jack\-\_\-client\-\_\-open@{jack\-\_\-client\-\_\-open}}
+\index{jack\-\_\-client\-\_\-open@{jack\-\_\-client\-\_\-open}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-client\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-client\-\_\-t$\ast$ {\bf jack\-\_\-client\-\_\-open} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{client\-\_\-name, }
+\item[{jack\-\_\-options\-\_\-t}]{options, }
+\item[{jack\-\_\-status\-\_\-t $\ast$}]{status, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_abbd2041bca191943b6ef29a991a131c5}
+\-Open an external client session with a \-J\-A\-C\-K server. \-This interface is more complex but more powerful than \hyperlink{jack_8h_a97482adad8116b76635a63f646a2d2f5}{jack\-\_\-client\-\_\-new()}. \-With it, clients may choose which of several servers to connect, and control whether and how to start the server automatically, if it was not already running. \-There is also an option for \-J\-A\-C\-K to generate a unique client name, when necessary.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client\-\_\-name} & of at most \hyperlink{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{jack\-\_\-client\-\_\-name\-\_\-size()} characters. \-The name scope is local to each server. \-Unless forbidden by the \hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name} option, the server will modify this name to create a unique variant, if needed.\\
+\hline
+{\em options} & formed by \-O\-R-\/ing together \hyperlink{types_8h_a396617de2ef101891c51346f408a375e}{\-Jack\-Options} bits. \-Only the \hyperlink{types_8h_ab39e7f78dba631f3c0d34ac4cddcf80f}{\-Jack\-Open\-Options} bits are allowed.\\
+\hline
+{\em status} & (if non-\/\-N\-U\-L\-L) an address for \-J\-A\-C\-K to return information from the open operation. \-This status word is formed by \-O\-R-\/ing together the relevant \-Jack\-Status bits.\\
+\hline
+\end{DoxyParams}
+{\bfseries \-Optional parameters\-:} depending on corresponding \mbox{[}{\itshape options\/} bits\mbox{]} additional parameters may follow {\itshape status\/} (in this order).
+
+\begin{DoxyItemize}
+\item \mbox{[}\hyperlink{types_8h_a396617de2ef101891c51346f408a375ea348557bfdc579daed2e35cc41c4f09c7}{\-Jack\-Server\-Name}\mbox{]} {\itshape (char $\ast$) server\-\_\-name\/} selects from among several possible concurrent server instances. \-Server names are unique to each user. \-If unspecified, use \char`\"{}default\char`\"{} unless \$\-J\-A\-C\-K\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-E\-R\-V\-E\-R is defined in the process environment.\end{DoxyItemize}
+\begin{DoxyReturn}{\-Returns}
+\-Opaque client handle if successful. \-If this is \-N\-U\-L\-L, the open operation failed, {\itshape $\ast$status\/} includes \-Jack\-Failure and the caller is not a \-J\-A\-C\-K client. 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Jack\-Adapter\-::connect\-To\-Server().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d89/jack_8h_abbd2041bca191943b6ef29a991a131c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{jack_8h_a4e78f0a2ca6c837709c7ec641afd9954}{\index{jack.\-h@{jack.\-h}!jack\-\_\-client\-\_\-thread\-\_\-id@{jack\-\_\-client\-\_\-thread\-\_\-id}}
+\index{jack\-\_\-client\-\_\-thread\-\_\-id@{jack\-\_\-client\-\_\-thread\-\_\-id}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-client\-\_\-thread\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-native\-\_\-thread\-\_\-t {\bf jack\-\_\-client\-\_\-thread\-\_\-id} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a4e78f0a2ca6c837709c7ec641afd9954}
+\begin{DoxyReturn}{\-Returns}
+the pthread \-I\-D of the thread running the \-J\-A\-C\-K client side code. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a2c6447b766b13d3aa356aba2b48e51fa}{\index{jack.\-h@{jack.\-h}!jack\-\_\-deactivate@{jack\-\_\-deactivate}}
+\index{jack\-\_\-deactivate@{jack\-\_\-deactivate}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-deactivate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-deactivate} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a2c6447b766b13d3aa356aba2b48e51fa}
+\-Tell the \-Jack server to remove this {\itshape client\/} from the process graph. \-Also, disconnect all ports belonging to it, since inactive clients have no port connections.
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Jack\-Adapter\-::stop\-Audio\-Processing().
+
+
+
+\-Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d89/jack_8h_a2c6447b766b13d3aa356aba2b48e51fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{jack_8h_a437010097629ac8124a56c752c02f299}{\index{jack.\-h@{jack.\-h}!jack\-\_\-free@{jack\-\_\-free}}
+\index{jack\-\_\-free@{jack\-\_\-free}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-free} (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a437010097629ac8124a56c752c02f299}
+\-The free function to be used on memory returned by jack\-\_\-port\-\_\-get\-\_\-connections, jack\-\_\-port\-\_\-get\-\_\-all\-\_\-connections and jack\-\_\-get\-\_\-ports functions. \-This is \-M\-A\-N\-D\-A\-T\-O\-R\-Y on \-Windows when otherwise all nasty runtime version related crashes can occur. \-Developers are strongly encouraged to use this function instead of the standard \char`\"{}free\char`\"{} function in new code. \hypertarget{jack_8h_a49f7d301475b45a8a3cc0da848d81e2f}{\index{jack.\-h@{jack.\-h}!jack\-\_\-get\-\_\-client\-\_\-name@{jack\-\_\-get\-\_\-client\-\_\-name}}
+\index{jack\-\_\-get\-\_\-client\-\_\-name@{jack\-\_\-get\-\_\-client\-\_\-name}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-client\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf jack\-\_\-get\-\_\-client\-\_\-name} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a49f7d301475b45a8a3cc0da848d81e2f}
+\begin{DoxyReturn}{\-Returns}
+pointer to actual client name. \-This is useful when \hyperlink{types_8h_a396617de2ef101891c51346f408a375ea352b176ffa092ec946a06b707f6aa21b}{\-Jack\-Use\-Exact\-Name} is not specified on open and \-Jack\-Name\-Not\-Unique status was returned. \-In that case, the actual name will differ from the {\itshape client\-\_\-name\/} requested. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a061be5cff05ea66cc4de032bb51f414a}{\index{jack.\-h@{jack.\-h}!jack\-\_\-get\-\_\-client\-\_\-pid@{jack\-\_\-get\-\_\-client\-\_\-pid}}
+\index{jack\-\_\-get\-\_\-client\-\_\-pid@{jack\-\_\-get\-\_\-client\-\_\-pid}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-client\-\_\-pid}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-get\-\_\-client\-\_\-pid} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a061be5cff05ea66cc4de032bb51f414a}
+\begin{DoxyReturn}{\-Returns}
+pid of client. \-If not available, 0 will be returned. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a6b79d486b8b5365750cec851c6d076f7}{\index{jack.\-h@{jack.\-h}!jack\-\_\-get\-\_\-version@{jack\-\_\-get\-\_\-version}}
+\index{jack\-\_\-get\-\_\-version@{jack\-\_\-get\-\_\-version}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-get\-\_\-version} (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{major\-\_\-ptr, }
+\item[{int $\ast$}]{minor\-\_\-ptr, }
+\item[{int $\ast$}]{micro\-\_\-ptr, }
+\item[{int $\ast$}]{proto\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a6b79d486b8b5365750cec851c6d076f7}
+\-Note\-: \-More documentation can be found in \hyperlink{types_8h}{jack/types.\-h}. \-Call this function to get version of the \-J\-A\-C\-K, in form of several numbers
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em major\-\_\-ptr} & pointer to variable receiving major version of \-J\-A\-C\-K.\\
+\hline
+{\em minor\-\_\-ptr} & pointer to variable receiving minor version of \-J\-A\-C\-K.\\
+\hline
+{\em major\-\_\-ptr} & pointer to variable receiving micro version of \-J\-A\-C\-K.\\
+\hline
+{\em major\-\_\-ptr} & pointer to variable receiving protocol version of \-J\-A\-C\-K. \\
+\hline
+\end{DoxyParams}
+\hypertarget{jack_8h_a47723977d5370170f3b9498eeb932ce3}{\index{jack.\-h@{jack.\-h}!jack\-\_\-get\-\_\-version\-\_\-string@{jack\-\_\-get\-\_\-version\-\_\-string}}
+\index{jack\-\_\-get\-\_\-version\-\_\-string@{jack\-\_\-get\-\_\-version\-\_\-string}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-get\-\_\-version\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf jack\-\_\-get\-\_\-version\-\_\-string} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a47723977d5370170f3b9498eeb932ce3}
+\-Call this function to get version of the \-J\-A\-C\-K, in form of a string
+
+\begin{DoxyReturn}{\-Returns}
+\-Human readable string describing \-J\-A\-C\-K version being used. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a0ad890884c983c78ba93ed2d9b8ee8cc}{\index{jack.\-h@{jack.\-h}!jack\-\_\-internal\-\_\-client\-\_\-close@{jack\-\_\-internal\-\_\-client\-\_\-close}}
+\index{jack\-\_\-internal\-\_\-client\-\_\-close@{jack\-\_\-internal\-\_\-client\-\_\-close}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-internal\-\_\-client\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-internal\-\_\-client\-\_\-close} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{client\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a0ad890884c983c78ba93ed2d9b8ee8cc}
+\-Remove an internal client from a \-J\-A\-C\-K server.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{\-Deprecated}]\-Please use \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()}. \end{DoxyRefDesc}
+\hypertarget{jack_8h_a87be6679700acc40a0da17ac9ba3a31e}{\index{jack.\-h@{jack.\-h}!jack\-\_\-internal\-\_\-client\-\_\-new@{jack\-\_\-internal\-\_\-client\-\_\-new}}
+\index{jack\-\_\-internal\-\_\-client\-\_\-new@{jack\-\_\-internal\-\_\-client\-\_\-new}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-internal\-\_\-client\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-internal\-\_\-client\-\_\-new} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{client\-\_\-name, }
+\item[{const char $\ast$}]{load\-\_\-name, }
+\item[{const char $\ast$}]{load\-\_\-init}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a87be6679700acc40a0da17ac9ba3a31e}
+\-Load an internal client into the \-Jack server.
+
+\-Internal clients run inside the \-J\-A\-C\-K server process. \-They can use most of the same functions as external clients. \-Each internal client must declare jack\-\_\-initialize() and jack\-\_\-finish() entry points, called at load and unload times. \-See inprocess.\-c for an example of how to write an internal client.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{\-Deprecated}]\-Please use \hyperlink{intclient_8h_adca1931231a03563544281cda1530ca6}{jack\-\_\-internal\-\_\-client\-\_\-load()}.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client\-\_\-name} & of at most \hyperlink{jack_8h_ab8b16ee616207532d0585d04a0bd1d60}{jack\-\_\-client\-\_\-name\-\_\-size()} characters.\\
+\hline
+{\em load\-\_\-name} & of a shared object file containing the code for the new client.\\
+\hline
+{\em load\-\_\-init} & an arbitary string passed to the jack\-\_\-initialize() routine of the new client (may be \-N\-U\-L\-L).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 if successful. 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a15719a4abdcc5fa8415167dd6ed6512c}{\index{jack.\-h@{jack.\-h}!jack\-\_\-is\-\_\-realtime@{jack\-\_\-is\-\_\-realtime}}
+\index{jack\-\_\-is\-\_\-realtime@{jack\-\_\-is\-\_\-realtime}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-is\-\_\-realtime}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-is\-\_\-realtime} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a15719a4abdcc5fa8415167dd6ed6512c}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & pointer to \-J\-A\-C\-K client structure.\\
+\hline
+\end{DoxyParams}
+\-Check if the \-J\-A\-C\-K subsystem is running with -\/\-R (-\/-\/realtime).
+
+\begin{DoxyReturn}{\-Returns}
+1 if \-J\-A\-C\-K is running realtime, 0 otherwise 
+\end{DoxyReturn}
+\hypertarget{jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}{\index{jack.\-h@{jack.\-h}!jack\-\_\-set\-\_\-latency\-\_\-callback@{jack\-\_\-set\-\_\-latency\-\_\-callback}}
+\index{jack\-\_\-set\-\_\-latency\-\_\-callback@{jack\-\_\-set\-\_\-latency\-\_\-callback}!jack.h@{jack.\-h}}
+\subsubsection[{jack\-\_\-set\-\_\-latency\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-latency\-\_\-callback} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{\-Jack\-Latency\-Callback}]{latency\-\_\-callback, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{df/d89/jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}
+\-Tell the \-Jack server to call {\itshape latency\-\_\-callback\/} whenever it is necessary to recompute the latencies for some or all \-Jack ports.
+
+{\itshape latency\-\_\-callback\/} will be called twice each time it is needed, once being passed \-Jack\-Capture\-Latency and once \-Jack\-Playback\-Latency. \-See \hyperlink{group__LatencyFunctions}{\-Managing and determining latency} for the definition of each type of latency and related functions.
+
+{\bfseries \-I\-M\-P\-O\-R\-T\-A\-N\-T\-: \-Most \-J\-A\-C\-K clients do \-N\-O\-T need to register a latency callback.}
+
+\-Clients that meet any of the following conditions do \-N\-O\-T need to register a latency callback\-:
+
+
+\begin{DoxyItemize}
+\item have only input ports
+\item have only output ports
+\item their output is totally unrelated to their input
+\item their output is not delayed relative to their input (i.\-e. data that arrives in a given process() callback is processed and output again in the same callback)
+\end{DoxyItemize}
+
+\-Clients \-N\-O\-T registering a latency callback \-M\-U\-S\-T also satisfy this condition\-:
+
+
+\begin{DoxyItemize}
+\item have no multiple distinct internal signal pathways
+\end{DoxyItemize}
+
+\-This means that if your client has more than 1 input and output port, and considers them always \char`\"{}correlated\char`\"{} (e.\-g. as a stereo pair), then there is only 1 (e.\-g. stereo) signal pathway through the client. \-This would be true, for example, of a stereo \-F\-X rack client that has a left/right input pair and a left/right output pair.
+
+\-However, this is somewhat a matter of perspective. \-The same \-F\-X rack client could be connected so that its two input ports were connected to entirely separate sources. \-Under these conditions, the fact that the client does not register a latency callback \-M\-A\-Y result in port latency values being incorrect.
+
+\-Clients that do not meet any of those conditions \-S\-H\-O\-U\-L\-D register a latency callback.
+
+\-See the documentation for \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()} on how the callback should operate. \-Remember that the {\itshape mode\/} argument given to the latency callback will need to be passed into \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()}
+
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code 
+\end{DoxyReturn}

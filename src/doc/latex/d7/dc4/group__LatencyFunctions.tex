@@ -1,0 +1,179 @@
+\hypertarget{group__LatencyFunctions}{\section{\-Managing and determining latency}
+\label{d7/dc4/group__LatencyFunctions}\index{\-Managing and determining latency@{\-Managing and determining latency}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__LatencyFunctions_gaba121996f00bd96ceec5b1c1012fc767}{jack\-\_\-port\-\_\-set\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t}) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range} (jack\-\_\-port\-\_\-t $\ast$port, jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t mode, jack\-\_\-latency\-\_\-range\-\_\-t $\ast$range) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+void \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range} (jack\-\_\-port\-\_\-t $\ast$port, jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t mode, jack\-\_\-latency\-\_\-range\-\_\-t $\ast$range) \-J\-A\-C\-K\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}{jack\-\_\-recompute\-\_\-total\-\_\-latencies} (jack\-\_\-client\-\_\-t $\ast$) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__LatencyFunctions_ga47fa957309f9b3111010284e10cc1de0}{jack\-\_\-port\-\_\-get\-\_\-latency} (jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__LatencyFunctions_ga7f5835f17cb55a5ed64bb63cb18c462c}{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\item 
+int \hyperlink{group__LatencyFunctions_ga56372ab81d673cc4a419fd04cd3bfb8a}{jack\-\_\-recompute\-\_\-total\-\_\-latency} (jack\-\_\-client\-\_\-t $\ast$, jack\-\_\-port\-\_\-t $\ast$port) \-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The purpose of \-J\-A\-C\-K's latency \-A\-P\-I is to allow clients to easily answer two questions\-:
+
+
+\begin{DoxyItemize}
+\item \-How long has it been since the data read from a port arrived at the edge of the \-J\-A\-C\-K graph (either via a physical port or being synthesized from scratch)?
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-How long will it be before the data written to a port arrives at the edge of a \-J\-A\-C\-K graph?
+\end{DoxyItemize}
+
+\-To help answering these two questions, all \-J\-A\-C\-K ports have two latency values associated with them, both measured in frames\-:
+
+{\bfseries capture latency}\-: how long since the data read from the buffer of a port arrived at at a port marked with \-Jack\-Port\-Is\-Terminal. \-The data will have come from the \char`\"{}outside
+                  world\char`\"{} if the terminal port is also marked with \-Jack\-Port\-Is\-Physical, or will have been synthesized by the client that owns the terminal port.
+
+{\bfseries playback latency}\-: how long until the data written to the buffer of port will reach a port marked with \-Jack\-Port\-Is\-Terminal.
+
+\-Both latencies might potentially have more than one value because there may be multiple pathways to/from a given port and a terminal port. \-Latency is therefore generally expressed a min/max pair.
+
+\-In most common setups, the minimum and maximum latency are the same, but this design accomodates more complex routing, and allows applications (and thus users) to detect cases where routing is creating an anomalous situation that may either need fixing or more sophisticated handling by clients that care about latency.
+
+\-See also \hyperlink{jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}{jack\-\_\-set\-\_\-latency\-\_\-callback} for details on how clients that add latency to the signal path should interact with \-J\-A\-C\-K to ensure that the correct latency figures are used. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__LatencyFunctions_ga47fa957309f9b3111010284e10cc1de0}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-port\-\_\-get\-\_\-latency@{jack\-\_\-port\-\_\-get\-\_\-latency}}
+\index{jack\-\_\-port\-\_\-get\-\_\-latency@{jack\-\_\-port\-\_\-get\-\_\-latency}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-latency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-port\-\_\-get\-\_\-latency} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_ga47fa957309f9b3111010284e10cc1de0}
+\begin{DoxyReturn}{\-Returns}
+the time (in frames) between data being available or delivered at/to a port, and the time at which it arrived at or is delivered to the \char`\"{}other side\char`\"{} of the port. \-E.\-g. for a physical audio output port, this is the time between writing to the port and when the signal will leave the connector. \-For a physical audio input port, this is the time between the sound arriving at the connector and the corresponding frames being readable from the port.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000009}{\-Deprecated}]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()} in any existing use cases. \end{DoxyRefDesc}
+\hypertarget{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range@{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range}}
+\index{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range@{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t}]{mode, }
+\item[{jack\-\_\-latency\-\_\-range\-\_\-t $\ast$}]{range}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}
+return the latency range defined by {\itshape mode\/} for {\itshape port\/}, in frames.
+
+\-See \hyperlink{group__LatencyFunctions}{\-Managing and determining latency} for the definition of each latency value.
+
+\-This is normally used in the \-Latency\-Callback. and therefor safe to execute from callbacks. \hypertarget{group__LatencyFunctions_ga7f5835f17cb55a5ed64bb63cb18c462c}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency@{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency}}
+\index{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency@{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_ga7f5835f17cb55a5ed64bb63cb18c462c}
+\-The maximum of the sum of the latencies in every connection path that can be drawn between the port and other ports with the \-Jack\-Port\-Is\-Terminal flag set.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000010}{\-Deprecated}]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()} in any existing use cases. \end{DoxyRefDesc}
+\hypertarget{group__LatencyFunctions_gaba121996f00bd96ceec5b1c1012fc767}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-port\-\_\-set\-\_\-latency@{jack\-\_\-port\-\_\-set\-\_\-latency}}
+\index{jack\-\_\-port\-\_\-set\-\_\-latency@{jack\-\_\-port\-\_\-set\-\_\-latency}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-port\-\_\-set\-\_\-latency}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-port\-\_\-set\-\_\-latency} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_gaba121996f00bd96ceec5b1c1012fc767}
+\-The port latency is zero by default. \-Clients that control physical hardware with non-\/zero latency should call this to set the latency to its correct value. \-Note that the value should include any systemic latency present \char`\"{}outside\char`\"{} the physical hardware controlled by the client. \-For example, for a client controlling a digital audio interface connected to an external digital converter, the latency setting should include both buffering by the audio interface $\ast$and$\ast$ the converter.
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000008}{\-Deprecated}]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by a latency callback that calls \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()}. \end{DoxyRefDesc}
+\hypertarget{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range@{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range}}
+\index{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range@{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port, }
+\item[{jack\-\_\-latency\-\_\-callback\-\_\-mode\-\_\-t}]{mode, }
+\item[{jack\-\_\-latency\-\_\-range\-\_\-t $\ast$}]{range}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}
+set the minimum and maximum latencies defined by {\itshape mode\/} for {\itshape port\/}, in frames.
+
+\-See \hyperlink{group__LatencyFunctions}{\-Managing and determining latency} for the definition of each latency value.
+
+\-This function should \-O\-N\-L\-Y be used inside a latency callback. \-The client should determine the current value of the latency using \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()} (called using the same mode as {\itshape mode\/}) and then add some number of frames to that reflects latency added by the client.
+
+\-How much latency a client adds will vary dramatically. \-For most clients, the answer is zero and there is no reason for them to register a latency callback and thus they should never call this function.
+
+\-More complex clients that take an input signal, transform it in some way and output the result but not during the same process() callback will generally know a single constant value to add to the value returned by \hyperlink{group__LatencyFunctions_gaf379bc0e88a6df6c4b7836db4b9382d7}{jack\-\_\-port\-\_\-get\-\_\-latency\-\_\-range()}.
+
+\-Such clients would register a latency callback (see \hyperlink{jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}{jack\-\_\-set\-\_\-latency\-\_\-callback}) and must know what input ports feed which output ports as part of their internal state. \-Their latency callback will update the ports' latency values appropriately.
+
+\-A pseudo-\/code example will help. \-The {\itshape mode\/} argument to the latency callback will determine whether playback or capture latency is being set. \-The callback will use \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()} as follows\-:
+
+
+\begin{DoxyCode}
+ jack_latency_range_t range;
+ if (mode == JackPlaybackLatency) {
+  foreach input_port in (all self-registered port) {
+   jack_port_get_latency_range (port_feeding_input_port, JackPlaybackLatency, &
+      range);
+   range.min += min_delay_added_as_signal_flows_from port_feeding to input_port
+      ;
+   range.max += max_delay_added_as_signal_flows_from port_feeding to input_port
+      ;
+   jack_port_set_latency_range (input_port, JackPlaybackLatency, &range);
+  }
+ } else if (mode == JackCaptureLatency) {
+  foreach output_port in (all self-registered port) {
+   jack_port_get_latency_range (port_fed_by_output_port, JackCaptureLatency, &
+      range);
+   range.min += min_delay_added_as_signal_flows_from_output_port_to_fed_by_port
+      ;
+   range.max += max_delay_added_as_signal_flows_from_output_port_to_fed_by_port
+      ;
+   jack_port_set_latency_range (output_port, JackCaptureLatency, &range);
+  }
+ }
+\end{DoxyCode}
+
+
+\-In this relatively simple pseudo-\/code example, it is assumed that each input port or output is connected to only 1 output or input port respectively.
+
+\-If a port is connected to more than 1 other port, then the range.\-min and range.\-max values passed to \hyperlink{group__LatencyFunctions_ga7a8f181fcec32945db7b8e06ee1ca94b}{jack\-\_\-port\-\_\-set\-\_\-latency\-\_\-range()} should reflect the minimum and maximum values across all connected ports.
+
+\-See the description of \hyperlink{jack_8h_a70a38fb1e74c5e9df9f1305c695c58bf}{jack\-\_\-set\-\_\-latency\-\_\-callback} for more information. \hypertarget{group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-recompute\-\_\-total\-\_\-latencies@{jack\-\_\-recompute\-\_\-total\-\_\-latencies}}
+\index{jack\-\_\-recompute\-\_\-total\-\_\-latencies@{jack\-\_\-recompute\-\_\-total\-\_\-latencies}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-recompute\-\_\-total\-\_\-latencies}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-recompute\-\_\-total\-\_\-latencies} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}
+\-Request a complete recomputation of all port latencies. \-This can be called by a client that has just changed the internal latency of its port using jack\-\_\-port\-\_\-set\-\_\-latency and wants to ensure that all signal pathways in the graph are updated with respect to the values that will be returned by jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency. \-It allows a client to change multiple port latencies without triggering a recompute for each change.
+
+\begin{DoxyReturn}{\-Returns}
+zero for successful execution of the request. non-\/zero otherwise. 
+\end{DoxyReturn}
+\hypertarget{group__LatencyFunctions_ga56372ab81d673cc4a419fd04cd3bfb8a}{\index{\-Managing and determining latency@{\-Managing and determining latency}!jack\-\_\-recompute\-\_\-total\-\_\-latency@{jack\-\_\-recompute\-\_\-total\-\_\-latency}}
+\index{jack\-\_\-recompute\-\_\-total\-\_\-latency@{jack\-\_\-recompute\-\_\-total\-\_\-latency}!Managing and determining latency@{\-Managing and determining latency}}
+\subsubsection[{jack\-\_\-recompute\-\_\-total\-\_\-latency}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-recompute\-\_\-total\-\_\-latency} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{, }
+\item[{jack\-\_\-port\-\_\-t $\ast$}]{port}
+\end{DoxyParamCaption}
+)}}\label{d7/dc4/group__LatencyFunctions_ga56372ab81d673cc4a419fd04cd3bfb8a}
+\-Request a complete recomputation of a port's total latency. \-This can be called by a client that has just changed the internal latency of its port using jack\-\_\-port\-\_\-set\-\_\-latency and wants to ensure that all signal pathways in the graph are updated with respect to the values that will be returned by jack\-\_\-port\-\_\-get\-\_\-total\-\_\-latency.
+
+\begin{DoxyReturn}{\-Returns}
+zero for successful execution of the request. non-\/zero otherwise.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000011}{\-Deprecated}]\-This method will be removed in the next major release of \-J\-A\-C\-K. \-It should not be used in new code, and should be replaced by \hyperlink{group__LatencyFunctions_ga46400b9a573389549784a356ab2d4e3b}{jack\-\_\-recompute\-\_\-total\-\_\-latencies()} in any existing use cases. \end{DoxyRefDesc}

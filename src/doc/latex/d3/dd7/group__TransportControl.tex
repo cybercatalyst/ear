@@ -1,0 +1,297 @@
+\hypertarget{group__TransportControl}{\section{\-Transport and \-Timebase control}
+\label{d3/dd7/group__TransportControl}\index{\-Transport and Timebase control@{\-Transport and Timebase control}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__TransportControl_gaea06ff63b129ec6266b2b805b6c8216a}{jack\-\_\-release\-\_\-timebase} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, \-Jack\-Sync\-Callback sync\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga2e89b0bb8702d34bcbbe1eac70685ab2}{jack\-\_\-set\-\_\-sync\-\_\-timeout} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_af9a29b8728e95cc38e2932c0ef855b7e}{jack\-\_\-time\-\_\-t} timeout) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{jack\-\_\-set\-\_\-timebase\-\_\-callback} (jack\-\_\-client\-\_\-t $\ast$client, int conditional, \-Jack\-Timebase\-Callback timebase\-\_\-callback, void $\ast$arg) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_gab3f52a42084aead87fd1ee75ed25b240}{jack\-\_\-transport\-\_\-locate} (jack\-\_\-client\-\_\-t $\ast$client, \hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} frame) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+jack\-\_\-transport\-\_\-state\-\_\-t \hyperlink{group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}{jack\-\_\-transport\-\_\-query} (const jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-position\-\_\-t $\ast$pos) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\hyperlink{types_8h_aa954df532e901ae5172e68a23f3da9b6}{jack\-\_\-nframes\-\_\-t} \hyperlink{group__TransportControl_gaef1df9479faa3b7f400c787be173f805}{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame} (const jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+int \hyperlink{group__TransportControl_ga6e51cb0600c5ba298546dc5420e0ccbc}{jack\-\_\-transport\-\_\-reposition} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-position\-\_\-t $\ast$pos) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_gab7b158bec8f27c03da29795f142d1caf}{jack\-\_\-transport\-\_\-start} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_ga6be6637c314bd88344826e9bcc1957b0}{jack\-\_\-transport\-\_\-stop} (jack\-\_\-client\-\_\-t $\ast$client) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_gaa3f548f66e8c9a4f271ef97a87ecb240}{jack\-\_\-get\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+void \hyperlink{group__TransportControl_ga2539e041b424eab678e7ba1ee4777579}{jack\-\_\-set\-\_\-transport\-\_\-info} (jack\-\_\-client\-\_\-t $\ast$client, jack\-\_\-transport\-\_\-info\-\_\-t $\ast$tinfo) \hyperlink{weakmacros_8h_adf1bde0dd996bbf61a44311165014dd1}{\-J\-A\-C\-K\-\_\-\-O\-P\-T\-I\-O\-N\-A\-L\-\_\-\-W\-E\-A\-K\-\_\-\-E\-X\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__TransportControl_gaef1df9479faa3b7f400c787be173f805}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame@{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame}}
+\index{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame@{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf jack\-\_\-nframes\-\_\-t} {\bf jack\-\_\-get\-\_\-current\-\_\-transport\-\_\-frame} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gaef1df9479faa3b7f400c787be173f805}
+\-Return an estimate of the current transport frame, including any time elapsed since the last transport positional update.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__TransportControl_gaa3f548f66e8c9a4f271ef97a87ecb240}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-get\-\_\-transport\-\_\-info@{jack\-\_\-get\-\_\-transport\-\_\-info}}
+\index{jack\-\_\-get\-\_\-transport\-\_\-info@{jack\-\_\-get\-\_\-transport\-\_\-info}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-get\-\_\-transport\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-get\-\_\-transport\-\_\-info} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-transport\-\_\-info\-\_\-t $\ast$}]{tinfo}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gaa3f548f66e8c9a4f271ef97a87ecb240}
+\-Gets the current transport info structure (deprecated).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em tinfo} & current transport info structure. \-The \char`\"{}valid\char`\"{} field describes which fields contain valid data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000012}{\-Deprecated}]\-This is for compatibility with the earlier transport interface. \-Use \hyperlink{group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}{jack\-\_\-transport\-\_\-query()}, instead.\end{DoxyRefDesc}
+
+
+\begin{DoxyPrecond}{\-Precondition}
+\-Must be called from the process thread. 
+\end{DoxyPrecond}
+\hypertarget{group__TransportControl_gaea06ff63b129ec6266b2b805b6c8216a}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-release\-\_\-timebase@{jack\-\_\-release\-\_\-timebase}}
+\index{jack\-\_\-release\-\_\-timebase@{jack\-\_\-release\-\_\-timebase}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-release\-\_\-timebase}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-release\-\_\-timebase} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gaea06ff63b129ec6266b2b805b6c8216a}
+\-Called by the timebase master to release itself from that responsibility.
+
+\-If the timebase master releases the timebase or leaves the \-J\-A\-C\-K graph for any reason, the \-J\-A\-C\-K engine takes over at the start of the next process cycle. \-The transport state does not change. \-If rolling, it continues to play, with frame numbers as the only available position information.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{jack\-\_\-set\-\_\-timebase\-\_\-callback}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-set\-\_\-sync\-\_\-callback@{jack\-\_\-set\-\_\-sync\-\_\-callback}}
+\index{jack\-\_\-set\-\_\-sync\-\_\-callback@{jack\-\_\-set\-\_\-sync\-\_\-callback}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-set\-\_\-sync\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-sync\-\_\-callback} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{\-Jack\-Sync\-Callback}]{sync\-\_\-callback, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}
+\-Register (or unregister) as a slow-\/sync client, one that cannot respond immediately to transport position changes.
+
+\-The {\itshape sync\-\_\-callback\/} will be invoked at the first available opportunity after its registration is complete. \-If the client is currently active this will be the following process cycle, otherwise it will be the first cycle after calling \hyperlink{jack_8h_a9800d5b29bd7670d9944a15f6ea0ecf8}{jack\-\_\-activate()}. \-After that, it runs according to the \-::\-Jack\-Sync\-Callback rules. \-Clients that don't set a {\itshape sync\-\_\-callback\/} are assumed to be ready immediately any time the transport wants to start.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em sync\-\_\-callback} & is a realtime function that returns \-T\-R\-U\-E when the client is ready. \-Setting {\itshape sync\-\_\-callback\/} to \-N\-U\-L\-L declares that this client no longer requires slow-\/sync processing. \\
+\hline
+{\em arg} & an argument for the {\itshape sync\-\_\-callback\/} function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_ga2e89b0bb8702d34bcbbe1eac70685ab2}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-set\-\_\-sync\-\_\-timeout@{jack\-\_\-set\-\_\-sync\-\_\-timeout}}
+\index{jack\-\_\-set\-\_\-sync\-\_\-timeout@{jack\-\_\-set\-\_\-sync\-\_\-timeout}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-set\-\_\-sync\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-sync\-\_\-timeout} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-time\-\_\-t}}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga2e89b0bb8702d34bcbbe1eac70685ab2}
+\-Set the timeout value for slow-\/sync clients.
+
+\-This timeout prevents unresponsive slow-\/sync clients from completely halting the transport mechanism. \-The default is two seconds. \-When the timeout expires, the transport starts rolling, even if some slow-\/sync clients are still unready. \-The {\itshape sync\-\_\-callbacks\/} of these clients continue being invoked, giving them a chance to catch up.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em timeout} & is delay (in microseconds) before the timeout expires.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 on success, otherwise a non-\/zero error code. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-set\-\_\-timebase\-\_\-callback@{jack\-\_\-set\-\_\-timebase\-\_\-callback}}
+\index{jack\-\_\-set\-\_\-timebase\-\_\-callback@{jack\-\_\-set\-\_\-timebase\-\_\-callback}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-set\-\_\-timebase\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-set\-\_\-timebase\-\_\-callback} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{int}]{conditional, }
+\item[{\-Jack\-Timebase\-Callback}]{timebase\-\_\-callback, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga0c2f2f464f6ba1c0b2aa45e6507b7aa9}
+\-Register as timebase master for the \-J\-A\-C\-K subsystem.
+
+\-The timebase master registers a callback that updates extended position information such as beats or timecode whenever necessary. \-Without this extended information, there is no need for this function.
+
+\-There is never more than one master at a time. \-When a new client takes over, the former {\itshape timebase\-\_\-callback\/} is no longer called. \-Taking over the timebase may be done conditionally, so it fails if there was a master already.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em conditional} & non-\/zero for a conditional request. \\
+\hline
+{\em timebase\-\_\-callback} & is a realtime function that returns position information. \\
+\hline
+{\em arg} & an argument for the {\itshape timebase\-\_\-callback\/} function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+
+\begin{DoxyItemize}
+\item 0 on success;
+\item \-E\-B\-U\-S\-Y if a conditional request fails because there was already a timebase master;
+\item other non-\/zero error code. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_ga2539e041b424eab678e7ba1ee4777579}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-set\-\_\-transport\-\_\-info@{jack\-\_\-set\-\_\-transport\-\_\-info}}
+\index{jack\-\_\-set\-\_\-transport\-\_\-info@{jack\-\_\-set\-\_\-transport\-\_\-info}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-set\-\_\-transport\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-set\-\_\-transport\-\_\-info} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-transport\-\_\-info\-\_\-t $\ast$}]{tinfo}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga2539e041b424eab678e7ba1ee4777579}
+\-Set the transport info structure (deprecated).
+
+\begin{DoxyRefDesc}{\-Deprecated}
+\item[\hyperlink{deprecated__deprecated000013}{\-Deprecated}]\-This function still exists for compatibility with the earlier transport interface, but it does nothing. \-Instead, define a \-::\-Jack\-Timebase\-Callback. \end{DoxyRefDesc}
+\hypertarget{group__TransportControl_gab3f52a42084aead87fd1ee75ed25b240}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-transport\-\_\-locate@{jack\-\_\-transport\-\_\-locate}}
+\index{jack\-\_\-transport\-\_\-locate@{jack\-\_\-transport\-\_\-locate}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-transport\-\_\-locate}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-transport\-\_\-locate} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{{\bf jack\-\_\-nframes\-\_\-t}}]{frame}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gab3f52a42084aead87fd1ee75ed25b240}
+\-Reposition the transport to a new frame number.
+
+\-May be called at any time by any client. \-The new position takes effect in two process cycles. \-If there are slow-\/sync clients and the transport is already rolling, it will enter the \-::\-Jack\-Transport\-Starting state and begin invoking their {\itshape sync\-\_\-callbacks\/} until ready. \-This function is realtime-\/safe.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__TransportControl_ga6e51cb0600c5ba298546dc5420e0ccbc}{jack\-\_\-transport\-\_\-reposition}, \hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em frame} & frame number of new transport position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 if valid request, non-\/zero otherwise. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-transport\-\_\-query@{jack\-\_\-transport\-\_\-query}}
+\index{jack\-\_\-transport\-\_\-query@{jack\-\_\-transport\-\_\-query}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-transport\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}jack\-\_\-transport\-\_\-state\-\_\-t {\bf jack\-\_\-transport\-\_\-query} (
+\begin{DoxyParamCaption}
+\item[{const jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-position\-\_\-t $\ast$}]{pos}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga5f08eb71a5ee5431a3d756af5729d5aa}
+\-Query the current transport state and position.
+
+\-This function is realtime-\/safe, and can be called from any thread. \-If called from the process thread, {\itshape pos\/} corresponds to the first frame of the current cycle and the state returned is valid for the entire cycle.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em pos} & pointer to structure for returning current transport position; {\itshape pos-\/$>$valid\/} will show which fields contain valid data. \-If {\itshape pos\/} is \-N\-U\-L\-L, do not return position information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Current transport state. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_ga6e51cb0600c5ba298546dc5420e0ccbc}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-transport\-\_\-reposition@{jack\-\_\-transport\-\_\-reposition}}
+\index{jack\-\_\-transport\-\_\-reposition@{jack\-\_\-transport\-\_\-reposition}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-transport\-\_\-reposition}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf jack\-\_\-transport\-\_\-reposition} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client, }
+\item[{jack\-\_\-position\-\_\-t $\ast$}]{pos}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga6e51cb0600c5ba298546dc5420e0ccbc}
+\-Request a new transport position.
+
+\-May be called at any time by any client. \-The new position takes effect in two process cycles. \-If there are slow-\/sync clients and the transport is already rolling, it will enter the \-::\-Jack\-Transport\-Starting state and begin invoking their {\itshape sync\-\_\-callbacks\/} until ready. \-This function is realtime-\/safe.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__TransportControl_gab3f52a42084aead87fd1ee75ed25b240}{jack\-\_\-transport\-\_\-locate}, \hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+{\em pos} & requested new transport position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 if valid request, \-E\-I\-N\-V\-A\-L if position structure rejected. 
+\end{DoxyReturn}
+\hypertarget{group__TransportControl_gab7b158bec8f27c03da29795f142d1caf}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-transport\-\_\-start@{jack\-\_\-transport\-\_\-start}}
+\index{jack\-\_\-transport\-\_\-start@{jack\-\_\-transport\-\_\-start}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-transport\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-transport\-\_\-start} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_gab7b158bec8f27c03da29795f142d1caf}
+\-Start the \-J\-A\-C\-K transport rolling.
+
+\-Any client can make this request at any time. \-It takes effect no sooner than the next process cycle, perhaps later if there are slow-\/sync clients. \-This function is realtime-\/safe.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{group__TransportControl_gae53f7ac54804d2896d51b6ad599fa93c}{jack\-\_\-set\-\_\-sync\-\_\-callback}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__TransportControl_ga6be6637c314bd88344826e9bcc1957b0}{\index{\-Transport and Timebase control@{\-Transport and Timebase control}!jack\-\_\-transport\-\_\-stop@{jack\-\_\-transport\-\_\-stop}}
+\index{jack\-\_\-transport\-\_\-stop@{jack\-\_\-transport\-\_\-stop}!Transport and Timebase control@{\-Transport and Timebase control}}
+\subsubsection[{jack\-\_\-transport\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jack\-\_\-transport\-\_\-stop} (
+\begin{DoxyParamCaption}
+\item[{jack\-\_\-client\-\_\-t $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{d3/dd7/group__TransportControl_ga6be6637c314bd88344826e9bcc1957b0}
+\-Stop the \-J\-A\-C\-K transport.
+
+\-Any client can make this request at any time. \-It takes effect on the next process cycle. \-This function is realtime-\/safe.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & the \-J\-A\-C\-K client structure. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,101 @@
+\hypertarget{classProcessor}{\section{\-Processor \-Class \-Reference}
+\label{db/d9f/classProcessor}\index{\-Processor@{\-Processor}}
+}
+
+
+\hyperlink{classProcessor}{\-Processor} defines an interface that must be met by processors.  
+
+
+
+
+{\ttfamily \#include $<$processor.\-h$>$}
+
+
+
+\-Inheritance diagram for \-Processor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{dd/d93/classProcessor__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProcessor_a50c89dbf76a073f4fb491628258cf292}{\-Processor} ()
+\item 
+virtual \hyperlink{classProcessor_a3b64ced3bba74102fc53ee539b2072c0}{$\sim$\-Processor} ()
+\item 
+virtual void \hyperlink{classProcessor_a3dad5d3ba8d0946e2f32acecadb1ede5}{process} (int samples)=0
+\begin{DoxyCompactList}\small\item\em \-Called whenever samples have to be processed. \-Warning\-: \-This method is time-\/critical. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classProcessor}{\-Processor} defines an interface that must be met by processors. 
+
+\begin{DoxyAuthor}{\-Author}
+\-Jacob \-Dawid ( \href{mailto:jacob.dawid@cybercatalyst.net}{\tt jacob.\-dawid@cybercatalyst.\-net} ) 
+
+\-Otto \-Ritter ( \href{mailto:otto.ritter.or@googlemail.com}{\tt otto.\-ritter.\-or@googlemail.\-com} ) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+09.\-2011 
+\end{DoxyDate}
+
+
+\-Definition at line 37 of file processor.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classProcessor_a50c89dbf76a073f4fb491628258cf292}{\index{\-Processor@{\-Processor}!\-Processor@{\-Processor}}
+\index{\-Processor@{\-Processor}!Processor@{\-Processor}}
+\subsubsection[{\-Processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Processor\-::\-Processor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{db/d9f/classProcessor_a50c89dbf76a073f4fb491628258cf292}
+\-Constructs a new processor. 
+
+\-Definition at line 42 of file processor.\-h.
+
+\hypertarget{classProcessor_a3b64ced3bba74102fc53ee539b2072c0}{\index{\-Processor@{\-Processor}!$\sim$\-Processor@{$\sim$\-Processor}}
+\index{$\sim$\-Processor@{$\sim$\-Processor}!Processor@{\-Processor}}
+\subsubsection[{$\sim$\-Processor}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Processor\-::$\sim$\-Processor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{db/d9f/classProcessor_a3b64ced3bba74102fc53ee539b2072c0}
+\-Destructor. 
+
+\-Definition at line 45 of file processor.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classProcessor_a3dad5d3ba8d0946e2f32acecadb1ede5}{\index{\-Processor@{\-Processor}!process@{process}}
+\index{process@{process}!Processor@{\-Processor}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-Processor\-::process} (
+\begin{DoxyParamCaption}
+\item[{int}]{samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{db/d9f/classProcessor_a3dad5d3ba8d0946e2f32acecadb1ede5}
+
+
+\-Called whenever samples have to be processed. \-Warning\-: \-This method is time-\/critical. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em samples} & \-Number of samples. \\
+\hline
+\end{DoxyParams}
+
+
+\-Implemented in \hyperlink{classEarProcessor_a2a65b0d2bafc93871789ff7f750d0565}{\-Ear\-Processor}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libear/include/\hyperlink{processor_8h}{processor.\-h}\end{DoxyCompactItemize}
