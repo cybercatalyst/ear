@@ -20,7 +20,6 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "jackadapter.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -31,33 +30,22 @@
 #define PINK_NOISE_COMBO_TEXT "Pink Noise"
 #define FILE_TYPES "*.csv"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(DSPCore &dspCore, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow) {
+    ui(new Ui::MainWindow),
+    _dspCore(dspCore) {
     ui->setupUi(this);
     showMaximized();
 
-    if(JackAdapter::instance()->connectToServer("EAR")){
-        m_earProcessor = new EarProcessor();
-        JackAdapter::instance()->setProcessor(m_earProcessor);
-        JackAdapter::instance()->startAudioProcessing();
-    } else {
-        qDebug("Please start the JACK Server before launching EAR.");
-        QApplication::quit();
-        exit(0);
-    }
 
-    m_visualizer = new VisualizerWidget(m_earProcessor, this);
+    m_visualizer = new VisualizerWidget(_dspCore, this);
     setCentralWidget(m_visualizer);
 
     m_updateTimer.setInterval(1000 / 50);
     m_updateTimer.setSingleShot(false);
     m_updateTimer.start();
     connect(&m_updateTimer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-    connect(ui->automaticAdaption, SIGNAL(toggled(bool)),
-            m_earProcessor, SLOT(setAutomaticAdaptionActive(bool)));
-    connect(ui->bypass, SIGNAL(toggled(bool)),
-            m_earProcessor, SLOT(setBypassActive(bool)));
+
     ui->signalSourceComboBox->addItem(MUSIC_COMBO_TEXT);
     ui->signalSourceComboBox->addItem(WHITE_NOISE_COMBO_TEXT);
     ui->signalSourceComboBox->addItem(PINK_NOISE_COMBO_TEXT);
@@ -70,7 +58,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionLoadRight, SIGNAL(triggered()), this, SLOT(loadRightEqualizer()));
     connect(ui->actionSaveRight, SIGNAL(triggered()), this, SLOT(saveRightEqualizer()));
 
-    connect(ui->calibrateAction, SIGNAL(triggered()), m_earProcessor, SLOT(calibrate()));
+    connect(ui->automaticAdaption, SIGNAL(toggled(bool)),
+            &_dspCore, SLOT(setAutomaticAdaptionActive(bool)));
+    connect(ui->bypass, SIGNAL(toggled(bool)),
+            &_dspCore, SLOT(setBypassActive(bool)));
+    connect(ui->calibrateAction, SIGNAL(triggered()),
+            &_dspCore, SLOT(calibrate()));
 }
 
 MainWindow::~MainWindow() {
@@ -78,34 +71,34 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::closeEvent(QCloseEvent *closeEvent) {
-    JackAdapter::instance()->stopAudioProcessing();
+    _dspCore.client().deactivate();
     QMainWindow::closeEvent(closeEvent);
 }
 
 void MainWindow::updateGUI() {
-    ui->microphoneLeftChannelLevel->setValue(m_earProcessor->microphoneLevelLeft());
-    ui->microphoneRightChannelLevel->setValue(m_earProcessor->microphoneLevelRight());
-    ui->musicSourceLeftChannelLevel->setValue(m_earProcessor->signalSourceLevelLeft());
-    ui->musicSourceRightChannelLevel->setValue(m_earProcessor->signalSourceLevelRight());
+    ui->microphoneLeftChannelLevel->setValue(_dspCore.microphoneLevelLeft());
+    ui->microphoneRightChannelLevel->setValue(_dspCore.microphoneLevelRight());
+    ui->musicSourceLeftChannelLevel->setValue(_dspCore.signalSourceLevelLeft());
+    ui->musicSourceRightChannelLevel->setValue(_dspCore.signalSourceLevelRight());
     ui->statusbar->showMessage(QString("Server statistics: CPU Load: %1% - Sample Rate: %2 Hz - Buffer Size: %3 Samples")
-                               .arg((int)JackAdapter::instance()->cpuLoad())
-                               .arg(JackAdapter::instance()->sampleRate())
-                               .arg(JackAdapter::instance()->bufferSize()));
+                               .arg((int)_dspCore.client().cpuLoad())
+                               .arg(_dspCore.client().sampleRate())
+                               .arg(_dspCore.client().bufferSize()));
     m_visualizer->updateGL();
 }
 
 void MainWindow::signalSourceChanged(QString text) {
     if(text == MUSIC_COMBO_TEXT)
-        m_earProcessor->setSignalSource(EarProcessor::ExternalSource);
+        _dspCore.setSignalSource(DSPCore::ExternalSource);
     if(text == WHITE_NOISE_COMBO_TEXT)
-        m_earProcessor->setSignalSource(EarProcessor::WhiteNoise);
+        _dspCore.setSignalSource(DSPCore::WhiteNoise);
     if(text == PINK_NOISE_COMBO_TEXT)
-        m_earProcessor->setSignalSource(EarProcessor::PinkNoise);
+        _dspCore.setSignalSource(DSPCore::PinkNoise);
 }
 
 void MainWindow::resetControls() {
-    DigitalEqualizer *leftEqualizer = m_earProcessor->leftEqualizer();
-    DigitalEqualizer *rightEqualizer = m_earProcessor->rightEqualizer();
+    DigitalEqualizer *leftEqualizer = _dspCore.leftEqualizer();
+    DigitalEqualizer *rightEqualizer = _dspCore.rightEqualizer();
     double *controls;
 
     leftEqualizer->acquireControls();
@@ -124,7 +117,7 @@ void MainWindow::resetControls() {
 void MainWindow::loadLeftEqualizer() {
     QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getOpenFileName(this, "Load Left Equalizer", homeLocation, FILE_TYPES);
-    if(!m_earProcessor->leftEqualizer()->loadControlsFromFile(fileName)) {
+    if(!_dspCore.leftEqualizer()->loadControlsFromFile(fileName)) {
         QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
     }
 }
@@ -132,7 +125,7 @@ void MainWindow::loadLeftEqualizer() {
 void MainWindow::loadRightEqualizer() {
     QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getOpenFileName(this, "Load Right Equalizer", homeLocation, FILE_TYPES);
-    if(!m_earProcessor->rightEqualizer()->loadControlsFromFile(fileName)) {
+    if(!_dspCore.rightEqualizer()->loadControlsFromFile(fileName)) {
         QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
     }
 }
@@ -140,7 +133,7 @@ void MainWindow::loadRightEqualizer() {
 void MainWindow::saveLeftEqualizer() {
     QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getSaveFileName(this, "Save Left Equalizer", homeLocation, FILE_TYPES);
-    if(!m_earProcessor->leftEqualizer()->saveControlsToFile(fileName)) {
+    if(!_dspCore.leftEqualizer()->saveControlsToFile(fileName)) {
         QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
     }
 }
@@ -148,7 +141,7 @@ void MainWindow::saveLeftEqualizer() {
 void MainWindow::saveRightEqualizer() {
     QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getSaveFileName(this, "Save Right Equalizer", homeLocation, FILE_TYPES);
-    if(!m_earProcessor->rightEqualizer()->saveControlsToFile(fileName)) {
+    if(!_dspCore.rightEqualizer()->saveControlsToFile(fileName)) {
         QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
     }
 }

@@ -18,39 +18,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef EARPROCESSOR_H
-#define EARPROCESSOR_H
+#ifndef DSPCORE_H
+#define DSPCORE_H
 
-// Own includes:
-#include "jackadapter.h"
-#include "processor.h"
+#include <Processor>
+#include <QMap>
+
 #include "digitalequalizer.h"
 #include "jnoise/jnoise.h"
 
-// Qt includes:
-#include <QVector>
-#include <QMap>
-#include <QDebug>
-#include <QSemaphore>
-
-/**
- * @class EarProcessor.
- *
- * @author Jacob Dawid ( jacob.dawid@cybercatalyst.net )
- * @author Otto Ritter ( otto.ritter.or@googlemail.com )
- * @date 09.2011
- *
- * @brief EarProcessor performs the central task of audio processing.
- *
- * The EAR processor compares the incoming delayed reference signal with the
- * recorded signal usually obtained by the microphone. In order to compensate
- * the differences in the the frequency spectrum it uses two independent
- * equalizers.
- */
-class EarProcessor : public Processor
-{
-  Q_OBJECT
+class DSPCore :
+    public QObject,
+    public QtJack::Processor {
+    Q_OBJECT
 public:
+    struct StereoAudioPort {
+        QtJack::AudioPort left;
+        QtJack::AudioPort right;
+    };
+
     /** Operating modes. */
     enum OperationMode {
         CalibratingLatency,
@@ -66,14 +52,19 @@ public:
 
     /** Signal channels. */
     enum Channel {
-        LeftChannel     = 0,
-        RightChannel    = 1
+        LeftChannel = 0,
+        RightChannel = 1
     };
 
-    /** Constructs a new EarProcessor. */
-    EarProcessor();
-    /** Destructor. */
-    ~EarProcessor();
+    DSPCore(QtJack::Client& client);
+    QtJack::Client& client();
+
+    StereoAudioPort registerStereoAudioInPort(QString name);
+    StereoAudioPort registerStereoAudioOutPort(QString name);
+
+    void process(int samples);
+
+    StereoAudioPort portByName(QString name);
 
     /** Returns a pointer to the equalizer object for the left channel. */
     DigitalEqualizer *leftEqualizer();
@@ -89,27 +80,14 @@ public:
     bool automaticAdaptionActive();
     /** Returns true, when the signal is being bypassed. */
     bool bypassActive();
-
     /** Returns the average microphone amplitude for the left channel. */
     int microphoneLevelLeft();
-
     /** Returns the average microphone amplitude for the right channel. */
     int microphoneLevelRight();
-
     /** Returns the average signal source amplitude for the left channel. */
     int signalSourceLevelLeft();
-
     /** Returns the average signal source amplitude for the right channel. */
     int signalSourceLevelRight();
-
-    /**
-      * Reimplemented from process. This will be called whenever there are new samples
-      * available for processing.
-      * Attention: This method is time critical.
-      *
-      * @param samples Number of samples that are available.
-      */
-    void process(int samples);
 
     /**
      * Provides the latency for the left channel.
@@ -143,18 +121,55 @@ signals:
     /** This signal is emitted when the calibration finished. */
     void calibrationFinished();
 
+
 private:
-    /** This method will fetch all input buffers to be ready for processing. */
-    void fetchInputBuffers(int samples);
+    DigitalEqualizer _leftEq, _rightEq;
+    JNoise _noiseGenerator;
 
-    /** Usually called at the end of audio processing, copies buffers back. */
-    void writeOutputBuffers(int samples);
+    QtJack::Client& _client;
+    QMap<QString, StereoAudioPort> _stereoPorts;
 
-    /** Processes audio. */
-    void processRectification(int samples);
+    // ..
+    /** Contains the current operation mode for this unit. */
+    OperationMode m_mode;
+    /** The current signal source. */
+    SignalSource m_signalSource;
 
-    /** Processes calibration. */
-    void processCalibration(int samples);
+    /** Ensures thread-safety. */
+    QSemaphore *m_levelSemaphore;
+    /** Semaphore for multithreaded access to the signal source. */
+    QSemaphore *m_signalSourceSemaphore;
+    /** Semaphore for multithreaded access to the automatic adaption state member. */
+    QSemaphore *m_automaticAdaptionSemaphore;
+    /** Semaphore for multithreaded access to the bypass state member. */
+    QSemaphore *m_bypassSemaphore;
+
+    /** Automatic adaption state. */
+    bool m_automaticAdaptionActive;
+    /** Bypass state. */
+    bool m_bypassActive;
+
+    /** Latency buffer for the left channel reference input. */
+    QList<double> m_leftLatencyBuffer;
+    /** Latency buffer for the right channel reference input. */
+    QList<double> m_rightLatencyBuffer;
+
+    /** This struct contains attributes that refer
+      * to the calibration process. */
+    struct Calibration {
+        /** This is true if we are waiting for a click. */
+        bool m_waitingForClick;
+        /** Latency for the left and right channel. */
+        int m_latency[2];
+        /** Offset in case we are waiting for more than
+          * a sample buffer period. */
+        int m_offset;
+        /** All previous latency measures. */
+        QVector<int> m_latencyMeasures[2];
+        /** Weighted map that correlates the number of occurences
+          * of a measure to the measure itself. */
+        QMap<int, int> m_weightedMeasures[2];
+    } m_calibration;
 
     /** Buffer for microphone input. This will be updated by fetchInputBuffers(). */
     fftw_complex m_microphoneBuffer[2][4096];
@@ -190,82 +205,29 @@ private:
       * with the microphone feedback. */
     fftw_complex m_delayedRightSignalSource[4096];
 
-    /** Contains the current operation mode for this unit. */
-    OperationMode m_mode;
-
-    /** Left equalizer. */
-    DigitalEqualizer *m_leftEqualizer;
-
-    /** Right equalizer. */
-    DigitalEqualizer *m_rightEqualizer;
-
-    /** Latency buffer for the left channel reference input. */
-    QList<double> m_leftLatencyBuffer;
-
-    /** Latency buffer for the right channel reference input. */
-    QList<double> m_rightLatencyBuffer;
-
-    /** This struct contains attributes that refer
-      * to the calibration process. */
-    struct Calibration {
-        /** This is true if we are waiting for a click. */
-        bool m_waitingForClick;
-        /** Latency for the left and right channel. */
-        int m_latency[2];
-        /** Offset in case we are waiting for more than
-          * a sample buffer period. */
-        int m_offset;
-        /** All previous latency measures. */
-        QVector<int> m_latencyMeasures[2];
-        /** Weighted map that correlates the number of occurences
-          * of a measure to the measure itself. */
-        QMap<int, int> m_weightedMeasures[2];
-    } m_calibration;
-
-    /** Identifier for the microphone input. */
-    QString m_microphoneName;
-
-    /** Identifier for the reference input. */
-    QString m_signalSourceName;
-
-    /** Identifier for the main output. */
-    QString m_mainOutName;
-
-    /** Ensures thread-safety. */
-    QSemaphore *m_levelSemaphore;
-
     /** The average absolute amplitude for microphone input. */
     int m_microphoneLevel[2];
 
     /** The average absolute amplitude for the signal source input. */
     int m_signalSourceLevel[2];
 
-    /** Semaphore for multithreaded access to the signal source. */
-    QSemaphore *m_signalSourceSemaphore;
-
-    /** Semaphore for multithreaded access to the automatic adaption state member. */
-    QSemaphore *m_automaticAdaptionSemaphore;
-
-    /** Semaphore for multithreaded access to the bypass state member. */
-    QSemaphore *m_bypassSemaphore;
-
-    /** The current signal source. */
-    SignalSource m_signalSource;
-
-    /** Pointer to the noise generator object. */
-    JNoise *m_jNoise;
-
-    /** Automatic adaption state. */
-    bool m_automaticAdaptionActive;
-
-    /** Bypass state. */
-    bool m_bypassActive;
-
     /** Fake left sample buffer for generating noise. */
     jack_default_audio_sample_t m_fakeSampleBufferLeft[4096];
 
     /** Fake right sample buffer for generating noise. */
     jack_default_audio_sample_t m_fakeSampleBufferRight[4096];
+
+    /** This method will fetch all input buffers to be ready for processing. */
+    void fetchInputBuffers(int samples);
+
+    /** Usually called at the end of audio processing, copies buffers back. */
+    void writeOutputBuffers(int samples);
+
+    /** Processes audio. */
+    void processRectification(int samples);
+
+    /** Processes calibration. */
+    void processCalibration(int samples);
 };
 
-#endif // EARPROCESSOR_H
+#endif // DSPCORE_H

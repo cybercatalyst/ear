@@ -27,7 +27,7 @@
 // FFTW3 includes:
 #include "fftw3.h"
 
-namespace FftwAdapter {
+namespace FFTWAdapter {
   /**
     * fftw works with arrays of fftw_complex numbers. In order to use fftw,
     * you have to convert between JACK samples, which are mere real numbers

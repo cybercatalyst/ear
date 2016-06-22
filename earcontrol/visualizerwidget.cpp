@@ -2,9 +2,11 @@
 #include <cmath>
 #include <QMessageBox>
 
-VisualizerWidget::VisualizerWidget(EarProcessor *earProcessor, QWidget *parent)
-    : QGLWidget(parent) {
-    m_earProcessor = earProcessor;
+#include "semaphorelocker.h"
+
+VisualizerWidget::VisualizerWidget(DSPCore &dspCore, QWidget *parent)
+    : QGLWidget(parent),
+      _dspCore(dspCore) {
 
     for(int i = 0; i <= 40; i ++) {
         m_logarithmicFrequencies[i] = (22050 * pow(10, (float)i / 16 + 7.5) / pow(10, 10.0));
@@ -107,8 +109,8 @@ void VisualizerWidget::paintGL() {
         renderText(-0.075, 1.0 - 1.0 * (float)rows / 20.0, 0.0, QString("-%1 dB").arg(rows));
     }
 
-    DigitalEqualizer *leftEqualizer = m_earProcessor->leftEqualizer();
-    DigitalEqualizer *rightEqualizer = m_earProcessor->rightEqualizer();
+    DigitalEqualizer *leftEqualizer = _dspCore.leftEqualizer();
+    DigitalEqualizer *rightEqualizer = _dspCore.rightEqualizer();
     double *leftControls;
     double *rightControls;
     float boxSize = 0.008;

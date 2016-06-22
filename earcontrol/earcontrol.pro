@@ -23,28 +23,26 @@ LIBS += -lfftw3
 
 SOURCES += \
     digitalequalizer.cpp \
-    earprocessor.cpp \
     fftwadapter.cpp \
-    jackadapter.cpp \
     launcher.cpp \
     mainwindow.cpp \
     visualizerwidget.cpp \
     jnoise/jnoise.cpp \
-    jnoise/randomgenerator.cpp
+    jnoise/randomgenerator.cpp \
+    dspcore.cpp
 
 HEADERS += \
     digitalequalizer.h \
-    earprocessor.h \
     fftwadapter.h \
-    jackadapter.h \
     launcher.cpp \
     mainwindow.h \
-    processor.h \
     Splash.png \
     visualizerwidget.h \
     jnoise/jnoise.h \
     jnoise/prbsgenerator.h \
-    jnoise/randomgenerator.h
+    jnoise/randomgenerator.h \
+    dspcore.h \
+    semaphorelocker.h
 
 FORMS += \
     mainwindow.ui

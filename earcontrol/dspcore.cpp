@@ -18,32 +18,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Standard includes:
+#include "dspcore.h"
+#include "semaphorelocker.h"
+
 #include <cmath>
+#include "fftwadapter.h"
 
-// Own includes:
-#include "earprocessor.h"
-
-using namespace FftwAdapter;
-
-EarProcessor::EarProcessor()
-    : Processor() {
-    m_microphoneName = "mic";
-    m_signalSourceName = "source";
-    m_mainOutName = "main";
-
+DSPCore::DSPCore(QtJack::Client& client)
+    : Processor(client),
+      _client(client) {
     m_automaticAdaptionActive = true;
-
-    JackAdapter* jackClient = JackAdapter::instance();
-    jackClient->registerStereoInputPort(m_signalSourceName);
-    jackClient->registerStereoInputPort(m_microphoneName);
-    jackClient->registerStereoOutputPort(m_mainOutName);
-    m_leftEqualizer = new DigitalEqualizer();
-    m_rightEqualizer = new DigitalEqualizer();
-
     m_mode = ProcessingAudio;
     m_signalSource = ExternalSource;
-    m_jNoise = new JNoise();
 
     while(m_leftLatencyBuffer.size() < 44100)
         m_leftLatencyBuffer.append(0.0);
@@ -60,79 +46,153 @@ EarProcessor::EarProcessor()
     m_signalSourceSemaphore = new QSemaphore(1);
     m_automaticAdaptionSemaphore = new QSemaphore(1);
     m_bypassSemaphore = new QSemaphore(1);
+
+    registerStereoAudioInPort("in");
+    registerStereoAudioInPort("ref");
+    registerStereoAudioOutPort("out");
 }
 
-EarProcessor::~EarProcessor() {
-    delete m_leftEqualizer;
-    delete m_rightEqualizer;
-    delete m_jNoise;
+QtJack::Client& DSPCore::client() {
+    return _client;
 }
 
-DigitalEqualizer *EarProcessor::leftEqualizer() {
-    return m_leftEqualizer;
+DSPCore::StereoAudioPort DSPCore::registerStereoAudioInPort(QString name) {
+    StereoAudioPort inputPort;
+    inputPort.left = _client.registerAudioInPort(name + "_1");
+    inputPort.right = _client.registerAudioInPort(name + "_2");
+    _stereoPorts[name] = inputPort;
+    return inputPort;
 }
 
-DigitalEqualizer *EarProcessor::rightEqualizer() {
-    return m_rightEqualizer;
+DSPCore::StereoAudioPort DSPCore::registerStereoAudioOutPort(QString name) {
+    StereoAudioPort outputPort;
+    outputPort.left = _client.registerAudioOutPort(name + "_1");
+    outputPort.right = _client.registerAudioOutPort(name + "_2");
+    _stereoPorts[name] = outputPort;
+    return outputPort;
 }
 
-void EarProcessor::setSignalSource(SignalSource signalSource) {
+void DSPCore::process(int samples) {
+    switch(m_mode) {
+    case CalibratingLatency:
+        processCalibration(samples);
+        break;
+    case ProcessingAudio:
+        processRectification(samples);
+        break;
+    };
+}
+
+DSPCore::StereoAudioPort DSPCore::portByName(QString name) {
+    return _stereoPorts[name];
+}
+
+DigitalEqualizer *DSPCore::leftEqualizer() {
+    return &_leftEq;
+}
+
+DigitalEqualizer *DSPCore::rightEqualizer() {
+    return &_rightEq;
+}
+
+void DSPCore::setSignalSource(SignalSource signalSource) {
     SemaphoreLocker locker(m_signalSourceSemaphore);
     m_signalSource = signalSource;
 }
 
-EarProcessor::SignalSource EarProcessor::signalSource() {
+DSPCore::SignalSource DSPCore::signalSource() {
     SemaphoreLocker locker(m_signalSourceSemaphore);
     return m_signalSource;
 }
 
-bool EarProcessor::automaticAdaptionActive() {
+bool DSPCore::automaticAdaptionActive() {
     SemaphoreLocker locker(m_automaticAdaptionSemaphore);
     return m_automaticAdaptionActive;
 }
 
-bool EarProcessor::bypassActive() {
+bool DSPCore::bypassActive() {
     SemaphoreLocker locker(m_bypassSemaphore);
     return m_bypassActive;
 }
 
-void EarProcessor::fetchInputBuffers(int samples) {
+int DSPCore::microphoneLevelLeft() {
+    SemaphoreLocker locker(m_levelSemaphore);
+    return m_microphoneLevel[LeftChannel];
+}
+
+int DSPCore::microphoneLevelRight() {
+    SemaphoreLocker locker(m_levelSemaphore);
+    return m_microphoneLevel[RightChannel];
+}
+
+int DSPCore::signalSourceLevelLeft() {
+    SemaphoreLocker locker(m_levelSemaphore);
+    return m_signalSourceLevel[LeftChannel];
+}
+
+int DSPCore::signalSourceLevelRight() {
+    SemaphoreLocker locker(m_levelSemaphore);
+    return m_signalSourceLevel[RightChannel];
+}
+
+void DSPCore::calibrate() {
+    m_mode = CalibratingLatency;
+    m_calibration.m_waitingForClick = false;
+    m_calibration.m_latencyMeasures[0].clear();
+    m_calibration.m_latencyMeasures[1].clear();
+    m_calibration.m_weightedMeasures[0].clear();
+    m_calibration.m_weightedMeasures[1].clear();
+}
+
+void DSPCore::setModeToRectification() {
+    m_mode = ProcessingAudio;
+    m_calibration.m_waitingForClick = false;
+    m_calibration.m_latencyMeasures[0].clear();
+    m_calibration.m_latencyMeasures[1].clear();
+    m_calibration.m_weightedMeasures[0].clear();
+    m_calibration.m_weightedMeasures[1].clear();
+}
+
+void DSPCore::setAutomaticAdaptionActive(bool on) {
+    SemaphoreLocker locker(m_automaticAdaptionSemaphore);
+    m_automaticAdaptionActive = on;
+}
+
+void DSPCore::setBypassActive(bool on) {
+    SemaphoreLocker locker(m_bypassSemaphore);
+    m_bypassActive = on;
+}
+
+// Actual processing
+
+void DSPCore::fetchInputBuffers(int samples) {
     int microphoneLevel[2] = {0, 0}, signalSourceLevel[2] = {0, 0};
     // Get the microphone input and copy it to fftw_complex buffers.
-    StereoPort microphoneInputPort = JackAdapter::instance()->stereoInputPort(m_microphoneName);
-    blit(microphoneInputPort.leftChannelBuffer(samples), m_microphoneBuffer[LeftChannel], samples);
-    blit(microphoneInputPort.rightChannelBuffer(samples), m_microphoneBuffer[RightChannel], samples);
+
+    StereoAudioPort microphoneInputPort = portByName("in");
+    FFTWAdapter::blit((jack_default_audio_sample_t*)microphoneInputPort.left.buffer(samples).internalMemory(), m_microphoneBuffer[LeftChannel], samples);
+    FFTWAdapter::blit((jack_default_audio_sample_t*)microphoneInputPort.right.buffer(samples).internalMemory(), m_microphoneBuffer[RightChannel], samples);
 
     // Get the signal source and it copy it to fftw_complex buffers.
-    StereoPort sourceInputPort = JackAdapter::instance()->stereoInputPort(m_signalSourceName);
+    StereoAudioPort sourceInputPort = portByName("ref");
 
     switch(signalSource()) {
     case ExternalSource: {
         // When transferring music, read directly from JACK buffers.
-        blit(sourceInputPort.leftChannelBuffer(samples), m_signalSourceBuffer[LeftChannel], samples);
-        blit(sourceInputPort.rightChannelBuffer(samples), m_signalSourceBuffer[RightChannel], samples);
+        FFTWAdapter::blit((jack_default_audio_sample_t*)sourceInputPort.left.buffer(samples).internalMemory(), m_signalSourceBuffer[LeftChannel], samples);
+        FFTWAdapter::blit((jack_default_audio_sample_t*)sourceInputPort.right.buffer(samples).internalMemory(), m_signalSourceBuffer[RightChannel], samples);
         break;
         }
     case WhiteNoise: {
-        // Query for true buffer, so JACK thinks we've fetched them.
-        (void)sourceInputPort.leftChannelBuffer(samples);
-        (void)sourceInputPort.rightChannelBuffer(samples);
-        // Pretend a fake buffer instead of the JACK buffer,
-        // so the noise generator can produce noise in it.
-        m_jNoise->process(samples, m_fakeSampleBufferLeft, m_fakeSampleBufferRight, 0, 0);
-        blit(m_fakeSampleBufferLeft, m_signalSourceBuffer[LeftChannel], samples);
-        blit(m_fakeSampleBufferRight, m_signalSourceBuffer[RightChannel], samples);
+        _noiseGenerator.process(samples, m_fakeSampleBufferLeft, m_fakeSampleBufferRight, 0, 0);
+        FFTWAdapter::blit(m_fakeSampleBufferLeft, m_signalSourceBuffer[LeftChannel], samples);
+        FFTWAdapter::blit(m_fakeSampleBufferRight, m_signalSourceBuffer[RightChannel], samples);
         break;
         }
     case PinkNoise: {
-        // Query for true buffer, so JACK thinks we've fetched them.
-        (void)sourceInputPort.leftChannelBuffer(samples);
-        (void)sourceInputPort.rightChannelBuffer(samples);
-        // Pretend a fake buffer instead of the JACK buffer,
-        // so the noise generator can produce noise in it.
-        m_jNoise->process(samples, 0, 0, m_fakeSampleBufferLeft, m_fakeSampleBufferRight);
-        blit(m_fakeSampleBufferLeft, m_signalSourceBuffer[LeftChannel], samples);
-        blit(m_fakeSampleBufferRight, m_signalSourceBuffer[RightChannel], samples);
+        _noiseGenerator.process(samples, 0, 0, m_fakeSampleBufferLeft, m_fakeSampleBufferRight);
+        FFTWAdapter::blit(m_fakeSampleBufferLeft, m_signalSourceBuffer[LeftChannel], samples);
+        FFTWAdapter::blit(m_fakeSampleBufferRight, m_signalSourceBuffer[RightChannel], samples);
         break;
         }
     }
@@ -166,46 +226,14 @@ void EarProcessor::fetchInputBuffers(int samples) {
     m_signalSourceLevel[RightChannel]   = signalSourceLevel[RightChannel];
 }
 
-void EarProcessor::writeOutputBuffers(int samples) {
+void DSPCore::writeOutputBuffers(int samples) {
     // Write result into the output buffers.
-    StereoPort outputPort = JackAdapter::instance()->stereoOutputPort(m_mainOutName);
-    blit(m_outputBuffer[LeftChannel], outputPort.leftChannelBuffer(samples), samples);
-    blit(m_outputBuffer[RightChannel], outputPort.rightChannelBuffer(samples), samples);
+    StereoAudioPort outputPort = portByName("out");
+    FFTWAdapter::blit(m_outputBuffer[LeftChannel], (jack_default_audio_sample_t*)outputPort.left.buffer(samples).internalMemory(), samples);
+    FFTWAdapter::blit(m_outputBuffer[RightChannel], (jack_default_audio_sample_t*)outputPort.right.buffer(samples).internalMemory(), samples);
 }
 
-int EarProcessor::microphoneLevelLeft() {
-    SemaphoreLocker locker(m_levelSemaphore);
-    return m_microphoneLevel[LeftChannel];
-}
-
-int EarProcessor::microphoneLevelRight() {
-    SemaphoreLocker locker(m_levelSemaphore);
-    return m_microphoneLevel[RightChannel];
-}
-
-int EarProcessor::signalSourceLevelLeft() {
-    SemaphoreLocker locker(m_levelSemaphore);
-    return m_signalSourceLevel[LeftChannel];
-}
-
-int EarProcessor::signalSourceLevelRight() {
-    SemaphoreLocker locker(m_levelSemaphore);
-    return m_signalSourceLevel[RightChannel];
-}
-
-void EarProcessor::process(int samples) {
-    switch(m_mode)
-    {
-    case CalibratingLatency:
-        processCalibration(samples);
-        break;
-    case ProcessingAudio:
-        processRectification(samples);
-        break;
-    };
-}
-
-void EarProcessor::processRectification(int samples) {
+void DSPCore::processRectification(int samples) {
     fetchInputBuffers(samples);
 
     // Shift samples of the reference signals into the latency buffers.
@@ -232,12 +260,12 @@ void EarProcessor::processRectification(int samples) {
             }
 
             // Get the spectrum by performing the dft.
-            performFFT(m_microphoneBuffer[LeftChannel], m_leftMicrophoneFrequencyDomain, samples);
-            performFFT(m_delayedLeftSignalSource, m_leftSignalSourceFrequencyDomain, samples);
+            FFTWAdapter::performFFT(m_microphoneBuffer[LeftChannel], m_leftMicrophoneFrequencyDomain, samples);
+            FFTWAdapter::performFFT(m_delayedLeftSignalSource, m_leftSignalSourceFrequencyDomain, samples);
 
             // Gain exclusive access to equalizer controls.
-            m_leftEqualizer->acquireControls();
-            double *leftEqualizerControls = m_leftEqualizer->controls();
+            _leftEq.acquireControls();
+            double *leftEqualizerControls = _leftEq.controls();
 
             // Compare microphone signal and signal source (ie. music signal).
             for(int i = 0; i < 2048; i++) {
@@ -274,7 +302,7 @@ void EarProcessor::processRectification(int samples) {
             }
 
             // We're done manipulating the controls, release them.
-            m_leftEqualizer->releaseControls();
+            _leftEq.releaseControls();
         }
 
         // As soon as we have enogh samples accumulated, we can start to compare.
@@ -287,12 +315,12 @@ void EarProcessor::processRectification(int samples) {
             }
 
             // Get the spectrum by performing the dft.
-            performFFT(m_microphoneBuffer[RightChannel], m_rightMicrophoneFrequencyDomain, samples);
-            performFFT(m_delayedRightSignalSource, m_rightSignalSourceFrequencyDomain, samples);
+            FFTWAdapter::performFFT(m_microphoneBuffer[RightChannel], m_rightMicrophoneFrequencyDomain, samples);
+            FFTWAdapter::performFFT(m_delayedRightSignalSource, m_rightSignalSourceFrequencyDomain, samples);
 
             // Gain exclusive access to equalizer controls.
-            m_rightEqualizer->acquireControls();
-            double *rightEqualizerControls = m_rightEqualizer->controls();
+            _rightEq.acquireControls();
+            double *rightEqualizerControls = _rightEq.controls();
 
             // Compare microphone signal and signal source (ie. music signal).
             for(int i = 0; i < 2048; i++) {
@@ -330,27 +358,27 @@ void EarProcessor::processRectification(int samples) {
             }
 
             // We're done manipulating the controls, release them.
-            m_rightEqualizer->releaseControls();
+            _rightEq.releaseControls();
         }
 
         // We're done updating the controls, now generate a new filter.
-        m_leftEqualizer->generateFilter();
-        m_rightEqualizer->generateFilter();
-    }    
+        _leftEq.generateFilter();
+        _rightEq.generateFilter();
+    }
 
     if(!bypassActive()) {
         // Run signals through equalizers into the output buffers.
-        m_leftEqualizer->process(m_signalSourceBuffer[LeftChannel], m_outputBuffer[LeftChannel], samples);
-        m_rightEqualizer->process(m_signalSourceBuffer[RightChannel], m_outputBuffer[RightChannel], samples);
+        _leftEq.process(m_signalSourceBuffer[LeftChannel], m_outputBuffer[LeftChannel], samples);
+        _rightEq.process(m_signalSourceBuffer[RightChannel], m_outputBuffer[RightChannel], samples);
     } else {
         // Bypass equalizers and copy the signal source in the output buffers.
-        blit(m_signalSourceBuffer[LeftChannel], m_outputBuffer[LeftChannel], samples);
-        blit(m_signalSourceBuffer[RightChannel], m_outputBuffer[RightChannel], samples);
+        FFTWAdapter::blit(m_signalSourceBuffer[LeftChannel], m_outputBuffer[LeftChannel], samples);
+        FFTWAdapter::blit(m_signalSourceBuffer[RightChannel], m_outputBuffer[RightChannel], samples);
     }
     writeOutputBuffers(samples);
 }
 
-void EarProcessor::processCalibration(int samples) {
+void DSPCore::processCalibration(int samples) {
     // The calibration process basically consists of two states:
     // 1.) Sending a signal
     // 2.) Waiting to receive the signal
@@ -467,32 +495,3 @@ void EarProcessor::processCalibration(int samples) {
 
     writeOutputBuffers(samples);
 }
-
-void EarProcessor::calibrate() {
-    m_mode = CalibratingLatency;
-    m_calibration.m_waitingForClick = false;
-    m_calibration.m_latencyMeasures[0].clear();
-    m_calibration.m_latencyMeasures[1].clear();
-    m_calibration.m_weightedMeasures[0].clear();
-    m_calibration.m_weightedMeasures[1].clear();
-}
-
-void EarProcessor::setModeToRectification() {
-    m_mode = ProcessingAudio;
-    m_calibration.m_waitingForClick = false;
-    m_calibration.m_latencyMeasures[0].clear();
-    m_calibration.m_latencyMeasures[1].clear();
-    m_calibration.m_weightedMeasures[0].clear();
-    m_calibration.m_weightedMeasures[1].clear();
-}
-
-void EarProcessor::setAutomaticAdaptionActive(bool on) {
-    SemaphoreLocker locker(m_automaticAdaptionSemaphore);
-    m_automaticAdaptionActive = on;
-}
-
-void EarProcessor::setBypassActive(bool on) {
-    SemaphoreLocker locker(m_bypassSemaphore);
-    m_bypassActive = on;
-}
-

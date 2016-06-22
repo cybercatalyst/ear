@@ -26,8 +26,7 @@
 #include <QDesktopServices>
 #include <QTimer>
 
-#include "jackadapter.h"
-#include "earprocessor.h"
+#include "dspcore.h"
 
 #include "visualizerwidget.h"
 
@@ -47,7 +46,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(DSPCore& dspCore, QWidget *parent = 0);
     ~MainWindow();
 
 protected:
@@ -80,8 +79,7 @@ private:
     /** Ui namespace for automatically generated GUI code. */
     Ui::MainWindow *ui;
 
-    /** EAR processor model. */
-    EarProcessor *m_earProcessor;
+    DSPCore& _dspCore;
 
     /** View attached to the EAR processor model class. */
     VisualizerWidget *m_visualizer;

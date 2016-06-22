@@ -21,7 +21,7 @@
 // FFTW3 includes:
 #include "fftwadapter.h"
 
-void FftwAdapter::blit(fftw_complex *fftw_complexIn,
+void FFTWAdapter::blit(fftw_complex *fftw_complexIn,
                        jack_default_audio_sample_t *jack_default_audio_sample_tsOut,
                        int n) {
     for(int i = 0; i < n; i++) {
@@ -29,7 +29,7 @@ void FftwAdapter::blit(fftw_complex *fftw_complexIn,
    }
 }
 
-void FftwAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_tsIn,
+void FFTWAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_tsIn,
                        fftw_complex *fftw_complexOut,
                        int n) {
     for(int i = 0; i < n; i++) {
@@ -38,7 +38,7 @@ void FftwAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_ts
     }
 }
 
-void FftwAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_tsIn,
+void FFTWAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_tsIn,
                        jack_default_audio_sample_t *jack_default_audio_sample_tsOut,
                        int n) {
     for(int i = 0; i < n; i++) {
@@ -46,7 +46,7 @@ void FftwAdapter::blit(jack_default_audio_sample_t *jack_default_audio_sample_ts
    }
 }
 
-void FftwAdapter::blit(fftw_complex *fftw_complexIn,
+void FFTWAdapter::blit(fftw_complex *fftw_complexIn,
                        fftw_complex *fftw_complexOut,
                        int n) {
     for(int i = 0; i < n; i++) {
@@ -55,14 +55,14 @@ void FftwAdapter::blit(fftw_complex *fftw_complexIn,
     }
 }
 
-void FftwAdapter::performFFT(fftw_complex *input, fftw_complex *result, int n) {
+void FFTWAdapter::performFFT(fftw_complex *input, fftw_complex *result, int n) {
     fftw_plan plan = fftw_plan_dft_1d(n, input, result,
                                       FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_execute(plan);
     fftw_destroy_plan(plan);
 }
 
-void FftwAdapter::performInverseFFT(fftw_complex *input, fftw_complex *result, int n) {
+void FFTWAdapter::performInverseFFT(fftw_complex *input, fftw_complex *result, int n) {
     fftw_plan plan = fftw_plan_dft_1d(n, input, result,
                                       FFTW_BACKWARD, FFTW_ESTIMATE);
     fftw_execute(plan);

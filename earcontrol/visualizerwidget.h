@@ -1,3 +1,23 @@
+/* This file is part of EAR, an audio processing tool.
+ *
+ * Copyright (C) 2011-2016 Otto Ritter, Jacob Dawid
+ * otto.ritter.or@googlemail.com
+ * jacob@omg-it.works
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the Affero GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the Affero GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #ifndef VISUALIZERWIDGET_H
 #define VISUALIZERWIDGET_H
 
@@ -5,8 +25,8 @@
 #include <QWheelEvent>
 #include <QMouseEvent>
 #include <QSemaphore>
-#include "earprocessor.h"
 
+#include "dspcore.h"
 
 /**
   * @class VisualizerWidget
@@ -22,7 +42,7 @@ public:
       * @param earProcessor EAR processor to which this view will be attached.
       * @param parent Parent widget for the Qt framework.
       */
-    VisualizerWidget(EarProcessor *earProcessor, QWidget *parent = 0);
+    VisualizerWidget(DSPCore& dspCore, QWidget *parent = 0);
 
 protected:
     /** Reimplemented from QGLWidget. */
@@ -73,7 +93,7 @@ private:
     void drawBezier(GLfloat *controlPoints, int n);
 
     /** Model class this view is attached to. */
-    EarProcessor *m_earProcessor;
+    DSPCore& _dspCore;
 
     /** Helper array to calculate frequency in logarithmic scale. */
     double m_logarithmicFrequencies[41];

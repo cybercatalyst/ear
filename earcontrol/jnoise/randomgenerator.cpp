@@ -1,6 +1,6 @@
 /*
   Copyright (C) 2003 Fons Adriaensen <fons.adriaensen@skynet.be>
-  Copyright (C) 2011 Jacob Dawid <jacob.dawid@cybercatalyst.net>
+  Copyright (C) 2011-2016 Jacob Dawid <jacob@omg-it.works>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

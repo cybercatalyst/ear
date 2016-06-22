@@ -24,6 +24,8 @@
 #include <QDebug>
 #include <QStringList>
 
+#include "semaphorelocker.h"
+
 DigitalEqualizer::DigitalEqualizer() {
     m_numberOfControls = MAX_NUMBER_OF_CONTROLS;
     for(int i = 0; i < MAX_NUMBER_OF_CONTROLS * 2; i++) {
@@ -132,7 +134,7 @@ void DigitalEqualizer::generateFilter() {
 
 
     // Translate into the time domain.
-    FftwAdapter::performInverseFFT(m_idealFilter, m_ifftIdealFilter, m_numberOfControls * 2);
+    FFTWAdapter::performInverseFFT(m_idealFilter, m_ifftIdealFilter, m_numberOfControls * 2);
 
     // Time domain signal after inverse DFT:
     // value
