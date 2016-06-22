@@ -25,7 +25,7 @@
 #include "jackadapter.h"
 #include "processor.h"
 #include "digitalequalizer.h"
-#include "jnoise.h"
+#include "jnoise/jnoise.h"
 
 // Qt includes:
 #include <QVector>

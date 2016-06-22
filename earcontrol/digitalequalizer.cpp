@@ -76,7 +76,7 @@ bool DigitalEqualizer::saveControlsToFile(QString fileName) {
     QFile file(fileName);
     file.open(QFile::WriteOnly);
     if(file.isOpen()) {
-        file.write(serializeCSV().toAscii());
+        file.write(serializeCSV().toLatin1());
         file.close();
         return true;
     }
@@ -87,7 +87,7 @@ bool DigitalEqualizer::loadControlsFromFile(QString fileName) {
     QFile file(fileName);
     file.open(QFile::ReadOnly);
     if(file.isOpen()) {
-        unserializeCSV(QString::fromAscii(file.readAll()));
+        unserializeCSV(QString::fromLatin1(file.readAll()));
         file.close();
         generateFilter();
         return true;

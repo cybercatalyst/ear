@@ -24,6 +24,7 @@
 
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QStandardPaths>
 
 #define MUSIC_COMBO_TEXT "Ext. Source"
 #define WHITE_NOISE_COMBO_TEXT "White Noise"
@@ -121,8 +122,7 @@ void MainWindow::resetControls() {
 }
 
 void MainWindow::loadLeftEqualizer() {
-    QDesktopServices desktopServices;
-    QString homeLocation = desktopServices.storageLocation(QDesktopServices::HomeLocation);
+    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getOpenFileName(this, "Load Left Equalizer", homeLocation, FILE_TYPES);
     if(!m_earProcessor->leftEqualizer()->loadControlsFromFile(fileName)) {
         QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
@@ -130,8 +130,7 @@ void MainWindow::loadLeftEqualizer() {
 }
 
 void MainWindow::loadRightEqualizer() {
-    QDesktopServices desktopServices;
-    QString homeLocation = desktopServices.storageLocation(QDesktopServices::HomeLocation);
+    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getOpenFileName(this, "Load Right Equalizer", homeLocation, FILE_TYPES);
     if(!m_earProcessor->rightEqualizer()->loadControlsFromFile(fileName)) {
         QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
@@ -139,8 +138,7 @@ void MainWindow::loadRightEqualizer() {
 }
 
 void MainWindow::saveLeftEqualizer() {
-    QDesktopServices desktopServices;
-    QString homeLocation = desktopServices.storageLocation(QDesktopServices::HomeLocation);
+    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getSaveFileName(this, "Save Left Equalizer", homeLocation, FILE_TYPES);
     if(!m_earProcessor->leftEqualizer()->saveControlsToFile(fileName)) {
         QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
@@ -148,8 +146,7 @@ void MainWindow::saveLeftEqualizer() {
 }
 
 void MainWindow::saveRightEqualizer() {
-    QDesktopServices desktopServices;
-    QString homeLocation = desktopServices.storageLocation(QDesktopServices::HomeLocation);
+    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
     QString fileName = QFileDialog::getSaveFileName(this, "Save Right Equalizer", homeLocation, FILE_TYPES);
     if(!m_earProcessor->rightEqualizer()->saveControlsToFile(fileName)) {
         QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");

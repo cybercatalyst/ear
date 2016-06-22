@@ -1,0 +1,5 @@
+[qtjack]
+author=Jacob Dawid
+description=Interface the JACK Audio Connection Kit.
+license=GPLv3
+website=
