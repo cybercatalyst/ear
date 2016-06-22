@@ -1,8 +1,8 @@
 /* This file is part of EAR, an audio processing tool.
  *
- * Copyright (C) 2011 Otto Ritter, Jacob Dawid
+ * Copyright (C) 2011-2016 Otto Ritter, Jacob Dawid
  * otto.ritter.or@googlemail.com
- * jacob.dawid@cybercatalyst.net
+ * jacob@omg-it.works
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the Affero GNU General Public License as published by
@@ -35,7 +35,7 @@ JACK is a system for handling real-time, low latency audio (and MIDI). It runs o
 <br />
 JACK was designed from the ground up for professional audio work, and its design focuses on two key areas: synchronous execution of all clients, and low latency operation.
 <br />
-This description was copied from <a href="http://jackaudio.org/" target="_new">Jack Audio Connection Kit - Copyright 2001-2006 Paul Davis</a> at 21.09.2011.
+This description was copied from <a href="http://jackaudio.org/" target="_new">Jack Audio Connection Kit - Copyright 2001-2006 Paul Davis</a> at 21.09.2011-2016.
 <br />
 <h3>Setting up EAR</h3>
 EAR is running on top of JACK. At first, you need to download and install JACK for your operating system. Though JACK is running as a separate process and can be configured via the command line it is recommended to use QJackControl, which provides a graphical user interface that allows you to set up the JACK audio server, draw connections and view system messages.
@@ -59,7 +59,7 @@ Make sure the server is running and launch EAR. Connect your music player of cho
 <br />
 <h2>Latency Calibration</h2>
 To achieve best results, you will need to find out the latency for the regulating loop. Click on 'Calibrate'. This will send out a click tone on your speakers that will be received through the microphone. As soon as the click sound will be received, the next will be send. Try to avoid making noise during the calibration process.
-* @author Jacob Dawid (jacob.dawid@cybercatalyst.net)
+* @author Jacob Dawid (jacob@omg-it.works)
 * @author Otto Ritter (otto.ritter.or@googlemail.com)
 */
 

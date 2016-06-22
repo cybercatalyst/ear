@@ -1,8 +1,8 @@
 /* This file is part of EAR, an audio processing tool.
  *
- * Copyright (C) 2011 Otto Ritter, Jacob Dawid
+ * Copyright (C) 2011-2016 Otto Ritter, Jacob Dawid
  * otto.ritter.or@googlemail.com
- * jacob.dawid@cybercatalyst.net
+ * jacob@omg-it.works
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the Affero GNU General Public License as published by
