@@ -17,16 +17,36 @@
  * You should have received a copy of the Affero GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/* This file is part of EAR, an audio processing tool.
+ *
+ * Copyright (C) 2011-2016 Otto Ritter, Jacob Dawid
+ * otto.ritter.or@googlemail.com
+ * jacob@omg-it.works
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the Affero GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the Affero GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-#include "digitalequalizer.h"
-#include <cmath>
 #include <QFile>
 #include <QDebug>
 #include <QStringList>
 
+#include <cmath>
+
+#include "equalizer.h"
 #include "semaphorelocker.h"
 
-DigitalEqualizer::DigitalEqualizer() {
+Equalizer::Equalizer() {
     m_numberOfControls = MAX_NUMBER_OF_CONTROLS;
     for(int i = 0; i < MAX_NUMBER_OF_CONTROLS * 2; i++) {
         m_delayLine[i] = 0.0;
@@ -41,12 +61,12 @@ DigitalEqualizer::DigitalEqualizer() {
     generateFilter();
 }
 
-DigitalEqualizer::~DigitalEqualizer() {
+Equalizer::~Equalizer() {
     delete m_numberOfControlsAccessSemaphore;
     delete m_controlsAccessSemaphore;
 }
 
-void DigitalEqualizer::setNumberOfControls(int n) {
+void Equalizer::setNumberOfControls(int n) {
     // Add a scope, so the Locker-Object will unlock.
     {
         SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
@@ -57,24 +77,24 @@ void DigitalEqualizer::setNumberOfControls(int n) {
     generateFilter();
 }
 
-int DigitalEqualizer::numberOfControls() {
+int Equalizer::numberOfControls() {
     SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
     return m_numberOfControls;
 }
 
-void DigitalEqualizer::acquireControls() {
+void Equalizer::acquireControls() {
     m_controlsAccessSemaphore->acquire();
 }
 
-double *DigitalEqualizer::controls() {
+double *Equalizer::controls() {
     return m_controls;
 }
 
-void DigitalEqualizer::releaseControls() {
+void Equalizer::releaseControls() {
     m_controlsAccessSemaphore->release();
 }
 
-bool DigitalEqualizer::saveControlsToFile(QString fileName) {
+bool Equalizer::saveControlsToFile(QString fileName) {
     QFile file(fileName);
     file.open(QFile::WriteOnly);
     if(file.isOpen()) {
@@ -85,7 +105,7 @@ bool DigitalEqualizer::saveControlsToFile(QString fileName) {
     return false;
 }
 
-bool DigitalEqualizer::loadControlsFromFile(QString fileName) {
+bool Equalizer::loadControlsFromFile(QString fileName) {
     QFile file(fileName);
     file.open(QFile::ReadOnly);
     if(file.isOpen()) {
@@ -97,7 +117,7 @@ bool DigitalEqualizer::loadControlsFromFile(QString fileName) {
     return false;
 }
 
-void DigitalEqualizer::generateFilter() {
+void Equalizer::generateFilter() {
     SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
     Q_UNUSED(locker);
 
@@ -198,7 +218,7 @@ void DigitalEqualizer::generateFilter() {
     // +------------------------------------------------> coefficients
 }
 
-void DigitalEqualizer::process(fftw_complex *sampleBuffer, fftw_complex *result, int samples) {
+void Equalizer::process(fftw_complex *sampleBuffer, fftw_complex *result, int samples) {
     SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
     Q_UNUSED(locker);
 
@@ -214,7 +234,7 @@ void DigitalEqualizer::process(fftw_complex *sampleBuffer, fftw_complex *result,
     }
 }
 
-QString DigitalEqualizer::serializeCSV() {
+QString Equalizer::serializeCSV() {
     SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
     Q_UNUSED(locker);
 
@@ -229,7 +249,7 @@ QString DigitalEqualizer::serializeCSV() {
     return outStream;
 }
 
-void DigitalEqualizer::unserializeCSV(QString stream) {
+void Equalizer::unserializeCSV(QString stream) {
     SemaphoreLocker locker(m_numberOfControlsAccessSemaphore);
     Q_UNUSED(locker);
 

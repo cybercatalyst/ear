@@ -21,13 +21,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "earchannelwidget.h"
+
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QStandardPaths>
+#include <QMdiSubWindow>
 
-#define MUSIC_COMBO_TEXT "Ext. Source"
-#define WHITE_NOISE_COMBO_TEXT "White Noise"
-#define PINK_NOISE_COMBO_TEXT "Pink Noise"
 #define FILE_TYPES "*.csv"
 
 MainWindow::MainWindow(DSPCore &dspCore, QWidget *parent) :
@@ -37,37 +37,28 @@ MainWindow::MainWindow(DSPCore &dspCore, QWidget *parent) :
     ui->setupUi(this);
     showMaximized();
 
-
-    m_visualizer = new VisualizerWidget(_dspCore, this);
-    setCentralWidget(m_visualizer);
-
-    m_updateTimer.setInterval(1000 / 50);
-    m_updateTimer.setSingleShot(false);
-    m_updateTimer.start();
-    connect(&m_updateTimer, SIGNAL(timeout()), this, SLOT(updateGUI()));
-
-    ui->signalSourceComboBox->addItem(MUSIC_COMBO_TEXT);
-    ui->signalSourceComboBox->addItem(WHITE_NOISE_COMBO_TEXT);
-    ui->signalSourceComboBox->addItem(PINK_NOISE_COMBO_TEXT);
-
-    connect(ui->signalSourceComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(signalSourceChanged(QString)));
-    connect(ui->resetControlsPushButton, SIGNAL(clicked()), this, SLOT(resetControls()));
+    addEARChannel("Left");
+    addEARChannel("Right");
 
     connect(ui->actionLoadLeft, SIGNAL(triggered()), this, SLOT(loadLeftEqualizer()));
     connect(ui->actionSaveLeft, SIGNAL(triggered()), this, SLOT(saveLeftEqualizer()));
     connect(ui->actionLoadRight, SIGNAL(triggered()), this, SLOT(loadRightEqualizer()));
     connect(ui->actionSaveRight, SIGNAL(triggered()), this, SLOT(saveRightEqualizer()));
 
-    connect(ui->automaticAdaption, SIGNAL(toggled(bool)),
-            &_dspCore, SLOT(setAutomaticAdaptionActive(bool)));
-    connect(ui->bypass, SIGNAL(toggled(bool)),
-            &_dspCore, SLOT(setBypassActive(bool)));
-    connect(ui->calibrateAction, SIGNAL(triggered()),
-            &_dspCore, SLOT(calibrate()));
+    startTimer(200);
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+}
+
+void MainWindow::addEARChannel(QString channelName) {
+    EARFilter* filter = _dspCore.addEARFilter();
+    QMdiSubWindow *subWindow = ui->mdiArea->addSubWindow(new EARChannelWidget(filter));
+
+    subWindow->setWindowTitle(channelName);
+    subWindow->show();
+    subWindow->resize(subWindow->width(), 640);
 }
 
 void MainWindow::closeEvent(QCloseEvent *closeEvent) {
@@ -75,73 +66,60 @@ void MainWindow::closeEvent(QCloseEvent *closeEvent) {
     QMainWindow::closeEvent(closeEvent);
 }
 
-void MainWindow::updateGUI() {
-    ui->microphoneLeftChannelLevel->setValue(_dspCore.microphoneLevelLeft());
-    ui->microphoneRightChannelLevel->setValue(_dspCore.microphoneLevelRight());
-    ui->musicSourceLeftChannelLevel->setValue(_dspCore.signalSourceLevelLeft());
-    ui->musicSourceRightChannelLevel->setValue(_dspCore.signalSourceLevelRight());
+void MainWindow::timerEvent(QTimerEvent *timerEvent) {
+    Q_UNUSED(timerEvent);
     ui->statusbar->showMessage(QString("Server statistics: CPU Load: %1% - Sample Rate: %2 Hz - Buffer Size: %3 Samples")
                                .arg((int)_dspCore.client().cpuLoad())
                                .arg(_dspCore.client().sampleRate())
                                .arg(_dspCore.client().bufferSize()));
-    m_visualizer->updateGL();
-}
-
-void MainWindow::signalSourceChanged(QString text) {
-    if(text == MUSIC_COMBO_TEXT)
-        _dspCore.setSignalSource(DSPCore::ExternalSource);
-    if(text == WHITE_NOISE_COMBO_TEXT)
-        _dspCore.setSignalSource(DSPCore::WhiteNoise);
-    if(text == PINK_NOISE_COMBO_TEXT)
-        _dspCore.setSignalSource(DSPCore::PinkNoise);
 }
 
 void MainWindow::resetControls() {
-    DigitalEqualizer *leftEqualizer = _dspCore.leftEqualizer();
-    DigitalEqualizer *rightEqualizer = _dspCore.rightEqualizer();
-    double *controls;
+//    DigitalEqualizer *leftEqualizer = _dspCore.leftEqualizer();
+//    DigitalEqualizer *rightEqualizer = _dspCore.rightEqualizer();
+//    double *controls;
 
-    leftEqualizer->acquireControls();
-    controls = leftEqualizer->controls();
-    for(int i = 0; i < 2048; i++)
-        controls[i] = 0.01;
-    leftEqualizer->releaseControls();
+//    leftEqualizer->acquireControls();
+//    controls = leftEqualizer->controls();
+//    for(int i = 0; i < 2048; i++)
+//        controls[i] = 0.01;
+//    leftEqualizer->releaseControls();
 
-    rightEqualizer->acquireControls();
-    controls = rightEqualizer->controls();
-    for(int i = 0; i < 2048; i++)
-        controls[i] = 0.01;
-    rightEqualizer->releaseControls();
+//    rightEqualizer->acquireControls();
+//    controls = rightEqualizer->controls();
+//    for(int i = 0; i < 2048; i++)
+//        controls[i] = 0.01;
+//    rightEqualizer->releaseControls();
 }
 
 void MainWindow::loadLeftEqualizer() {
-    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
-    QString fileName = QFileDialog::getOpenFileName(this, "Load Left Equalizer", homeLocation, FILE_TYPES);
-    if(!_dspCore.leftEqualizer()->loadControlsFromFile(fileName)) {
-        QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
-    }
+//    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
+//    QString fileName = QFileDialog::getOpenFileName(this, "Load Left Equalizer", homeLocation, FILE_TYPES);
+//    if(!_dspCore.leftEqualizer()->loadControlsFromFile(fileName)) {
+//        QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
+//    }
 }
 
 void MainWindow::loadRightEqualizer() {
-    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
-    QString fileName = QFileDialog::getOpenFileName(this, "Load Right Equalizer", homeLocation, FILE_TYPES);
-    if(!_dspCore.rightEqualizer()->loadControlsFromFile(fileName)) {
-        QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
-    }
+//    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
+//    QString fileName = QFileDialog::getOpenFileName(this, "Load Right Equalizer", homeLocation, FILE_TYPES);
+//    if(!_dspCore.rightEqualizer()->loadControlsFromFile(fileName)) {
+//        QMessageBox::warning(this, "Error Loading File", "There was an error loading the specified file.");
+//    }
 }
 
 void MainWindow::saveLeftEqualizer() {
-    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
-    QString fileName = QFileDialog::getSaveFileName(this, "Save Left Equalizer", homeLocation, FILE_TYPES);
-    if(!_dspCore.leftEqualizer()->saveControlsToFile(fileName)) {
-        QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
-    }
+//    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
+//    QString fileName = QFileDialog::getSaveFileName(this, "Save Left Equalizer", homeLocation, FILE_TYPES);
+//    if(!_dspCore.leftEqualizer()->saveControlsToFile(fileName)) {
+//        QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
+//    }
 }
 
 void MainWindow::saveRightEqualizer() {
-    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
-    QString fileName = QFileDialog::getSaveFileName(this, "Save Right Equalizer", homeLocation, FILE_TYPES);
-    if(!_dspCore.rightEqualizer()->saveControlsToFile(fileName)) {
-        QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
-    }
+//    QString homeLocation = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0);
+//    QString fileName = QFileDialog::getSaveFileName(this, "Save Right Equalizer", homeLocation, FILE_TYPES);
+//    if(!_dspCore.rightEqualizer()->saveControlsToFile(fileName)) {
+//        QMessageBox::warning(this, "Error Saving File", "There was an error saving the specified file.");
+//    }
 }

@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include <Client>
+#include <QStyleFactory>
 
 /**
 * @mainpage EAR Audio Rectifier
@@ -65,6 +66,8 @@ To achieve best results, you will need to find out the latency for the regulatin
 
 int main (int argc, char* argv[]) {
     QApplication qApplication(argc, argv);
+    qApplication.setStyle(QStyleFactory::create("gtk"));
+
     QSplashScreen splash(QPixmap(":/Splash.png"));
     splash.show();
     qApplication.processEvents();
@@ -74,12 +77,6 @@ int main (int argc, char* argv[]) {
 
     DSPCore dspCore(client);
     client.activate();
-
-    client.connect(client.portByName("system:capture_1"), dspCore.portByName("in").left);
-    client.connect(client.portByName("system:capture_2"), dspCore.portByName("in").right);
-
-    client.connect(dspCore.portByName("out").left, client.portByName("system:playback_1"));
-    client.connect(dspCore.portByName("out").right, client.portByName("system:playback_2"));
 
     MainWindow *mainWindow = new MainWindow(dspCore);
     splash.finish(mainWindow);

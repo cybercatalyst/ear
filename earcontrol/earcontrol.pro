@@ -22,30 +22,35 @@ INCLUDEPATH += .
 LIBS += -lfftw3
 
 SOURCES += \
-    digitalequalizer.cpp \
     fftwadapter.cpp \
     launcher.cpp \
     mainwindow.cpp \
-    visualizerwidget.cpp \
     jnoise/jnoise.cpp \
     jnoise/randomgenerator.cpp \
-    dspcore.cpp
+    dspcore.cpp \
+    earfilter.cpp \
+    earchannelwidget.cpp \
+    equalizerwidget.cpp \
+    equalizer.cpp
 
 HEADERS += \
-    digitalequalizer.h \
     fftwadapter.h \
     launcher.cpp \
     mainwindow.h \
     Splash.png \
-    visualizerwidget.h \
     jnoise/jnoise.h \
     jnoise/prbsgenerator.h \
     jnoise/randomgenerator.h \
     dspcore.h \
-    semaphorelocker.h
+    semaphorelocker.h \
+    earfilter.h \
+    earchannelwidget.h \
+    equalizerwidget.h \
+    equalizer.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    earchannelwidget.ui
 
 RESOURCES += \
     Pics.qrc

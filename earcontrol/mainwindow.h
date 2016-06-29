@@ -24,11 +24,9 @@
 #include <QMainWindow>
 #include <QCloseEvent>
 #include <QDesktopServices>
-#include <QTimer>
+#include <QTimerEvent>
 
 #include "dspcore.h"
-
-#include "visualizerwidget.h"
 
 namespace Ui {
     class MainWindow;
@@ -49,16 +47,15 @@ public:
     explicit MainWindow(DSPCore& dspCore, QWidget *parent = 0);
     ~MainWindow();
 
+    void addEARChannel(QString channelName);
+
 protected:
     /** Reimplemented from QWidget. */
     void closeEvent(QCloseEvent *closeEvent);
 
-private slots:
-    /** Attempts to update all visual elements from the current model data. */
-    void updateGUI();
+    void timerEvent(QTimerEvent *timerEvent);
 
-    /** Changes the current signal source according to the given string. */
-    void signalSourceChanged(QString text);
+private slots:
 
     /** Resets all equalizer controls to the highest possible value. */
     void resetControls();
@@ -80,12 +77,6 @@ private:
     Ui::MainWindow *ui;
 
     DSPCore& _dspCore;
-
-    /** View attached to the EAR processor model class. */
-    VisualizerWidget *m_visualizer;
-
-    /** Timer to trigger updates for the visualization. */
-    QTimer m_updateTimer;
 };
 
 #endif // MAINWINDOW_H

@@ -26,7 +26,7 @@
 #include "fftwadapter.h"
 
 /**
- * @class DigitalEqualizer
+ * @class Equalizer
  *
  * @author Jacob Dawid ( jacob@omg-it.works )
  * @author Otto Ritter ( otto.ritter.or@googlemail.com )
@@ -34,14 +34,14 @@
  *
  * @brief Modifies the frequency spectrum of the sampled audio signal.
  */
-class DigitalEqualizer
+class Equalizer
 {
 public:
     /** Constructs a new digital equalizer. */
-    DigitalEqualizer();
+    Equalizer();
 
     /** Destructor. */
-    ~DigitalEqualizer();
+    ~Equalizer();
 
     /** Sets the number of controls in linear frequency steps. */
     void setNumberOfControls(int n);
